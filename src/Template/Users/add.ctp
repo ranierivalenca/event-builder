@@ -9,7 +9,7 @@
         <?= $this->Form->create($user,array('class' => 'form-group'))?>
         <fieldset>
             <legend>Dados pessoais: </legend>
-            <?= $this->Form->input('nome', array('class' => 'form-control'))?>
+            <?= $this->Form->control('nome', array('class' => 'form-control'))?>
 
             <div class="my-form-inline">
                 <div style="min-width: 210px; width: 30%;">
