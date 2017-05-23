@@ -2,6 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
+use Cake\Error\Debugger;
 
 /**
  * Events Controller
@@ -10,6 +12,14 @@ use App\Controller\AppController;
  */
 class EventsController extends AppController
 {
+
+    
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow(['view','index']);
+        $this->Auth->deny(['add','edit','delete']);
+    }
 
     /**
      * Index method
@@ -105,5 +115,21 @@ class EventsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+
+    public function isAuthorized($user)
+    {
+        // O próprio usuário pode ver os seus dados
+        if ($this->request->action === 'add' ) {
+            $this->Flash->error(__('The event could not be deleted. Please, try again.'.$user['role']));
+            if (strpos('organizer', $user['role']) !== false){
+                return true;
+            }
+
+
+        }
+       
+        return parent::isAuthorized($user);
     }
 }

@@ -85,6 +85,7 @@ $cakeDescription = Configure::read('Event.name');
                     ) );
                     ?>
                     </li>
+                    <!--
                     <li>
                     <?php
                     echo $this->Html->link ( '<i class="fa fa-lg fa-list-alt"></i>' . ' Participações', ($this->fetch ( 'title' ) === 'home') ? '#attractions' : '/#attractions', array (
@@ -101,6 +102,7 @@ $cakeDescription = Configure::read('Event.name');
                     ) );
                     ?>
                     </li>
+                    -->
                     <li>
                     <?php
                     echo $this->Html->link ( '<i class="fa fa-book fa-lg"></i>' . ' Mostra Acadêmica', ($this->fetch ( 'title' ) === 'home') ? '#academic' : '/#academic', array (
@@ -118,7 +120,7 @@ $cakeDescription = Configure::read('Event.name');
                     ) );
                     ?>
                     </li>
-
+                    <!--
                     <li>
                     <?php
                     echo $this->Html->link ( '<i class="fa fa-lg fa-heart"></i>' . ' Apoio', ($this->fetch ( 'title' ) === 'home') ? '#support' : '/#support', array (
@@ -127,7 +129,7 @@ $cakeDescription = Configure::read('Event.name');
                     ) );
                     ?>
                     </li>
-                    <!-- <li>
+                     <li>
                     <?php
                     echo $this->Html->link ( '<i class="fa fa-group fa-lg"></i>' . ' Organização', ($this->fetch ( 'title' ) === 'home') ? '#people' : '/#people', array (
                             'escape' => false,
@@ -136,12 +138,23 @@ $cakeDescription = Configure::read('Event.name');
                     ?>
                     </li> -->
 
+                     <li>
+                    <?php
+                    echo $this->Html->link ( '<i class="fa fa-lg fa-pencil"></i>' . ' Inscrições', ($this->fetch ( 'title' ) === 'home') ? '#register' : '/#register', array (
+                            'escape' => false,
+                            'id' => 'register-link'
+                    ) );
+                    ?>
+                    </li>
+
                     <!--                    <li><a href="#insc" id="insc-link"><i class="fa fa-lg fa-pencil"></i> -->
                     <!--                            Inscrições</a></li> -->
                     <!-- $this->Html->italic('',['class' => 'fa fa-lg fa-pencil']) -->
+                    <!--
                     <li><?php
                     $loguser = $this->request->session ()->read ( 'Auth.User' );
                     if ($loguser) {
+
                         echo $this->Html->link ( '<i class="fa fa-lg fa-pencil"></i> '.' Minha Inscrição', array (
                                 'controller' => 'users',
                                 'action' => 'view',
@@ -157,7 +170,7 @@ $cakeDescription = Configure::read('Event.name');
                         ) );
                     }
                     ?></li>
-
+                    -->
                     <li><?php
                     if (strpos('admin', $loguser ['role']) !== false) {
                         echo $this->Html->link ( '<i class="fa fa-lg fa-fw fa-cog"></i> '.' Gerenciar', array (
@@ -166,7 +179,7 @@ $cakeDescription = Configure::read('Event.name');
                         ), array('escape' => false) );
                     }
                     ?></li>
-
+                    
                     <li><?php
                     if (strpos('admin', $loguser ['role']) !== false) {
                         echo $this->Html->link ( '<i class="fa fa-lg fa-fw fa-certificate"></i> '.' Certificados', array (
@@ -175,7 +188,7 @@ $cakeDescription = Configure::read('Event.name');
                         ), array('escape' => false) );
                     }
                     ?></li>
-
+                    
                     <li><?php
                     if (strpos('admin supervisor', $loguser ['role']) !== false) {
                         echo $this->Html->link ( '<i class="fa fa-lg fa-fw fa-tags"></i> '.' Credenciamento', array (
@@ -184,7 +197,7 @@ $cakeDescription = Configure::read('Event.name');
                         ), array('escape' => false) );
                     }
                     ?></li>
-
+                    
                     <li><?php
                     if (strpos('admin supervisor', $loguser ['role']) !== false) {
                         echo $this->Html->link ( '<i class="fa fa-lg fa-fw fa-graduation-cap"></i> '.' Minicursos', array (
@@ -225,15 +238,14 @@ $cakeDescription = Configure::read('Event.name');
         </div>
     </div>
 
-
-
-
                     <?= $this->fetch('content')?>
+
+                    
     <footer class="bg-success">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1>I ENTEC</h1>
+                    <h1>II ENTEC</h1>
                     <p>
                         Instituto Federal de Pernambuco <br>Campus Igarassu
                         <br><i class="fa fa-location-arrow"></i> Sede Provisória Faculdade de Igarassu (Facig) – Avenida Alfredo
@@ -289,6 +301,7 @@ $cakeDescription = Configure::read('Event.name');
           registerScroll("#where-link",        "#where",    1000);
           registerScroll("#support-link",      "#support",  1200);
           registerScroll("#people-link",       "#people",   400);
+          registerScroll("#register-link",       "#register",   400);
       <?php
         }
       ?>
