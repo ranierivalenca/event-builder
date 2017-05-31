@@ -2,7 +2,7 @@
 /**
   * @var \App\View\AppView $this
   */
-?>
+?>s
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
@@ -22,13 +22,13 @@
     <fieldset>
         <legend><?= __('Edit Event') ?></legend>
         <?php
-            echo $this->Form->input('name');
-            echo $this->Form->input('theme');
-            echo $this->Form->input('initials');
-            echo $this->Form->input('route');
-            echo $this->Form->input('description');
-            echo $this->Form->input('edition');
-            echo $this->Form->input('cover');
+            echo $this->Form->control('name');
+            echo $this->Form->control('theme');
+            echo $this->Form->control('initials');
+            echo $this->Form->control('route');
+            echo $this->Form->control('description');
+            echo $this->Form->control('edition');
+            echo $this->Form->control('cover');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

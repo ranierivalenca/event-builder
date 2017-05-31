@@ -6,8 +6,8 @@
 <?= $this->Form->create() ?>
     <fieldset>
         <legend><?= __('Por favor, entre com seu e-mail e senha: ') ?></legend>
-        <?= $this->Form->input('username',['label' => 'E-mail']) ?>
-        <?= $this->Form->input('password',['label' => 'Senha']) ?>
+        <?= $this->Form->control('username',['label' => 'E-mail']) ?>
+        <?= $this->Form->control('password',['label' => 'Senha']) ?>
     </fieldset>
 <?= $this->Form->button(__('Entrar')); ?>
 <?= $this->Form->end() ?>

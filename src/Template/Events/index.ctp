@@ -1,28 +1,17 @@
-<?php
-/**
-  * @var \App\View\AppView $this
-  */
-?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Event'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Registration'), ['controller' => 'Registration', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Registration'), ['controller' => 'Registration', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="events index large-9 medium-8 columns content">
-    <h3><?= __('Events') ?></h3>
+<div class="container section"
+    style="width: 70%; padding-top: 89px; margin-bottom: 10px;" id="insc">
+    <?= $this->Flash->render()?>
+    <h2>Lista de Eventos</h2>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
+                <th scope="col"><?= $this->Paginator->sort('cover') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('theme') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('initials') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('route') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('edition') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('cover') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -37,12 +26,17 @@
                 <td><?= h($event->initials) ?></td>
                 <td><?= h($event->route) ?></td>
                 <td><?= h($event->edition) ?></td>
-                <td><?= $this->Number->format($event->cover) ?></td>
+                <td>  <a href="<?= $event->cover->path.$event->cover->name ?>" download> Download</td>
                 <td><?= h($event->created) ?></td>
                 <td><?= h($event->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $event->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $event->id]) ?>
+
+                    <?=$this->Form->postLink ('<i class="fa   fa-flag-checkered"></i>' , array ('controller'=>'registrations', 'action' => 'register',$event->id ), array ('color:#555;','escape' => false,'confirm' => __ ( 'Registrar ' . $event->name . ' ?' ) ) );?>
+
+
+
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $event->id], ['confirm' => __('Are you sure you want to delete # {0}?', $event->id)]) ?>
                 </td>
             </tr>

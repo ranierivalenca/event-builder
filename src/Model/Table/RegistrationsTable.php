@@ -90,4 +90,8 @@ class RegistrationsTable extends Table
 
         return $rules;
     }
+
+    public function isEventOwner($eventId, $userId){
+        return $this->exists(['event_id' => $eventId, 'user_id' => $userId, 'role' => 'owner']);
+    }
 }

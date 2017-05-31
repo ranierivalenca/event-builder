@@ -18,9 +18,9 @@
     <fieldset>
         <legend><?= __('Add Registration') ?></legend>
         <?php
-            echo $this->Form->input('checkin');
-            echo $this->Form->input('certificate');
-            echo $this->Form->input('role');
+            echo $this->Form->control('checkin');
+            echo $this->Form->control('certificate');
+            echo $this->Form->control('role');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

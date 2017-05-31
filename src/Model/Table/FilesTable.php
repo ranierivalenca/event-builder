@@ -37,6 +37,8 @@ class FilesTable extends Table
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        
     }
 
     /**
@@ -65,5 +67,20 @@ class FilesTable extends Table
             ->notEmpty('status');
 
         return $validator;
+    }
+
+    public function uploadAndSaveFile($tmp_name, $path, $fileName){
+        $uploadFile = $path.$fileName;
+        if(move_uploaded_file($tmp_name,WWW_ROOT.$uploadFile)){
+            $uploadData = $this->newEntity();
+            $uploadData->name = $fileName;
+            $uploadData->path = $path;
+            $uploadData->created = date("Y-m-d H:i:s");
+            $uploadData->modified = date("Y-m-d H:i:s");
+            if ($this->save($uploadData)) {
+                return $uploadData;
+            }
+        }
+        return false;
     }
 }

@@ -43,6 +43,13 @@ class EventsTable extends Table
         $this->hasMany('Registration', [
             'foreignKey' => 'event_id'
         ]);
+
+        $this->belongsTo('Files')
+            ->setForeignKey('cover')
+            ->setProperty('cover');
+
+
+        /*$this->hasOne('Files',['foreignKey' => 'event_id', 'propertyName' => 'cover']);*/
     }
 
     /**
@@ -98,4 +105,9 @@ class EventsTable extends Table
 
         return $rules;
     }
+
+
+    
+
+
 }

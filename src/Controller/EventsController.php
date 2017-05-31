@@ -14,6 +14,13 @@ class EventsController extends AppController
 {
 
     
+    public function initialize(){
+        parent::initialize();
+        $this->loadModel('Files');
+        $this->loadModel('Registrations');
+    }
+
+
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
@@ -28,8 +35,9 @@ class EventsController extends AppController
      */
     public function index()
     {
-        $events = $this->paginate($this->Events);
 
+        
+        $events = $this->paginate($this->Events->find()->contain(['Files']));
         $this->set(compact('events'));
         $this->set('_serialize', ['events']);
     }
@@ -61,16 +69,37 @@ class EventsController extends AppController
         $event = $this->Events->newEntity();
         if ($this->request->is('post')) {
             $event = $this->Events->patchEntity($event, $this->request->data);
-            if ($this->Events->save($event)) {
-                $this->Flash->success(__('The event has been saved.'));
+            $extension = pathinfo($this->request->data['cover']['name'], PATHINFO_EXTENSION);
+            $cover = $this->Files->uploadAndSaveFile($this->request->data['cover']['tmp_name'],'events/img/','cover_'.$event->initials.'_'.$event->edition.'.'.$extension);
+            if($cover){
+                $event->cover = $cover->id;
+            }else{
+                $this->Flash->error(__('Problem ao carregar o aruvio de capa'));
+                return;
+            }
+            
 
+            if ($this->Events->save($event)) {
+                $ownerRegistration = $this->Registrations->newEntity();
+                $ownerRegistration->user_id = $this->Auth->user('id');
+                $ownerRegistration->event_id = $event->id;
+                $ownerRegistration->role = 'owner';
+                $this->Registrations->save($ownerRegistration);
+                $this->Flash->success(__('The event has been saved.'));
                 return $this->redirect(['action' => 'index']);
             }
+
+
             $this->Flash->error(__('The event could not be saved. Please, try again.'));
+
+            
         }
         $this->set(compact('event'));
         $this->set('_serialize', ['event']);
     }
+
+
+    
 
     /**
      * Edit method
@@ -120,14 +149,20 @@ class EventsController extends AppController
 
     public function isAuthorized($user)
     {
-        // O próprio usuário pode ver os seus dados
+        // qualquer um com o papel organizer pode criar eventos
         if ($this->request->action === 'add' ) {
-            $this->Flash->error(__('The event could not be deleted. Please, try again.'.$user['role']));
             if (strpos('organizer', $user['role']) !== false){
                 return true;
             }
+        }
 
-
+        // delete apenas o owner
+        if ($this->request->action === 'delete' ) {
+            $eventId = (int)$this->request->getParam('pass.0');
+            if ( $this->Registrations->isEventOwner($eventId, $user['id']) ){
+        
+                return true;
+            }
         }
        
         return parent::isAuthorized($user);
