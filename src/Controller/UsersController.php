@@ -13,6 +13,12 @@ use Cake\Mailer\Email;
 class UsersController extends AppController
 {
 
+
+    public function initialize(){
+        parent::initialize();
+        $this->loadModel('Registrations');
+    }
+
     
     public function beforeFilter(Event $event)
     {
@@ -34,6 +40,29 @@ class UsersController extends AppController
 
         $this->set(compact('users'));
         $this->set('_serialize', ['users']);
+    }
+
+
+    
+    public function migrar(){
+        $users = $this->Users->find()->where(['ativo' => 1]);
+
+        $this->Flash->default(__('entrou'));
+        foreach($users as $user)
+        {
+            $registration = $this->Registrations->newEntity();
+            $registration->user_id = $user->id;
+            $registration->event_id = 1;
+            $registration->checkin = $user->credenciado;
+            $registration->certificate = $user->rec_certificado;
+            $registration->created = $user->created;
+            $registration->modified = $user->modified;
+            $registration->role = 'participant';
+            $this->Registrations->save($registration);
+            
+        }
+
+        return $this->redirect($this->referer());
     }
 
     /**
@@ -77,13 +106,24 @@ class UsersController extends AppController
 
             $user->email = strtolower($user->email);
             $user->username = $user->email;
-            $user->role = "uszzer";
+            $user->role = "user";
             $user->nome = mb_strtoupper($user->nome, 'UTF-8');
             $user->activation_code = md5(time());
             $user->ativo = 0;
             $user->created = Time::now()->format('Y-m-d H:i:s');
             $user->modified = Time::now()->format('Y-m-d H:i:s');
             if ($this->Users->save($user)) {
+
+                $registration = $this->Registrations->newEntity();
+                $registration->user_id = $user->id;
+                $registration->event_id = 2;
+                $registration->role = 'participant';
+                $this->Registrations->save($registration);
+            
+            
+
+
+
                 $this->Flash->default(__($user->nome.', a sua inscrição está pendente de validação. Em instantes será enviado um e-mail para '.$user->email.' com instruções para a validação. '));
                 
                 $email = new Email('default');
