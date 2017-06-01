@@ -88,13 +88,30 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <div id="register" class="section">
       <div class="container">
         <div class="row">
-          <div class="col-md-8 col-md-offset-2 text-justify">
-            <h2 class="text-center">INSCRIÇÕES</h2>
+          <h2 class="text-center">INSCRIÇÕES ABERTAS!</h2>
+          <div class="col-md-8 col-md-offset-2 text-center">
+            
             <p class="text-center">
-              Aguarde, em breve as inscrições estarão disponíveis pelo site.
+              Se você participou do ENTEC 2016? Apenas clique INSCREVER-SE e realize o login!
+            </p>
+            <p class="text-center">
+             <?php echo $this->Html->link(
+              '<i class="fa fa-file-excel-o fa-2x"> INSCREVER-SE</i>',
+              array('controller'=>'registrations','action'=>'register'),
+              array('class'=>'btn btn-success btn-md btn-block', 'escape' => false));?>
+
             </p>
             
-             
+            <p class="text-center">
+           Não participou da edição anterior? Crie uma conta primeiro:
+            </p>
+
+            <p class="text-center">
+               <?php echo $this->Html->link(
+              '<i class="fa fa-file-excel-o fa-2x"> Criar uma conta</i>',
+              array('controller'=>'users','action'=>'add'),
+              array('class'=>'btn btn-warning btn-md btn-block', 'escape' => false));?>
+            </p>
           </div>
         </div>
        

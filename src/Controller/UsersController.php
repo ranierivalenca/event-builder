@@ -23,7 +23,7 @@ class UsersController extends AppController
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['add', 'logout', 'activate', 'login']);
+        $this->Auth->allow(['add', 'logout', 'activate', 'login', 'validacao']);
         $this->Auth->deny(['edit', 'index','view','delete','credenciamento']);
     }
 
@@ -42,28 +42,6 @@ class UsersController extends AppController
         $this->set('_serialize', ['users']);
     }
 
-
-    
-    public function migrar(){
-        $users = $this->Users->find()->where(['ativo' => 1]);
-
-        $this->Flash->default(__('entrou'));
-        foreach($users as $user)
-        {
-            $registration = $this->Registrations->newEntity();
-            $registration->user_id = $user->id;
-            $registration->event_id = 1;
-            $registration->checkin = $user->credenciado;
-            $registration->certificate = $user->rec_certificado;
-            $registration->created = $user->created;
-            $registration->modified = $user->modified;
-            $registration->role = 'participant';
-            $this->Registrations->save($registration);
-            
-        }
-
-        return $this->redirect($this->referer());
-    }
 
     /**
      * View method
@@ -89,7 +67,17 @@ class UsersController extends AppController
     }
 
     
+    public function validacao($id = null)
+    {
+        
+        
+        
+            $user = $this->Users->get($id);
+            $this->set('user', $user);
+            $this->set('_serialize', ['user']);
+    }
 
+    
 
 
 
@@ -119,10 +107,6 @@ class UsersController extends AppController
                 $registration->event_id = 2;
                 $registration->role = 'participant';
                 $this->Registrations->save($registration);
-            
-            
-
-
 
                 $this->Flash->default(__($user->nome.', a sua inscrição está pendente de validação. Em instantes será enviado um e-mail para '.$user->email.' com instruções para a validação. '));
                 
@@ -135,7 +119,8 @@ class UsersController extends AppController
                 ->viewVars(['nome' => $user->nome,'activation_link' => 'http://entec.ifpe.edu.br/users/activate/'.$user->id.'/'.$user->activation_code])
                 ->send();
                 
-                return $this->redirect(['action' => 'add']);
+
+                return $this->redirect(['action' => 'validacao',$user->id]);
             }
             $this->Flash->error(__('Incrição não realizada, verifique os campos destacados em vermelho.'));
         }
@@ -281,4 +266,30 @@ class UsersController extends AppController
         }
         return parent::isAuthorized($user);
     }
+
+
+    /**
+    public function migrar(){
+        $users = $this->Users->find()->where(['ativo' => 1]);
+
+        $this->Flash->default(__('entrou'));
+        foreach($users as $user)
+        {
+            $registration = $this->Registrations->newEntity();
+            $registration->user_id = $user->id;
+            $registration->event_id = 1;
+            $registration->checkin = $user->credenciado;
+            $registration->certificate = $user->rec_certificado;
+            $registration->created = $user->created;
+            $registration->modified = $user->modified;
+            $registration->role = 'participant';
+            $this->Registrations->save($registration);
+            
+        }
+
+        return $this->redirect($this->referer());
+    }
+    */
+
+
 }

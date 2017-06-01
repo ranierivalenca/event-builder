@@ -2,7 +2,8 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-
+use Cake\Event\Event;
+use Cake\Mailer\Email;
 /**
  * Registrations Controller
  *
@@ -25,6 +26,14 @@ class RegistrationsController extends AppController
 
         $this->set(compact('registrations'));
         $this->set('_serialize', ['registrations']);
+    }
+
+
+
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->deny(['register', 'welcome']);
     }
 
     /**
@@ -67,23 +76,31 @@ class RegistrationsController extends AppController
         $this->set('_serialize', ['registration']);
     }
 
-    public function register($event_id = null)
+    public function register($event_id = 2, $user_id = null)
     {
+        if($user_id === null) $user_id = $this->Auth->user('id');
         $registration = $this->Registrations->newEntity();
-        $registration->user_id = $this->Auth->user('id');
+        $registration->user_id = $user_id;
         $registration->event_id = $event_id;
         $registration->role = 'participant';
         if ($this->Registrations->save($registration)) {
+             $user = $this->Registrations->Users->get($user_id);
+             $email = new Email('default');
+             $email->from(['entec.ifpe.igarassu@gmail.com' => 'EnTec 2017'])
+            ->emailFormat('html')
+            ->to(strtolower($user->email))
+            ->template('default','insc_sucesso')
+            ->subject('[EnTec 2017] Bem Vindo, Inscrição Realizada!')
+            ->viewVars(['nome' => $user->nome,'ninscricao' => $user->id])
+            ->send();
+
             $this->Flash->success(__('The registration has been saved.'));
-            return $this->redirect(['action' => 'view', $registration->id]);
         }else{
             $this->Flash->error(__('The registration could not be saved. Please, try again.'));
-            return;
         }
-        $users = $this->Registrations->Users->find('list', ['limit' => 200]);
-        $events = $this->Registrations->Events->find('list', ['limit' => 200]);
-        $this->set(compact('registration', 'users', 'events'));
+        $this->set('registration', $registration);
         $this->set('_serialize', ['registration']);
+
     }
 
 
@@ -143,18 +160,7 @@ class RegistrationsController extends AppController
             return true;
         }
 
-        if ($this->request->action === 'index' ) {
-            return true;
-        }
-
-        // delete apenas o owner
-        if ($this->request->action === 'delete' ) {
-            $eventId = (int)$this->request->getParam('pass.0');
-            if ( $this->Registrations->isEventOwner($eventId, $user['id']) ){
         
-                return true;
-            }
-        }
        
         return parent::isAuthorized($user);
     }

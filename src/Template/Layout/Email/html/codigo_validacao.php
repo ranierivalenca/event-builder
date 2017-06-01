@@ -21,21 +21,14 @@
 <body>
 <p>Olá <?= $nome ?>,</p>
 
-<p>bem vindo ao ENTEC 2017!
-<br>O seu número de inscrição é <b><?= $ninscricao ?></b>
-<br>No ato do credenciamento, apresente o seu nome ou número da sua inscrição.</p>
-
-<p>Consulte a nossa programação em http://entec.ifpe.edu.br
-
-<br>Obrigado e o aguardamos no evento,
-<br>Organização ENTEC 2017</p>
-
+<p>a sua inscrição ainda não foi concluída.
+<br>Para finalizar sua inscrição no I Encontro de Tecnologia da Informação do IFPE - EnTec 2016, utilize o link abaixo para confirmar seu e-mail:</p>
+<p>Clique no link: <?= $activation_link ?></p>
 <br>
 <hr style="border:none;color:#909090;background-color:#b0b0b0;min-height:1px;width:99%">
 <p>II Encontro de Tecnologia da Informação do IFPE - EnTec 2017
 <br>Dias 21 e 21 de junho de 2017
 <br>Igarassu - PE
 <br>http://entec.ifpe.edu.br<p>
-</body>
 </body>
 </html>

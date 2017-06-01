@@ -14,7 +14,7 @@
 <?= $this->Flash->render('auth') ?>
 
 
-    <h1>Parabéns você esta inscrito no <?= $registration->event->name ?></h1>
+    <h1>Parabéns você esta inscrito no <?= $registration->event_id ?></h1>
     
   
 </div>
