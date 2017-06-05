@@ -52,112 +52,69 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
       <h1 class="text-center">Participações</h1>
       <div class="container">
         <div class="row">
+        
+          <?=
+            $this->element('home/participante', [
+                'name' => 'Raquel Lira',
+                'company' => 'IFPE - Campus Igarassu',
+                'year' => '2017',
+                'photo' => 'raquel_210x210.jpg',
+                'text' => '
+                    <p>
+                      Sobre <strong>Raquel Lira</strong>
+                    </p>
+                    <p>
+                      Professora de Gestão e Negócios do Instituto Federal de Pernambuco - IFPE, Campus Igarassu. Graduada e Mestre em Administração (PROPAD/UFPE). Atualmente, está engajada no ensino de ferramentas de gestão voltadas para inovação e empreendedorismo. É pesquisadora das temáticas que envolvem Políticas Públicas, Economia Criativa e Empreendedorismo.
+                    </p>
+                    <p>
+                      Palestra: <strong>Ensinamentos Jedi para Gestão de Equipes</strong>
+                    </p>
+                    <p>
+                      O que podemos aprender com ensinamentos da \'ordem Jedi\' para o mundo das empresas? O mini-curso tratará do assunto relacionando-o com falas dos mestres da \'ordem\' para lidar com o universo das organizações, das startups e dos desafios que enfrentamos em tempos sombrios. Conviver com a diversidade de opiniões, com diferente tipos de pessoas, culturas, povos e línguas. O foco é trabalhar aspectos individuais do comportamento dos participantes na suas relações com os colegas de trabalho. A \'brincadeira\' visa aproximar o universo estranho das organizações à realidade de programadores, desenvolvedores em outros tipos de profissionais em TI.
+                    </p>
 
-          <div class="col-md-3">
-            <div class="row">
-              <div class="col-md-10 col-md-offset-1">
-                <div class="thumbnail attraction">
-                  <img src="img/participantes_2017/raquel_210x210.jpg" alt="" class="img-rounded img-responsive">
-                  <div class="caption">
-                    <h4>
-                      Raquel Lira<br>
-                      <small>IFPE - Campus Igarassu</small>
-                    </h4>
-                    <h5 class="text-center">
-                      <a href="#" data-toggle="modal" data-target="#modal_raquel"><span class="fa fa-plus-square"></span> Saiba mais</a>
-                    </h5>
-                    <div class="modal fade" id="modal_raquel" tabindex="-1" role="dialog" aria-labelledby="raquel_title">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="raquel_title">Raquel Lira</h4>
-                          </div>
-                          <div class="modal-body">
-                            
-                            <p>
-                              Sobre <strong>Raquel Lira</strong>
-                            </p>
-                            <p>
-                              Professora de Gestão e Negócios do Instituto Federal de Pernambuco - IFPE, Campus Igarassu. Graduada e Mestre em Administração (PROPAD/UFPE). Atualmente, está engajada no ensino de ferramentas de gestão voltadas para inovação e empreendedorismo. É pesquisadora das temáticas que envolvem Políticas Públicas, Economia Criativa e Empreendedorismo. </p>
-                            <p>
-                              Palestra: <strong>Ensinamentos Jedi para Gestão de Equipes</strong>
-                            </p>
-                            <p>
-                              O que podemos aprender com ensinamentos da 'ordem Jedi' para o mundo das empresas? O mini-curso tratará do assunto relacionando-o com falas dos mestres da 'ordem' para lidar com o universo das organizações, das startups e dos desafios que enfrentamos em tempos sombrios. Conviver com a diversidade de opiniões, com diferente tipos de pessoas, culturas, povos e línguas. O foco é trabalhar aspectos individuais do comportamento dos participantes na suas relações com os colegas de trabalho. A 'brincadeira' visa aproximar o universo estranho das organizações à realidade de programadores, desenvolvedores em outros tipos de profissionais em TI.
-                            </p>
-
-                            <p> Redes Sociais</p>
-                              <ul style="list-style-type:none">
-                                <li><a href="https://twitter.com/raquellirax" target="_blank"><i class="fa fa-twitter"></i> @raquellirax</a>
-                                </li>
-                                <li ><a href="https://www.facebook.com/profaraquel.lira" target="_blank">
-                                <i class="fa fa-facebook fa-lg"></i>profaraquel.lira </a>
-                                </li>
-                                <li ><a href="https://www.instagram.com/raquellirax" target="_blank">
-                                <i class="fa fa-instagram fa-lg"></i> @raquellirax</a>
-                                </li>
-                              </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="row">
-              <div class="col-md-10 col-md-offset-1">
-                <div class="thumbnail attraction">
-                  <img src="img/participantes_2017/banana_210x210.jpg" alt="" class="img-rounded img-responsive">
-                  <div class="caption">
-                    <h4>
-                      Banana Digital<br>
-                    </h4>
-                    <h5 class="text-center">
-                      <a href="#" data-toggle="modal" data-target="#modal_banana"><span class="fa fa-plus-square"></span> Saiba mais</a>
-                    </h5>
-                    <div class="modal fade" id="modal_banana" tabindex="-1" role="dialog" aria-labelledby="banana_title">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="banana_title">Banana Digital</h4>
-                          </div>
-                          <div class="modal-body">
-                            
-                            <p>
-                              Atividade: <strong>HACK&LEARN: Workshop + Hackaton</strong>
-                            </p>
-                            <p>
-                              Modelo de ensino desenvolvido para combinar elementos de HACKATONS e WORKSHOPS com o objetivo de introduzir PBL (Project Based Learning) em eventos de ensino de tecnologia.
-                            </p>
-                            <p>WebSite: <a href="http://www.bananadigital.xyz/" target="_blank">
-                            www.bananadigital.xyz</a></p>
-                            <p> Redes Sociais</p>
-                              <ul style="list-style-type:none">
-                                <li><a href="https://www.youtube.com/channel/UCQxAaBFeP4Zx8fRoDgBIMwQ" target="_blank"><i class="fa fa-youtube"></i> YouTube</a>
-                                </li>
-                                <li ><a href="https://www.facebook.com/bananadigital.inc" target="_blank">
-                                <i class="fa fa-facebook fa-lg"></i> Facebook</a>
-                                </li>
-                                <li ><a href="https://www.linkedin.com/company/banana-digital?report%2Esuccess=6gcCQr75xprPO7XYhvjZ8J37EFZJUBSzv0j34tpx3ZPEn9V1bHBO6CQUThx6KoF16JJFVy" target="_blank">
-                                <i class="fa fa-linkedin fa-lg"></i> LinkedIn</a>
-                                </li>
-                              </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+                    <p> Redes Sociais</p>
+                    <ul style="list-style-type:none">
+                      <li><a href="https://twitter.com/raquellirax" target="_blank"><i class="fa fa-twitter"></i> @raquellirax</a>
+                      </li>
+                      <li ><a href="https://www.facebook.com/profaraquel.lira" target="_blank">
+                      <i class="fa fa-facebook fa-lg"></i>profaraquel.lira </a>
+                      </li>
+                      <li ><a href="https://www.instagram.com/raquellirax" target="_blank">
+                      <i class="fa fa-instagram fa-lg"></i> @raquellirax</a>
+                      </li>
+                    </ul>'
+            ])
+          ?>
+        
+          <?=
+            $this->element('home/participante', [
+                'name' => 'Banana Digital',
+                'company' => '',
+                'year' => '2017',
+                'photo' => 'banana_210x210.jpg',
+                'text' => '
+                    <p>
+                      Atividade: <strong>HACK&LEARN: Workshop + Hackaton</strong>
+                    </p>
+                    <p>
+                      Modelo de ensino desenvolvido para combinar elementos de HACKATONS e WORKSHOPS com o objetivo de introduzir PBL (Project Based Learning) em eventos de ensino de tecnologia.
+                    </p>
+                    <p>WebSite: <a href="http://www.bananadigital.xyz/" target="_blank">
+                    www.bananadigital.xyz</a></p>
+                    <p> Redes Sociais</p>
+                    <ul style="list-style-type:none">
+                      <li><a href="https://www.youtube.com/channel/UCQxAaBFeP4Zx8fRoDgBIMwQ" target="_blank"><i class="fa fa-youtube"></i> YouTube</a>
+                      </li>
+                      <li ><a href="https://www.facebook.com/bananadigital.inc" target="_blank">
+                      <i class="fa fa-facebook fa-lg"></i> Facebook</a>
+                      </li>
+                      <li ><a href="https://www.linkedin.com/company/banana-digital?report%2Esuccess=6gcCQr75xprPO7XYhvjZ8J37EFZJUBSzv0j34tpx3ZPEn9V1bHBO6CQUThx6KoF16JJFVy" target="_blank">
+                      <i class="fa fa-linkedin fa-lg"></i> LinkedIn</a>
+                      </li>
+                    </ul>'
+            ])
+          ?>
 
         </div>
       </div>
