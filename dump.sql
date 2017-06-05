@@ -188,6 +188,45 @@ INSERT INTO `users` VALUES (39,'entec.ifpe.igarassu@gmail.com','$2y$10$wAwL3za3j
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
+
+
+
+DROP TABLE IF EXISTS `papers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `papers` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned NOT NULL,
+  `title` varchar(180) NOT NULL,
+  `feedback` text,
+  `status` enum('pending','accepted','rejected','returned') NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `paper_user_id` (`user_id`),
+  CONSTRAINT `paper_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+DROP TABLE IF EXISTS `papers_files`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `papers_files` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `paper_id` int(11) unsigned NOT NULL,
+  `file_id` int(11) unsigned NOT NULL,
+  `version` enum('review','final') NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `paper_file` (`paper_id`,`file_id`),
+  KEY `papers_file_paper_id` (`paper_id`),
+  KEY `papers_file_file_id` (`file_id`),
+  CONSTRAINT `papers_file_paper_id` FOREIGN KEY (`paper_id`) REFERENCES `papers` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  CONSTRAINT `papers_file_file_id` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

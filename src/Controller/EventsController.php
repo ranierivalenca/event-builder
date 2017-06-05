@@ -74,7 +74,7 @@ class EventsController extends AppController
             if($cover){
                 $event->cover = $cover->id;
             }else{
-                $this->Flash->error(__('Problem ao carregar o aruvio de capa'));
+                $this->Flash->error(__('Problem ao carregar o arquivo de capa'));
                 return;
             }
             

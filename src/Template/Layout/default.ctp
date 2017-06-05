@@ -23,7 +23,7 @@ $cakeDescription = Configure::read('Event.name');
     <?= $this->Html->charset()?>
     <meta name="viewport"
     content="width=device-width, initial-scale=1.0">
-<!--    <script>
+    <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -33,7 +33,7 @@ $cakeDescription = Configure::read('Event.name');
   ga('send', 'pageview');
 
 </script>
--->
+
 
 <title>
         <?= $cakeDescription ?>
@@ -220,7 +220,8 @@ $cakeDescription = Configure::read('Event.name');
                             $user = $loguser ['nome'] . ' (' . $loguser ['username'] . ') ';
                     ?>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i>
+ Menu <span class="caret"></span></a>
                         <ul class="dropdown-menu inverse-dropdown">
                         <li><?= $loguser ['username'] ?></li>
                         <li role="separator" class="divider"></li>
@@ -288,7 +289,7 @@ $cakeDescription = Configure::read('Event.name');
                         <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a> -->
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a> -->
-                            <a href="https://www.facebook.com/events/1554970081462660/?active_tab=posts"><i class="fa fa-4x fa-fw fa-facebook-official text-inverse"></i></a>
+                            <a href="https://www.facebook.com/events/433886850319944/?active_tab=posts"><i class="fa fa-4x fa-fw fa-facebook-official text-inverse"></i></a>
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a> -->
                         </div>
                     </div>

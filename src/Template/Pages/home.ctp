@@ -76,11 +76,28 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                           <div class="modal-body">
                             
                             <p>
+                              Sobre <strong>Raquel Lira</strong>
+                            </p>
+                            <p>
+                              Professora de Gestão e Negócios do Instituto Federal de Pernambuco - IFPE, Campus Igarassu. Graduada e Mestre em Administração (PROPAD/UFPE). Atualmente, está engajada no ensino de ferramentas de gestão voltadas para inovação e empreendedorismo. É pesquisadora das temáticas que envolvem Políticas Públicas, Economia Criativa e Empreendedorismo. </p>
+                            <p>
                               Palestra: <strong>Ensinamentos Jedi para Gestão de Equipes</strong>
                             </p>
                             <p>
                               O que podemos aprender com ensinamentos da 'ordem Jedi' para o mundo das empresas? O mini-curso tratará do assunto relacionando-o com falas dos mestres da 'ordem' para lidar com o universo das organizações, das startups e dos desafios que enfrentamos em tempos sombrios. Conviver com a diversidade de opiniões, com diferente tipos de pessoas, culturas, povos e línguas. O foco é trabalhar aspectos individuais do comportamento dos participantes na suas relações com os colegas de trabalho. A 'brincadeira' visa aproximar o universo estranho das organizações à realidade de programadores, desenvolvedores em outros tipos de profissionais em TI.
                             </p>
+
+                            <p> Redes Sociais</p>
+                              <ul style="list-style-type:none">
+                                <li><a href="https://twitter.com/raquellirax" target="_blank"><i class="fa fa-twitter"></i> @raquellirax</a>
+                                </li>
+                                <li ><a href="https://www.facebook.com/profaraquel.lira" target="_blank">
+                                <i class="fa fa-facebook fa-lg"></i>profaraquel.lira </a>
+                                </li>
+                                <li ><a href="https://www.instagram.com/raquellirax" target="_blank">
+                                <i class="fa fa-instagram fa-lg"></i> @raquellirax</a>
+                                </li>
+                              </ul>
                           </div>
                         </div>
                       </div>
@@ -122,8 +139,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                             www.bananadigital.xyz</a></p>
                             <p> Redes Sociais</p>
                               <ul style="list-style-type:none">
-                                <li ><a href="https://www.youtube.com/channel/UCQxAaBFeP4Zx8fRoDgBIMwQ" target="_blank">
-                                <i class="fa fa-youtube"></i> YouTube</a>
+                                <li><a href="https://www.youtube.com/channel/UCQxAaBFeP4Zx8fRoDgBIMwQ" target="_blank"><i class="fa fa-youtube"></i> YouTube</a>
                                 </li>
                                 <li ><a href="https://www.facebook.com/bananadigital.inc" target="_blank">
                                 <i class="fa fa-facebook fa-lg"></i> Facebook</a>
@@ -210,19 +226,19 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
                   </p>
                   <p class="text-center">
                    <?php echo $this->Html->link(
-                    '<i class="fa fa-file-excel-o fa-2x"> INSCREVER-SE</i>',
+                    '<i class="fa fa-sign-in fa-2x"> INSCREVER-SE</i>',
                     array('controller'=>'registrations','action'=>'register'),
                     array('class'=>'btn btn-success btn-md btn-block', 'escape' => false));?>
 
                   </p>
                 
                 <p class="text-center">
-               Ñão participou da edição anterior? Crie uma conta primeiro:
+               Não participou da edição anterior? Crie uma conta primeiro:
                 </p>
 
                 <p class="text-center">
                    <?php echo $this->Html->link(
-                  '<i class="fa fa-file-excel-o fa-2x"> Criar uma conta</i>',
+                  '<i class="fa fa-user-plus fa-2x"> Criar uma conta</i>',
                   array('controller'=>'users','action'=>'add'),
                   array('class'=>'btn btn-warning btn-md btn-block', 'escape' => false));?>
                 </p>
