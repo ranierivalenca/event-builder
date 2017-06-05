@@ -40,6 +40,10 @@ $cakeDescription = Configure::read('Event.name');
         [<?= $this->fetch('title')?>]
     </title>
     <?= $this->Html->meta('icon')?>
+    
+    <?= 
+    $this->Html->meta('icone_64.gif', 'img/icone_64.gif', ['type' => 'icon'] );
+    ?>
 
 
     <?= $this->Html->css('pingendo-bootstrap.css')?>
@@ -74,8 +78,9 @@ $cakeDescription = Configure::read('Event.name');
                         class="icon-bar"></span>
                 </button>
             </div>
-            <div class="collapse navbar-collapse" id="navbar-ex-collapse">
 
+            <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+            <?php $loguser = $this->request->session ()->read ( 'Auth.User' );?>
                 <ul class="nav navbar-nav navbar-right">
 
                     <li>
@@ -86,7 +91,7 @@ $cakeDescription = Configure::read('Event.name');
                     ) );
                     ?>
                     </li>
-                    <!--
+                    
                     <li>
                     <?php
                     echo $this->Html->link ( '<i class="fa fa-lg fa-list-alt"></i>' . ' Participações', ($this->fetch ( 'title' ) === 'home') ? '#attractions' : '/#attractions', array (
@@ -95,6 +100,7 @@ $cakeDescription = Configure::read('Event.name');
                     ) );
                     ?>
                     </li>
+                    <!--
                     <li>
                     <?php
                     echo $this->Html->link ( '<i class="fa fa-lg fa-list-alt"></i>' . ' Programação', ($this->fetch ( 'title' ) === 'home') ? '#program' : '/#program', array (
@@ -112,7 +118,14 @@ $cakeDescription = Configure::read('Event.name');
                     ) );
                     ?>
                     </li>
-
+                    <li>
+                    <?php
+                    echo $this->Html->link ( '<i class="fa fa-lg fa-pencil"></i>' . ' Inscrições', ($this->fetch ( 'title' ) === 'home') ? '#register' : '/#register', array (
+                            'escape' => false,
+                            'id' => 'register-link'
+                    ) );
+                    ?>
+                    </li>
                     <li>
                     <?php
                     echo $this->Html->link ( '<i class="fa fa-lg fa-map-marker"></i>' . ' Local', ($this->fetch ( 'title' ) === 'home') ? '#where' : '/#where', array (
@@ -139,21 +152,11 @@ $cakeDescription = Configure::read('Event.name');
                     ?>
                     </li> -->
 
-                     <li>
-                    <?php
-                    echo $this->Html->link ( '<i class="fa fa-lg fa-pencil"></i>' . ' Inscrições', ($this->fetch ( 'title' ) === 'home') ? '#register' : '/#register', array (
-                            'escape' => false,
-                            'id' => 'register-link'
-                    ) );
-                    ?>
-                    </li>
-
-                    <!--                    <li><a href="#insc" id="insc-link"><i class="fa fa-lg fa-pencil"></i> -->
+                    <!-- <li><a href="#insc" id="insc-link"><i class="fa fa-lg fa-pencil"></i> -->
                     <!--                            Inscrições</a></li> -->
                     <!-- $this->Html->italic('',['class' => 'fa fa-lg fa-pencil']) -->
                     <!--
                     <li><?php
-                    $loguser = $this->request->session ()->read ( 'Auth.User' );
                     if ($loguser) {
 
                         echo $this->Html->link ( '<i class="fa fa-lg fa-pencil"></i> '.' Minha Inscrição', array (
@@ -208,17 +211,55 @@ $cakeDescription = Configure::read('Event.name');
                     }
                     ?></li>
 
-                    <li>
+                    
                     <?php
+                        if ($loguser) {
+                            $user = $loguser ['nome'] . ' (' . $loguser ['username'] . ') ';
+                    ?>
+                    <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                      <ul class="dropdown-menu inverse-dropdown">
+                         <li>
+                            
+                               <?= $loguser ['username'] ?>
+                           
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <?php
+                            echo $this->Html->link ( '<i class="fa fa-lg fa-pencil"></i> '.' Minha Inscrição', array (
+                                'controller' => 'users',
+                                'action' => 'view',
+                                $loguser ['id']
+                        ), array('escape' => false) );
+                            ?>
+                        </li>
+                        
+                        <li>
+                        <?php
+                            echo $this->Html->link ( '<i class="fa fa-sign-out fa-lg"></i>' . ' Sair', array (
+                                'controller' => 'users',
+                                'action' => 'logout'
+                            ), array ('escape' => false ) );
+                        ?>
+                        </li>
+                      </ul>
+                    </li>
 
 
-            if ($loguser) {
-                $user = $loguser ['nome'] . ' (' . $loguser ['username'] . ') ';
 
-                echo $this->Html->link ( '<i class="fa fa-sign-out fa-lg"></i>' . ' Sair', array (
-                        'controller' => 'users',
-                        'action' => 'logout'
-                ), array ('escape' => false ) );
+
+
+
+
+
+
+
+
+                    <li>
+
+            <?php
+                
             } else {
 
                 echo $this->Html->link ( '<i class="fa fa-sign-in fa-lg"></i>' . ' Entrar', array (
@@ -239,7 +280,7 @@ $cakeDescription = Configure::read('Event.name');
         </div>
     </div>
 
-                    <?= $this->fetch('content')?>
+    <?= $this->fetch('content')?>
 
                     
     <footer class="bg-success">

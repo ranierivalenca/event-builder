@@ -17,13 +17,14 @@ class UsersController extends AppController
     public function initialize(){
         parent::initialize();
         $this->loadModel('Registrations');
+        $this->loadModel('Recoverycodes');
     }
 
     
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['add', 'logout', 'activate', 'login', 'validacao']);
+        $this->Auth->allow(['add', 'logout', 'activate', 'login', 'validacao','recoverPassword', 'checkCode','editPassword']);
         $this->Auth->deny(['edit', 'index','view','delete','credenciamento']);
     }
 
@@ -77,9 +78,95 @@ class UsersController extends AppController
             $this->set('_serialize', ['user']);
     }
 
-    
 
 
+
+    public function recoverPassword()
+    {
+                
+         if ($this->request->is('post')) {
+             $user = $this->Users->find()->where(['email' => $this->request->data['email']])->first();
+             if($user){
+
+                $recoverycode = $this->Recoverycodes->newEntity();
+                $recoverycode->user_id = $user->id;
+                $recoverycode->code = md5(time());;
+                if($this->Recoverycodes->save($recoverycode)){
+                    $email = new Email('default');
+                    $email->from(['entec.ifpe.igarassu@gmail.com' => 'EnTec 2017'])
+                            ->emailFormat('html')
+                            ->to(strtolower($user->email))
+                            ->template('default','codigo_recuperacao')
+                            ->subject('[EnTec 2017] Recuperação de senha')
+                            ->viewVars(['nome' => $user->nome,'recovery_link' => 'http://entec.ifpe.edu.br/users/edit-password/'.$user->id.'/'.$recoverycode->code])
+                            ->send();
+                            $this->Flash->success(__('Em alguns instantes você receberá um e-mail com o link de recuperação de senha.'));
+                    return $this->redirect($this->referer());
+                }else{
+                    $this->Flash->error(__('Aconteceu um erro na geração do código de recuperação, entre em contato com a organização.'));
+                }
+                
+            }else{
+
+                $this->Flash->error(__('E-mail não encontrado no sistema, por favor verifique e tente novamente.'));
+            }
+        }        
+    }
+
+
+    function editPassword($user_id = null, $code = null) {
+        $allowPassChange = false;
+        if ($this->request->is('get')) {
+            $recoverycode = $this->Recoverycodes->find()->where(['user_id' => $user_id, 'code' => $code])->first();
+            if($recoverycode){                
+                if(!$recoverycode->used){
+                    $dateSub = strtotime(Time::now()->format('Y-m-d H:i:s')) - strtotime($recoverycode->created->format('Y-m-d H:i:s'));
+                
+                    if($dateSub/3600 < 48){
+                        $user = $this->Users->get($recoverycode->user_id);
+                        $allowPassChange = true;
+                        $this->set('user', $user);
+                        $this->set('_serialize', ['user']);
+                    }else{
+                        $this->Flash->error(__('O link de recuperação de senha expirou, ele é valido por apenas 48 horas, você deve gerar um novo link de recuperação.'));
+                        return $this->redirect(['action' => 'recoverPassword']);
+                    }
+                }else{
+                    $this->Flash->error(__('Este link de recuperação de senha já foi utilizado uma vez, ele não pode ser utilizado mais de uma vez, você deve solicitar outro link.'));
+                    return $this->redirect(['action' => 'recoverPassword']);
+                }
+            }else{
+                $this->Flash->error(__('O código de recuperação não foi encontrado, por favor verifique se o link de recuperação na barra de endereço é o mesmo que está no seu e-mail!'));
+            }
+        }else if ($this->request->is([ 'post', 'put'])) {
+            $user = $this->Users->get($user_id);
+            $user = $this->Users->patchEntity ( $user, $this->request->data );
+
+            if($user['new_password'] === $user['confirm_new_password']){
+                $user->password = $user['new_password'];
+                if($this->Users->save($user)){
+                    $this->Flash->success(__('Senha alterada com sucesso! Acesse a sua conta com a nova senha!'));
+                    //marca como usado todos os links da recuperação do usuário
+                    $this->Recoverycodes->updateAll(
+                            array('used' => '1'),
+                            array('user_id' => $user->id)
+                        );
+                    return $this->redirect(['action' => 'login']);
+                }else{
+
+                    $this->Flash->success(__('Falha ao salvar a senha, entre em contato com a organização.'));
+                }
+            }else{
+                $allowPassChange = true;
+                $this->set('user', $user);
+                $this->set('_serialize', ['user']); 
+                $this->Flash->success(__('As senhas digitadas são diferentes, tente novamente!'));
+            }
+        }        
+
+        $this->set('allowPassChange', $allowPassChange);
+
+    }
 
 
 
@@ -108,7 +195,7 @@ class UsersController extends AppController
                 $registration->role = 'participant';
                 $this->Registrations->save($registration);
 
-                $this->Flash->default(__($user->nome.', a sua inscrição está pendente de validação. Em instantes será enviado um e-mail para '.$user->email.' com instruções para a validação. '));
+                $this->Flash->default(__($user->nome.', a sua inscrição está pendente de validação. Em instantes você receberá um e-mail para '.$user->email.' com instruções para a validação. '));
                 
                 $email = new Email('default');
                 $email->from(['entec.ifpe.igarassu@gmail.com' => 'EnTec 2017'])
@@ -185,6 +272,9 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
             if ($user) {
+                $event = $this->Registrations->find()->where(['user_id' => $user['id'], 'event_id' => '2'])->first();
+                if($event) $user['isInscrito'] = true;
+                else $user['isInscrito'] = false;
                 $this->Auth->setUser($user);
                 return $this->redirect($this->Auth->redirectUrl());
             }
@@ -228,6 +318,8 @@ class UsersController extends AppController
 
     public function isAuthorized($user)
     {
+        
+
         // O próprio usuário pode ver os seus dados
         if ($this->request->action === 'edit' ) {
             $userId = (int)$this->request->params['pass'][0];

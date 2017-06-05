@@ -1,5 +1,6 @@
 <!-- src/Template/Users/add.ctp -->
-<?= $this->assign('title', 'Cadastrar Evento'); ?>
+
+<?= $this->assign('title', 'ENTEC 2017 - Cadastrar conta'); ?>
 <div class="container section"
     style="width: 70%; padding-top: 89px; margin-bottom: 10px;" id="insc">
     <?= $this->Flash->render()?>

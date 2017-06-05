@@ -1,5 +1,5 @@
 <!-- src/Template/Users/add.ctp -->
-<?= $this->assign('title', 'Inscrições'); ?>
+<?= $this->assign('title', 'ENTEC 2017 - Editar dados de usuário'); ?>
 <div class="container section"
     style="width: 70%; padding-top: 89px; margin-bottom: 10px;" id="insc">
     <?= $this->Flash->render()?>

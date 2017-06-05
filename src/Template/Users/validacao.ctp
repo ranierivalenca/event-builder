@@ -1,5 +1,5 @@
 <!-- src/Template/Users/aviso_validacao.ctp -->
-<?= $this->assign('title', 'Aviso Validação'); ?>
+<?= $this->assign('title', 'ENTEC 2017 - Aviso conta pendente de validação'); ?>
 <div class="container" style="width:80%;padding-top: 115px; margin-bottom: 10px; ">
     <?= $this->Flash->render()?>
     <?= $this->Flash->render('auth') ?>

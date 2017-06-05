@@ -79,10 +79,18 @@ class RegistrationsController extends AppController
     public function register($event_id = 2, $user_id = null)
     {
         if($user_id === null) $user_id = $this->Auth->user('id');
+        
+        if($this->Registrations->find()->where(['user_id' => $user_id, 'event_id' => $event_id])->count() > 0){
+            $this->Flash->success(__('Você já está inscrito no ENTEC 2017!'));
+            $this->Flash->success(__('Por favor, verifique se os seus dados estão atualizados e clique em ENVIAR!'));
+            return $this->redirect(['controller' => 'users','action' => 'edit', $user_id]);
+        }
+
         $registration = $this->Registrations->newEntity();
         $registration->user_id = $user_id;
         $registration->event_id = $event_id;
         $registration->role = 'participant';
+        
         if ($this->Registrations->save($registration)) {
              $user = $this->Registrations->Users->get($user_id);
              $email = new Email('default');
@@ -94,15 +102,17 @@ class RegistrationsController extends AppController
             ->viewVars(['nome' => $user->nome,'ninscricao' => $user->id])
             ->send();
 
-            $this->Flash->success(__('The registration has been saved.'));
+            $this->Flash->success(__('Parabéns você esta inscrito no ENTEC 2017 e em isntantes receberá um e-mail de confirmação!'));
+            $this->Flash->success(__('Por favor, verifique se os seus dados estão atualizados e clique ENVIAR!'));
+            return $this->redirect(['controller' => 'users','action' => 'edit', $user_id]);
         }else{
-            $this->Flash->error(__('The registration could not be saved. Please, try again.'));
+            $this->Flash->error(__('A sua inscrição não pode ser realizada, por favor entre em contato com a organização!'));
         }
-        $this->set('registration', $registration);
-        $this->set('_serialize', ['registration']);
+        
 
     }
 
+    
 
 
     /**

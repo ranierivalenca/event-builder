@@ -1,5 +1,5 @@
 <!-- src/Template/Users/view.ctp -->
-<?= $this->assign('title', 'Confirmar Inscri��o'); ?>
+<?= $this->assign('title', 'ENTEC 2017 - Visualizar dados de usuário'); ?>
 <div class="container" style="width:80%;padding-top: 115px; margin-bottom: 10px; ">
 <?= $this->Flash->render()?>
 <?= $this->Flash->render('auth') ?>

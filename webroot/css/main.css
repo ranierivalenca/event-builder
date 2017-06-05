@@ -1,4 +1,20 @@
 
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.inverse-dropdown {
+  background-color: #222;
+  border-color: #080808;
+  color: #9f9f9f !important;
+  &>li>a{
+    &:hover{
+      background-color: #000;
+    }
+  }
+}
+
+
 .my-form-inline{
        float: left;
        width: 100%;
