@@ -22,7 +22,7 @@
 <p>Olá <?= $nome ?>,</p>
 
 <p>a sua inscrição ainda não foi concluída.
-<br>Para finalizar sua inscrição no I Encontro de Tecnologia da Informação do IFPE - EnTec 2016, utilize o link abaixo para confirmar seu e-mail:</p>
+<br>Para finalizar sua inscrição no II Encontro de Tecnologia da Informação do IFPE - EnTec 2016, utilize o link abaixo para confirmar seu e-mail:</p>
 <p>Clique no link: <?= $activation_link ?></p>
 <br>
 <hr style="border:none;color:#909090;background-color:#b0b0b0;min-height:1px;width:99%">

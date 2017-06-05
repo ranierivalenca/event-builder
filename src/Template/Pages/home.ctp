@@ -24,9 +24,7 @@ $this->assign('title', 'ENTEC 2017 - Encontro de Tecnologia da Informação do I
 
 
 
-if (!Configure::read('debug')):
-  throw new NotFoundException('Please replace src/Template/Pages/home.ctp with your own version.');
-endif;
+
 
 $banner = Configure::read('Event.lanes.banner');
 
@@ -201,6 +199,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
         <br>
           <h2 class="text-center">INSCRIÇÕES ABERTAS!</h2>
           <div class="col-md-8 col-md-offset-2 text-center">
+          <p>As inscrições para participar do ENTEC são gratuitas!  </p>
           <?php $loguser = $this->request->session ()->read ( 'Auth.User' ); ?>
             <?php if($loguser['isInscrito']) {?>
                   <p> <?= $loguser['nome'] ?> você já esta inscrito no ENTEC 2017!</p>

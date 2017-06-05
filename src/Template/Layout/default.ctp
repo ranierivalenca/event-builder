@@ -212,26 +212,24 @@ $cakeDescription = Configure::read('Event.name');
                     ?></li>
 
                     
+
+
+
                     <?php
                         if ($loguser) {
                             $user = $loguser ['nome'] . ' (' . $loguser ['username'] . ') ';
                     ?>
                     <li class="dropdown">
-                      <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
-                      <ul class="dropdown-menu inverse-dropdown">
-                         <li>
-                            
-                               <?= $loguser ['username'] ?>
-                           
-                        </li>
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+                        <ul class="dropdown-menu inverse-dropdown">
+                        <li><?= $loguser ['username'] ?></li>
                         <li role="separator" class="divider"></li>
                         <li>
                             <?php
                             echo $this->Html->link ( '<i class="fa fa-lg fa-pencil"></i> '.' Minha Inscrição', array (
                                 'controller' => 'users',
                                 'action' => 'view',
-                                $loguser ['id']
-                        ), array('escape' => false) );
+                                $loguser ['id']), array('escape' => false) );
                             ?>
                         </li>
                         
@@ -245,32 +243,19 @@ $cakeDescription = Configure::read('Event.name');
                         </li>
                       </ul>
                     </li>
+                    
 
-
-
-
-
-
-
-
-
-
-
-                    <li>
-
-            <?php
-                
-            } else {
-
-                echo $this->Html->link ( '<i class="fa fa-sign-in fa-lg"></i>' . ' Entrar', array (
-                        'controller' => 'users',
-                        'action' => 'login'
-                ), array (
-                        'escape' => false
-                ) );
-            }
-            ?>
-
+                        <?php } else { ?>
+                        <li>
+                        <?php
+                            echo $this->Html->link ( '<i class="fa fa-sign-in fa-lg"></i>' . ' Entrar', array (
+                                    'controller' => 'users',
+                                    'action' => 'login'
+                            ), array (
+                                    'escape' => false
+                            ) );
+                        }
+                        ?>
 
                     </li>
 
