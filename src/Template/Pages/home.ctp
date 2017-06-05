@@ -23,12 +23,9 @@ $this->layout = 'default';
 $this->assign('title', 'ENTEC 2017 - Encontro de Tecnologia da Informação do IFPE');
 
 
-
-
-
 $banner = Configure::read('Event.lanes.banner');
 
-$cakeDescription = 'CakePHP: the rapid development PHP framework';
+$loguser = $this->request->session ()->read ( 'Auth.User' );
 ?>
 
 
@@ -169,37 +166,37 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <div id="register" class="section">
   <div class="container">
     <div class="row">
-    <br>
+      <br>
       <h2 class="text-center">INSCRIÇÕES ABERTAS!</h2>
       <div class="col-md-8 col-md-offset-2 text-center">
-      <p>As inscrições para participar do ENTEC são gratuitas!  </p>
-      <?php $loguser = $this->request->session ()->read ( 'Auth.User' ); ?>
-        <?php if($loguser['isInscrito']) {?>
-              <p> <?= $loguser['nome'] ?> você já esta inscrito no ENTEC 2017!</p>
+        <p>As inscrições para participar do ENTEC são gratuitas!  </p>
 
-        <?php }else{ ?>
-              <p class="text-center">
-                Se você participou do ENTEC 2016? Apenas clique INSCREVER-SE e realize o login!
-              </p>
-              <p class="text-center">
-               <?php echo $this->Html->link(
-                '<i class="fa fa-file-excel-o fa-2x"> INSCREVER-SE</i>',
-                array('controller'=>'registrations','action'=>'register'),
-                array('class'=>'btn btn-success btn-md btn-block', 'escape' => false));?>
+        <?php if($loguser['isInscrito']): ?>
+          <p> <?= $loguser['nome'] ?>, você já esta inscrito no ENTEC 2017!</p>
+        <?php else: ?>
+          <p class="text-center">
+            Se você participou do <strong>ENTEC 2016</strong>, apenas clique <strong>INSCREVER-SE</strong> para realizar seu login e confirmar a inscrição.
+          </p>
+          <p class="text-center">
+            <?= $this->Html->link(
+              'INSCREVER-SE',
+              array('controller'=>'registrations','action'=>'register'),
+              array('class'=>'btn btn-lg btn-success btn-md btn-block', 'escape' => false));
+            ?>
+          </p>
+        
+          <p class="text-center">
+            Não participou da edição anterior? Crie uma conta e inscreva-se no evento!
+          </p>
 
-              </p>
-            
-            <p class="text-center">
-           Ñão participou da edição anterior? Crie uma conta primeiro:
-            </p>
-
-            <p class="text-center">
-               <?php echo $this->Html->link(
-              '<i class="fa fa-file-excel-o fa-2x"> Criar uma conta</i>',
+          <p class="text-center">
+            <?= $this->Html->link(
+              'Criar uma conta</i>',
               array('controller'=>'users','action'=>'add'),
-              array('class'=>'btn btn-warning btn-md btn-block', 'escape' => false));?>
-            </p>
-        <?php } ?>
+              array('class'=>'btn btn-lg btn-warning btn-md btn-block', 'escape' => false));
+            ?>
+          </p>
+        <?php endif; ?>
       </div>
     </div>
    
