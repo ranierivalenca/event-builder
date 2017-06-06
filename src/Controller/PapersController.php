@@ -105,7 +105,17 @@ class PapersController extends AppController
                                 ->template('default','artigo_recebido')
                                 ->subject('[EnTec 2017] [Mostra Acadêmica] Artigo recebido (ID:'.$paper->id.')')
                                 ->viewVars(['nome' => $this->Auth->user('nome'),'paper' => $paper])
-                                ->send();
+                                ->attachments(array(
+                                    'header_email.png' => array(
+                                        'file' => WWW_ROOT.'img/email-header-1000.png',
+                                        'mimetype' => 'image/png',
+                                        'contentId' => 'header'),
+                                    'footer_email.png' => array(
+                                        'file' => WWW_ROOT.'img/email-footer-1000.png',
+                                        'mimetype' => 'image/png',
+                                        'contentId' => 'footer'),
+
+                                    )) ->send();
                             $email->from(['entec.ifpe.igarassu@gmail.com' => 'EnTec 2017'])
                                 ->emailFormat('html')
                                 ->to(strtolower('strapacao@gmail.com'))

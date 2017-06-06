@@ -19,6 +19,7 @@
     <title><?= $this->fetch('title') ?></title>
 </head>
 <body>
+<img src="cid:header" width="600px">
 <p>Olá <?= $nome ?>,</p>
 
 
@@ -37,5 +38,6 @@
 <br>Dias 21 e 21 de junho de 2017
 <br>Igarassu - PE
 <br>http://entec.ifpe.edu.br<p>
+<img src="cid:footer" width="600px">
 </body>
 </html>
