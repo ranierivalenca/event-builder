@@ -23,6 +23,11 @@
         </fieldset>
         <?= $this->Form->input(__('Entrar'), array('type' => 'submit', 'class' => 'btn btn-block btn-success')); ?>
       <?= $this->Form->end() ?>
+      <?= $this->Html->link(
+        'Criar uma conta',
+        array('controller'=>'users','action'=>'add'),
+        array('class'=>'btn btn-warning btn-md btn-block', 'escape' => false));
+      ?>
     </div>
   </div>
 </div>
