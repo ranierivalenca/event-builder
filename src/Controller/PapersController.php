@@ -21,6 +21,7 @@ class PapersController extends AppController
         parent::initialize();
         $this->loadModel('Files');
         $this->loadModel('PapersFiles');
+        $this->loadModel('Registrations');
     }
 
     
@@ -38,10 +39,18 @@ class PapersController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
+        $register = $this->Registrations->find()->select('role')->where(['user_id' => $this->Auth->user('id'),'event_id' => 2]);
+        if (strpos('admin', $this->Auth->user('role') !== false || strpos('manager', $register['role']) !== false)){
+                $this->paginate = [
             'contain' => ['Users']
         ];
-        $papers = $this->paginate($this->Papers);
+                $papers = $this->paginate($this->Papers);
+        }else{
+            $papers = $this->paginate($this->Papers->find()->where(['user_id' => $this->Auth->user('id')])->contain('Users') );
+
+        }
+
+        
 
         $this->set(compact('papers'));
         $this->set('_serialize', ['papers']);
@@ -73,30 +82,56 @@ class PapersController extends AppController
     {
         $paper = $this->Papers->newEntity();
         if ($this->request->is('post')) {
-            
-            $extension = pathinfo($this->request->data['arquivo']['name'], PATHINFO_EXTENSION);
-            $arquivo = $this->Files->uploadAndSaveFile($this->request->data['arquivo']['tmp_name'],'events/papers/','paper_'.$this->Auth->user('email').'_'.strtotime(Time::now()->format('Y-m-d_H_i_s')) .'.'.$extension);
-            if($arquivo){
-                
-                $paper = $this->Papers->patchEntity($paper, $this->request->getData());
-                $paper->status = 'pending';
-                $paper->user_id = $this->Auth->user('id');
+            //$this->Flash->error(__('Tamanho do arquivo : '.$this->request->data['arquivo']['tmp_name'])/pow(1024, 2)) ;
+            if(filesize($this->request->data['arquivo']['tmp_name'])/pow(1024, 2) < 4){
+                $extension = pathinfo($this->request->data['arquivo']['name'], PATHINFO_EXTENSION);
+                $arquivo = $this->Files->uploadAndSaveFile($this->request->data['arquivo']['tmp_name'],'events/papers/','paper_'.$this->Auth->user('email').'_'.Time::now()->format('Y-m-d_H_i_s').'.'.$extension);
+                if($arquivo){
+                    
+                    $paper = $this->Papers->patchEntity($paper, $this->request->getData());
+                    $paper->status = 'pending';
+                    $paper->user_id = $this->Auth->user('id');
 
-                if ($this->Papers->save($paper)) {
-                    $paperFile = $this->PapersFiles->newEntity();
-                    $paperFile->paper_id = $paper->id;
-                    $paperFile->file_id = $arquivo->id;
-                    $paperFile->version = 'review';
+                    if ($this->Papers->save($paper)) {
+                        $paperFile = $this->PapersFiles->newEntity();
+                        $paperFile->paper_id = $paper->id;
+                        $paperFile->file_id = $arquivo->id;
+                        $paperFile->version = 'review';
+                        if ($this->PapersFiles->save($paperFile)) {
+                            $email = new Email('default');
+                            $email->from(['entec.ifpe.igarassu@gmail.com' => 'EnTec 2017'])
+                                ->emailFormat('html')
+                                ->to(strtolower($this->Auth->user('email')))
+                                ->template('default','artigo_recebido')
+                                ->subject('[EnTec 2017] [Mostra Acadêmica] Artigo recebido (ID:'.$paper->id.')')
+                                ->viewVars(['nome' => $this->Auth->user('nome'),'paper' => $paper])
+                                ->send();
+                            $email->from(['entec.ifpe.igarassu@gmail.com' => 'EnTec 2017'])
+                                ->emailFormat('html')
+                                ->to(strtolower('strapacao@gmail.com'))
+                                ->template('default','recibo_coord_mostra')
+                                ->subject('[EnTec 2017] [Mostra Acadêmica] Artigo recebido (ID:'.$paper->id.')')
+                                ->viewVars(['usernome' => $this->Auth->user('nome'),'useremail' => $this->Auth->user('email'),'paper' => $paper])
+                                ->attachments(WWW_ROOT.$arquivo->path.$arquivo->name)
+                                ->send();
 
-                    $this->Flash->success(__('The paper has been saved.'));
-                    return $this->redirect(['action' => 'index']);
+                            $this->Flash->success(__('O seu artigo foi enviado para revisão, em instantes você receberá um e-mail de confirmação.'.Time::now()->format('Y-m-d_H_i_s') ));
+                            return $this->redirect(['action' => 'index']);
+                        }else{
+                            $this->Flash->error(__('Problema ao enviar o artigo, entre em contato com a organização.'));    
+                        }
+                        
+                    }else{
+                        $this->Flash->error(__('The paper could not be saved. Please, try again.'));
+                    }
+
+
+                }else{
+                    $this->Flash->error(__('Problem ao carregar o arquivo! Entre em contato com a organização.'));
+                    return;
                 }
-            $this->Flash->error(__('The paper could not be saved. Please, try again.'));
-
-
             }else{
-                $this->Flash->error(__('Problem ao carregar o arquivo! Entre em contato com a organização.'));
-                return;
+                $this->Flash->error(__('Tamanho do arquivo maior é que 4 Megabytes, por favor, reduza o tamaho do arquivo. As ferramentas de escritório como Word e Writer disponibilizam opções de compactação.'));
             }
 
 
@@ -107,7 +142,8 @@ class PapersController extends AppController
      //   $users = $this->Papers->Users->find('list', ['limit' => 200]);
       //  $files = $this->Papers->Files->find('list', ['limit' => 200]);
        // $this->set(compact('paper', 'users', 'files'));
-        //$this->set('_serialize', ['paper']);
+        $this->set(compact('paper'));
+        $this->set('_serialize', ['paper']);
     }
 
     /**
@@ -163,6 +199,7 @@ class PapersController extends AppController
 
         if (    $this->request->action === 'add'
             ||  $this->request->action === 'view'
+            ||  $this->request->action === 'index'
             ||  $this->request->action === 'edit') {
             return true;
         }

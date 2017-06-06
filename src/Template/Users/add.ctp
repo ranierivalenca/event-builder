@@ -2,10 +2,14 @@
 
 <?= $this->assign('title', 'ENTEC 2017 - Cadastrar conta'); ?>
 <div class="container section"
-    style="width: 70%; padding-top: 89px; margin-bottom: 10px;" id="insc">
+    style="width: 100%; padding-top: 89px; margin-bottom: 10px;" id="insc">
+    
+
+  <div class="row align-items-center">
+    <!-- <div class="users form col-12 offset-0 col-sm-12 offset-sm-0 col-md-10 offset-md-1 col col-lg-8 col-xl-8 offset-xl-2"> -->
+    <div class="users form col-12 col-offset-0 col-sm-12 col-sm-offset-0 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2 col-xl-6 col-xl-offset-3">
     <?= $this->Flash->render()?>
     <h2>Inscrição:</h2>
-    <div class="users form">
         <span>Atenção, os campos marcados com o * asterísco são obrigatórios, os demais opcionais. </span>
         <?= $this->Form->create($user,array('class' => 'form-group'))?>
         <fieldset>
@@ -114,6 +118,7 @@
 
         <?= $this->Form->button(__('<i class="fa fa-paper-plane-o"></i> ENVIAR'), ['class'=>'form-control', 'escape' => false]); ?>
         <?= $this->Form->end()?>
+    </div>
     </div>
 </div>
 

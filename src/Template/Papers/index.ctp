@@ -3,18 +3,11 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Paper'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Files'), ['controller' => 'Files', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New File'), ['controller' => 'Files', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="papers index large-9 medium-8 columns content">
-    <h3><?= __('Papers') ?></h3>
+<?= $this->assign('title', 'ENTEC 2017 - Lista Artigos'); ?>
+<div class="container section"
+    style="width: 70%; padding-top: 89px; margin-bottom: 10px;" id="insc">
+    <?= $this->Flash->render()?>
+    <h2>Lista de Artigos:</h2>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -31,7 +24,7 @@
             <?php foreach ($papers as $paper): ?>
             <tr>
                 <td><?= $this->Number->format($paper->id) ?></td>
-                <td><?= $paper->has('user') ? $this->Html->link($paper->user->id, ['controller' => 'Users', 'action' => 'view', $paper->user->id]) : '' ?></td>
+                <td><?= $paper->has('user') ? $this->Html->link($paper->user->nome, ['controller' => 'Users', 'action' => 'view', $paper->user->id]) : '' ?></td>
                 <td><?= h($paper->title) ?></td>
                 <td><?= h($paper->status) ?></td>
                 <td><?= h($paper->created) ?></td>

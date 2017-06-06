@@ -64,7 +64,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                   Professora de Gestão e Negócios do Instituto Federal de Pernambuco - IFPE, Campus Igarassu. Graduada e Mestre em Administração (PROPAD/UFPE). Atualmente, está engajada no ensino de ferramentas de gestão voltadas para inovação e empreendedorismo. É pesquisadora das temáticas que envolvem Políticas Públicas, Economia Criativa e Empreendedorismo.
                 </p>
                 <p>
-                  Palestra: <strong>Ensinamentos Jedi para Gestão de Equipes</strong>
+                  Mini-curso: <strong>Ensinamentos Jedi para Gestão de Equipes</strong>
                 </p>
                 <p>
                   O que podemos aprender com ensinamentos da \'ordem Jedi\' para o mundo das empresas? O mini-curso tratará do assunto relacionando-o com falas dos mestres da \'ordem\' para lidar com o universo das organizações, das startups e dos desafios que enfrentamos em tempos sombrios. Conviver com a diversidade de opiniões, com diferente tipos de pessoas, culturas, povos e línguas. O foco é trabalhar aspectos individuais do comportamento dos participantes na suas relações com os colegas de trabalho. A \'brincadeira\' visa aproximar o universo estranho das organizações à realidade de programadores, desenvolvedores em outros tipos de profissionais em TI.

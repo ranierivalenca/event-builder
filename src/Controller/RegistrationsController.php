@@ -102,7 +102,7 @@ class RegistrationsController extends AppController
             ->viewVars(['nome' => $user->nome,'ninscricao' => $user->id])
             ->send();
 
-            $this->Flash->success(__('Parabéns você esta inscrito no ENTEC 2017 e em isntantes receberá um e-mail de confirmação!'));
+            $this->Flash->success(__('Parabéns você esta inscrito no ENTEC 2017 e em instantes receberá um e-mail de confirmação!'));
             $this->Flash->success(__('Por favor, verifique se os seus dados estão atualizados e clique ENVIAR!'));
             return $this->redirect(['controller' => 'users','action' => 'edit', $user_id]);
         }else{
