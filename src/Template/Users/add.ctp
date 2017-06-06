@@ -94,7 +94,7 @@
           <div class="col-xs-6 col-md-6 col-lg-4">
             <?=
               $this->Form->control('estado',
-                array( 'options' => [
+                array('class' => 'form-control', 'options' => [
                   '' => 'Selecione',
                   'Acre'  => 'Acre' ,
                   'Alagoas'  => 'Alagoas',
