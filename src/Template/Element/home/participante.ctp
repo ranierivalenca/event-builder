@@ -11,7 +11,7 @@
             <?= $name ?><br>
             <small><?= $company ?></small>
           </h4>
-          <h5 class="text-center">
+          <h5 class="text-center more">
             <a href="#" data-toggle="modal" data-target="#modal_<?= $id ?>"><span class="fa fa-plus-square"></span> Saiba mais</a>
           </h5>
           <div class="modal fade" id="modal_<?= $id ?>" tabindex="-1" role="dialog" aria-labelledby="pablo_title">
