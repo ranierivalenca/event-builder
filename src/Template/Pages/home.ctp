@@ -31,17 +31,17 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
 
 
 
-<div style="padding-top: 50px;"></div>
-<div style="opacity: 1; " id="home">
+<div style="padding-top: 50px;" id="home"></div>
+<div style="opacity: 1;">
   <img src="img/banner_2017_1701x651-min.png" alt="">
   <div class="container">
     <div class="row">
     </div>
   </div>
 </div>
-    
 
-  
+
+
 
 
 <div id="attractions" class="section">
@@ -49,7 +49,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
   <h1 class="text-center">Participações</h1>
   <div class="container">
     <div class="row">
-    
+
       <?=
         $this->element('home/participante', [
             'name' => 'Raquel Lira',
@@ -83,7 +83,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                 </ul>'
         ])
       ?>
-    
+
       <?=
         $this->element('home/participante', [
             'name' => 'Michael Barney',
@@ -172,7 +172,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
 
     </div>
   </div>
-</div> 
+</div>
 
 
 <div id="academic" class="section">
@@ -216,7 +216,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </blockquote>
       </div>
     </div>
-    
+
   </div>
 </div>
 
@@ -241,7 +241,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
               array('class'=>'btn btn-lg btn-success btn-md btn-block', 'escape' => false));
             ?>
           </p>
-        
+
           <p class="text-center">
             Não participou da edição anterior? Crie uma conta e inscreva-se no evento!
           </p>
@@ -256,10 +256,10 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         <?php endif; ?>
       </div>
     </div>
-   
+
   </div>
 </div>
- 
+
 
 
 <div id="where" class="section" >
