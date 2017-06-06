@@ -9,7 +9,7 @@ bd-dump:
 	@mysqldump -u $(USER) -p$(PW) $(DB) > $(DUMP_FILE)
 
 bd-init:
-	@mysql -u root -p -e "DROP DATABASE IF EXISTS $(DB); DROP USER IF EXISTS '$(USER)'@'localhost'; CREATE DATABASE $(DB); CREATE USER '$(USER)'@'localhost' IDENTIFIED BY '$(PW)'; GRANT ALL PRIVILEGES ON $(DB).* to '$(USER)'@'localhost';"
+	@mysql -u root -p -e "DROP DATABASE IF EXISTS $(DB); DROP USER '$(USER)'@'localhost'; CREATE DATABASE $(DB); CREATE USER '$(USER)'@'localhost' IDENTIFIED BY '$(PW)'; GRANT ALL PRIVILEGES ON $(DB).* to '$(USER)'@'localhost';"
 
 bd-set-dump: bd-init
 	@mysql -u $(USER) -p$(PW) $(DB) < $(DUMP_FILE)
