@@ -88,3 +88,11 @@ h5 .where {
 #home img{
 	width: 100%;
 }
+
+.section:last-of-type {
+    border-bottom: none;
+}
+
+footer hr {
+    border-top: 2px groove;
+}

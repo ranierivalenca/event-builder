@@ -40,8 +40,8 @@ $cakeDescription = Configure::read('Event.name');
         [<?= $this->fetch('title')?>]
     </title>
     <?= $this->Html->meta('icon')?>
-    
-    <?= 
+
+    <?=
     $this->Html->meta('icone_64.gif', 'img/icone_64.gif', ['type' => 'icon'] );
     ?>
 
@@ -91,7 +91,7 @@ $cakeDescription = Configure::read('Event.name');
                     ) );
                     ?>
                     </li>
-                    
+
                     <li>
                     <?php
                     echo $this->Html->link ( '<i class="fa fa-lg fa-list-alt"></i>' . ' Participações', ($this->fetch ( 'title' ) === 'home') ? '#attractions' : '/#attractions', array (
@@ -183,7 +183,7 @@ $cakeDescription = Configure::read('Event.name');
                         ), array('escape' => false) );
                     }
                     ?></li>
-                    
+
                     <li><?php
                     if (strpos('admin', $loguser ['role']) !== false) {
                         echo $this->Html->link ( '<i class="fa fa-lg fa-fw fa-certificate"></i> '.' Certificados', array (
@@ -192,7 +192,7 @@ $cakeDescription = Configure::read('Event.name');
                         ), array('escape' => false) );
                     }
                     ?></li>
-                    
+
                     <li><?php
                     if (strpos('admin supervisor', $loguser ['role']) !== false) {
                         echo $this->Html->link ( '<i class="fa fa-lg fa-fw fa-tags"></i> '.' Credenciamento', array (
@@ -201,7 +201,7 @@ $cakeDescription = Configure::read('Event.name');
                         ), array('escape' => false) );
                     }
                     ?></li>
-                    
+
                     <li><?php
                     if (strpos('admin supervisor', $loguser ['role']) !== false) {
                         echo $this->Html->link ( '<i class="fa fa-lg fa-fw fa-graduation-cap"></i> '.' Minicursos', array (
@@ -211,7 +211,7 @@ $cakeDescription = Configure::read('Event.name');
                     }
                     ?></li>
 
-                    
+
 
 
 
@@ -233,7 +233,7 @@ $cakeDescription = Configure::read('Event.name');
                                 $loguser ['id']), array('escape' => false) );
                             ?>
                         </li>
-                        
+
                         <li>
                         <?php
                             echo $this->Html->link ( '<i class="fa fa-sign-out fa-lg"></i>' . ' Sair', array (
@@ -244,7 +244,7 @@ $cakeDescription = Configure::read('Event.name');
                         </li>
                       </ul>
                     </li>
-                    
+
 
                         <?php } else { ?>
                         <li>
@@ -268,13 +268,15 @@ $cakeDescription = Configure::read('Event.name');
 
     <?= $this->fetch('content')?>
 
-                    
-    <footer class="bg-success">
-        <div class="container">
+
+    <footer class="container">
+        <div class="row">
+        <div class="col-sm-12">
+            <hr style="height: 10px;">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1>II ENTEC</h1>
-                    <p>
+                    <h3>II ENTEC</h3>
+                    <p class="small">
                         Instituto Federal de Pernambuco <br>Campus Igarassu
                         <br><i class="fa fa-location-arrow"></i> Sede Provisória Faculdade de Igarassu (Facig) – Avenida Alfredo
                         Bandeira de Melo S/N, BR-101 Norte, Km 44, Igarassu-PE
@@ -282,27 +284,26 @@ $cakeDescription = Configure::read('Event.name');
                     </p>
                 </div>
                 <div class="col-sm-6">
-                    <p class="text-info text-right">
-                        <br> <br>
-                    </p>
                     <div class="row">
                         <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a> -->
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a> -->
-                            <a href="https://www.facebook.com/events/433886850319944/?active_tab=posts"><i class="fa fa-4x fa-fw fa-facebook-official text-inverse"></i></a>
+                            <a href="https://www.facebook.com/events/433886850319944/?active_tab=posts"><i class="fa fa-4x fa-fw fa-facebook-official"></i></a>
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a> -->
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 hidden-xs text-right">
+                            <br><br>
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a> -->
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a> -->
-                            <a target="blank" href="https://www.facebook.com/events/1554970081462660/?active_tab=posts"><i class="fa fa-4x fa-fw fa-facebook-official text-inverse"></i></a>
+                            <a target="blank" href="https://www.facebook.com/events/1554970081462660/?active_tab=posts"><i class="fa fa-4x fa-fw fa-facebook-official"></i></a>
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a> -->
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </footer>
 
