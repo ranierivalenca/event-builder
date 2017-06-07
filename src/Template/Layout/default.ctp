@@ -39,7 +39,7 @@ $cakeDescription = Configure::read('Event.name');
         <?= $cakeDescription ?>
         [<?= $this->fetch('title')?>]
     </title>
-    
+
    <?= $this->Html->meta ('favicon.ico','/img/favicon.ico', array ('type' => 'icon')); ?>
 
     <?= $this->Html->css('pingendo-bootstrap.css')?>
@@ -262,7 +262,9 @@ $cakeDescription = Configure::read('Event.name');
         </div>
     </div>
 
-    <?= $this->fetch('content')?>
+    <div class="main-content">
+        <?= $this->fetch('content')?>
+    </div>
 
 
     <footer class="container">

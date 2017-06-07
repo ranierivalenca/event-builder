@@ -1,11 +1,11 @@
 <!-- src/Template/Users/view.ctp -->
 <?= $this->assign('title', 'ENTEC 2017 - Visualizar dados de usuário'); ?>
-<div class="container" style="width:80%;padding-top: 115px; margin-bottom: 10px; ">
+<div class="container" style="width:80%; margin-bottom: 10px; ">
 <?= $this->Flash->render()?>
 <?= $this->Flash->render('auth') ?>
 <form>
 
-<?php 
+<?php
 $loguser = $this->request->session ()->read ( 'Auth.User' );
 if (strpos('admin', $loguser ['role']) !== false || $loguser ['id'] === $user->id) {
     echo $this->Html->link(
@@ -20,17 +20,17 @@ if (strpos('admin', $loguser ['role']) !== false || $loguser ['id'] === $user->i
             <b>Nº Inscrição : </b> <?= h($user->id)?>
             <br> <b>Login : </b> <?= h($user->username) ?>
             <br> <b>Data Inscrição : </b> <?= $user->created->format('d/m/Y - H:i:s') ?>
-            <br> <b>Modificado em : </b> <?= $user->modified->format('d/m/Y - H:i:s') ?>    
+            <br> <b>Modificado em : </b> <?= $user->modified->format('d/m/Y - H:i:s') ?>
     </fieldset>
-    
-    
+
+
     <fieldset>
         <legend>Dados pessoais: </legend>
-            <b>Nome : </b> <?= h($user->nome) ?> 
-            <br> <b>Telefone : </b> <?= h($user->telefone) ?> 
-            <br> <b>Sexo : </b> <?= h($user->sexo) ?> 
-            <br> <b>Nascimento : </b> <?= h($user->nascimento->format('d/m/Y')) ?> 
-            <br> <b>e-mail : </b> <?= h($user->email) ?> 
+            <b>Nome : </b> <?= h($user->nome) ?>
+            <br> <b>Telefone : </b> <?= h($user->telefone) ?>
+            <br> <b>Sexo : </b> <?= h($user->sexo) ?>
+            <br> <b>Nascimento : </b> <?= h($user->nascimento->format('d/m/Y')) ?>
+            <br> <b>e-mail : </b> <?= h($user->email) ?>
     </fieldset>
     <fieldset>
         <legend>Endereço: </legend>

@@ -3,7 +3,7 @@
 <!-- src/Template/Users/add.ctp -->
 <?= $this->assign('title', 'Inscrições'); ?>
 <div class="container section"
-    style="width: 70%; padding-top: 89px; margin-bottom: 10px;" id="insc">
+    style="width: 70%; margin-bottom: 10px;" id="insc">
     <?= $this->Flash->render()?>
     <h2>Inscrição:</h2>
     <div class="events form">
@@ -13,7 +13,7 @@
             <legend>Dados do evento: </legend>
             <?= $this->Form->control('name', array('label' => 'Nome Completo do Evento', 'class' => 'form-control'))?>
             <?=  $this->Form->control('theme', array('label' => 'Tema do Evento','class' => 'form-control')); ?>
-            
+
             <div class="my-form-inline">
                 <div style="min-width: 180px; width: 35%;">
                     <?=  $this->Form->control('initials', array('label' => 'Sigla do Evento','class' => 'form-control')); ?>
@@ -26,23 +26,23 @@
             <div class="my-form-inline">
                 <div style="min-width: 180px; width: 35%;">
                     <?=  $this->Form->control('edition', array('label' => 'Edição do Evento','class' => 'form-control')); ?>
-                </div> 
+                </div>
                 <div style="min-width: 180px; width: 35%;">
                      <?=  $this->Form->control('cover', ['label' => 'Arquivo Banner de Capa do Evento','type' => 'file']); ?>
                 </div>
             </div>
 
-            
+
             <?=  $this->Form->control('description', array('label' => 'Descrição do Evento','class' => 'form-control')); ?>
-            
-           
-        
+
+
+
 
 
 
         </fieldset>
 
-              
+
 
         <?= $this->Form->button(__('<i class="fa fa-paper-plane-o"></i> ENVIAR'), ['class'=>'form-control', 'escape' => false]); ?>
         <?= $this->Form->end()?>

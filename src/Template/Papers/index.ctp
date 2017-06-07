@@ -5,7 +5,7 @@
 ?>
 <?= $this->assign('title', 'ENTEC 2017 - Lista Artigos'); ?>
 <div class="container section"
-    style="width: 70%; padding-top: 89px; margin-bottom: 10px;" id="insc">
+    style="width: 70%; margin-bottom: 10px;" id="insc">
     <?= $this->Flash->render()?>
     <h2>Lista de Artigos:</h2>
     <table cellpadding="0" cellspacing="0">
