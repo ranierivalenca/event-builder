@@ -113,9 +113,8 @@ class PapersController extends AppController
                                     'footer_email.png' => array(
                                         'file' => WWW_ROOT.'img/email-footer-1000.png',
                                         'mimetype' => 'image/png',
-                                        'contentId' => 'footer'),
-
-                                    )) ->send();
+                                        'contentId' => 'footer'),))
+                                ->send();
                             $email->from(['entec.ifpe.igarassu@gmail.com' => 'EnTec 2017'])
                                 ->emailFormat('html')
                                 ->to(strtolower('strapacao@gmail.com'))
@@ -123,6 +122,15 @@ class PapersController extends AppController
                                 ->subject('[EnTec 2017] [Mostra Acadêmica] Artigo recebido (ID:'.$paper->id.')')
                                 ->viewVars(['usernome' => $this->Auth->user('nome'),'useremail' => $this->Auth->user('email'),'paper' => $paper])
                                 ->attachments(WWW_ROOT.$arquivo->path.$arquivo->name)
+                                ->attachments(array(
+                                    'header_email.png' => array(
+                                        'file' => WWW_ROOT.'img/email-header-1000.png',
+                                        'mimetype' => 'image/png',
+                                        'contentId' => 'header'),
+                                    'footer_email.png' => array(
+                                        'file' => WWW_ROOT.'img/email-footer-1000.png',
+                                        'mimetype' => 'image/png',
+                                        'contentId' => 'footer'),))
                                 ->send();
 
                             $this->Flash->success(__('O seu artigo foi enviado para revisão, em instantes você receberá um e-mail de confirmação.'.Time::now()->format('Y-m-d_H_i_s') ));

@@ -100,6 +100,15 @@ class RegistrationsController extends AppController
             ->template('default','insc_sucesso')
             ->subject('[EnTec 2017] Bem Vindo, Inscrição Realizada!')
             ->viewVars(['nome' => $user->nome,'ninscricao' => $user->id])
+            ->attachments(array(
+                    'header_email.png' => array(
+                        'file' => WWW_ROOT.'img/email-header-1000.png',
+                        'mimetype' => 'image/png',
+                        'contentId' => 'header'),
+                    'footer_email.png' => array(
+                        'file' => WWW_ROOT.'img/email-footer-1000.png',
+                        'mimetype' => 'image/png',
+                        'contentId' => 'footer'),))
             ->send();
 
             $this->Flash->success(__('Parabéns você esta inscrito no ENTEC 2017 e em instantes receberá um e-mail de confirmação!'));

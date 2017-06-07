@@ -99,6 +99,15 @@ class UsersController extends AppController
                             ->template('default','codigo_recuperacao')
                             ->subject('[EnTec 2017] Recuperação de senha')
                             ->viewVars(['nome' => $user->nome,'recovery_link' => 'http://entec.ifpe.edu.br/users/edit-password/'.$user->id.'/'.$recoverycode->code])
+                            ->attachments(array(
+                                    'header_email.png' => array(
+                                        'file' => WWW_ROOT.'img/email-header-1000.png',
+                                        'mimetype' => 'image/png',
+                                        'contentId' => 'header'),
+                                    'footer_email.png' => array(
+                                        'file' => WWW_ROOT.'img/email-footer-1000.png',
+                                        'mimetype' => 'image/png',
+                                        'contentId' => 'footer'),))
                             ->send();
                             $this->Flash->success(__('Em alguns instantes você receberá um e-mail com o link de recuperação de senha.'));
                     return $this->redirect($this->referer());
@@ -204,6 +213,15 @@ class UsersController extends AppController
                 ->template('default','confirma_insc')
                 ->subject('[EnTec 2017] Inscrição pendente de validação')
                 ->viewVars(['nome' => $user->nome,'activation_link' => 'http://entec.ifpe.edu.br/users/activate/'.$user->id.'/'.$user->activation_code])
+                ->attachments(array(
+                        'header_email.png' => array(
+                            'file' => WWW_ROOT.'img/email-header-1000.png',
+                            'mimetype' => 'image/png',
+                            'contentId' => 'header'),
+                        'footer_email.png' => array(
+                            'file' => WWW_ROOT.'img/email-footer-1000.png',
+                            'mimetype' => 'image/png',
+                            'contentId' => 'footer'),))
                 ->send();
                 
 
@@ -304,6 +322,15 @@ class UsersController extends AppController
             ->template('default','insc_sucesso')
             ->subject('[EnTec 2017] Inscrição confirmada')
             ->viewVars(['nome' => $user->nome,'ninscricao' => $user->id])
+            ->attachments(array(
+                    'header_email.png' => array(
+                        'file' => WWW_ROOT.'img/email-header-1000.png',
+                        'mimetype' => 'image/png',
+                        'contentId' => 'header'),
+                    'footer_email.png' => array(
+                        'file' => WWW_ROOT.'img/email-footer-1000.png',
+                        'mimetype' => 'image/png',
+                        'contentId' => 'footer'),))
             ->send();
             $this->Flash->success(__('A sua inscrição foi confirmada com sucesso, para alterar os seus dados realize login!'));
 

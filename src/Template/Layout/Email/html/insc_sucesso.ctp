@@ -20,18 +20,15 @@
 </head>
 <body>
 
-<img src="img/header_email.png" alt="">
+<img src="cid:header" width="600px">
 <p>Olá <?= $nome ?>,</p>
 
-<p>seja bem vindo ao ENTEC 2017!
+<p>seja bem vindo ao <strong style="color:#003399" >ENTEC 2017!</strong> 
 
 
 <br>O seu número de inscrição é <b><?= $ninscricao ?></b>
 <br>No ato do credenciamento, apresente o seu nome ou número da sua inscrição.</p>
-<p>Fique ligado nos udates da nossa programação no site entec.ifpe.edu.br
-
-
-
+<p>Fique ligado nos updates da nossa programação no site <strong style="color:#003399" >entec.ifpe.edu.br</strong>
 
 <br>Obrigado e o aguardamos no evento,
 <br>Organização ENTEC 2017</p>
@@ -42,7 +39,7 @@
 <br>Dias 21 e 21 de junho de 2017
 <br>Igarassu - PE
 <br>http://entec.ifpe.edu.br<p>
-<img src="img/footer_email.png" alt="">
+<img src="cid:footer" width="600px">
 </body>
 </body>
 </html>
