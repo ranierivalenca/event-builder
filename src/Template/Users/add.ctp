@@ -5,7 +5,7 @@
 
   <?= $this->Flash->render()?>
   <div class="row align-items-center">
-    <!-- <div class="users form col-12 offset-0 col-sm-12 offset-sm-0 col-md-10 offset-md-1 col col-lg-8 col-xl-8 offset-xl-2"> -->
+
     <div class="users form-group col-12 col-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2">
       <h2>Inscrição:</h2>
       <span>Atenção, os campos marcados com o * asterísco são obrigatórios, os demais opcionais. </span>
@@ -67,14 +67,18 @@
             )?>
           </div>
 
-          <div class="col-xs-12">
+          <div class="col-12 col-sm-6">
             <?=$this->Form->control ( 'email', array ('class' => 'form-control','id' => 'email' ) )?>
           </div>
 
-          <div class="col-xs-6">
+          <div class="col-12 col-sm-6">
+            <?=$this->Form->control ( 'confirm_email', array ('label' => 'Confirmar e-mail','class' => 'form-control','id' => 'email' ) )?>
+          </div>
+
+          <div class="col-12 col-sm-6">
             <?= $this->Form->control('password', array('label' => 'Senha', 'class' => 'form-control'))?>
           </div>
-          <div class="col-xs-6">
+          <div class="col-12 col-sm-6">
             <?= $this->Form->control('confirm_password',array('label' => 'Confirmar Senha', 'type'  =>  'password','class' => 'form-control'))?>
           </div>
         </div>

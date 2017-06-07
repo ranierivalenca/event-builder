@@ -39,12 +39,8 @@ $cakeDescription = Configure::read('Event.name');
         <?= $cakeDescription ?>
         [<?= $this->fetch('title')?>]
     </title>
-    <?= $this->Html->meta('icon')?>
-
-    <?=
-    $this->Html->meta('icone_64.gif', 'img/icone_64.gif', ['type' => 'icon'] );
-    ?>
-
+    
+   <?= $this->Html->meta ('favicon.ico','/img/favicon.ico', array ('type' => 'icon')); ?>
 
     <?= $this->Html->css('pingendo-bootstrap.css')?>
     <?= $this->Html->css('font-awesome.min.css')?>

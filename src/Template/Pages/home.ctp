@@ -86,16 +86,33 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
     
       <?=
         $this->element('home/participante', [
-            'name' => 'Banana Digital',
-            'company' => '',
+            'name' => 'Michael Barney',
+            'company' => 'Banana Digital',
             'year' => '2017',
             'photo' => 'banana_210x210.jpg',
             'text' => '
                 <p>
+                  Sobre <strong>Michael Barney</strong>
+                </p>
+                <p>
+                  Graduando no curso de Engenharia da Computação na UFPE e Técnico em Eletrônica pelo IFPE: Campus Recife. Atua no laboratório DEXTER do IFPE, onde trabalhar em diversos projetos de pesquisa (como o Synesthesia Vision). É um dos fundadores da Banana Digital e colaborador do Programa Despertando Vocações de Tecnologia (PDVT) no IFPE. 
+                  <br>Site: <a href="michaelbarney.com" target="_blank">
+                michaelbarney.com</a>
+                </p>
+
+                <p>
+                  Sobre <strong>Banana Digital</strong>
+                </p>
+                <p>
+                  A Banana Digital é um grupo especializado em Educação Tecnológica. Com lema "Aprender, Fazer, Mudar o Mundo!", planejamos novas maneiras de aprender de modo interativo e eficiente.
+                </p>
+
+
+                <p>
                   Atividade: <strong>HACK&LEARN: Workshop + Hackaton</strong>
                 </p>
                 <p>
-                  Modelo de ensino desenvolvido para combinar elementos de HACKATONS e WORKSHOPS com o objetivo de introduzir PBL (Project Based Learning) em eventos de ensino de tecnologia.
+                  Modelo de ensino desenvolvido para combinar elementos de HACKATONS e WORKSHOPS com o objetivo de introduzir PBL (Project Based Learning) em eventos de ensino de tecnologia. Esta edição do Hack&Learn terá como tema "Mundo dos Bots", portanto os participantes poderão desenvolver interfaces únicas através de "conversas" em plataformas como Messenger, Skype e Google Home.
                 </p>
                 <p>WebSite: <a href="http://www.bananadigital.xyz/" target="_blank">
                 www.bananadigital.xyz</a></p>

@@ -204,7 +204,7 @@ class UsersController extends AppController
                 $registration->role = 'participant';
                 $this->Registrations->save($registration);
 
-                $this->Flash->default(__($user->nome.', a sua inscrição está pendente de validação. Em instantes você receberá um e-mail para '.$user->email.' com instruções para a validação. '));
+                //$this->Flash->default(__($user->nome.', a sua inscrição está pendente de validação. Em instantes você receberá um e-mail para '.$user->email.' com instruções para a validação. '));
                 
                 $email = new Email('default');
                 $email->from(['entec.ifpe.igarassu@gmail.com' => 'EnTec 2017'])
@@ -247,6 +247,8 @@ class UsersController extends AppController
             $this->Users->patchEntity ( $user, $this->request->data );
             $this->Users->validator()->remove('password');
             $this->Users->validator()->remove('confirm_password');
+            $this->Users->validator()->remove('email');
+            $this->Users->validator()->remove('confirm_email');
             $user->modified = Time::now()->format('Y-m-d H:i:s');
             $user->nome = mb_strtoupper($user->nome, 'UTF-8');
             $user->email = strtolower($user->email);

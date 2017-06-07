@@ -114,6 +114,18 @@ mb_internal_encoding(Configure::read('App.encoding'));
  */
 ini_set('intl.default_locale', Configure::read('App.defaultLocale'));
 
+
+//teste remover os 3 depois
+ini_set('upload_max_filesize','8M');
+ini_set('post_max_size', '10M');
+ini_set('max_execution_time', '400');
+
+//teste: corrigir o upload timeout erro 413 
+ini_set('max_input_time','400');
+
+
+
+
 /*
  * Register application error and exception handlers.
  */

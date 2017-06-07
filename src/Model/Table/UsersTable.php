@@ -65,7 +65,8 @@ class UsersTable extends Table
             ->notEmpty('cidade', 'Campo Cidade � obrigat�rio. ')
             ->notEmpty('bairro', 'Campo Bairro � obrigat�rio. ')
             ->notEmpty('password', 'Campo Senha � obrigat�rio. ')
-            ->notEmpty('confirm_password', 'Campo Confirma Senha � obrigat�rio. ')
+            ->notEmpty('confirm_password', 'Campo Confirmar Senha � obrigat�rio. ')
+            ->notEmpty('confirm_email', 'Campo Confirma email � obrigat�rio. ')
             ->add('password',[
                     'match'=>[
                             'rule'=> ['compareWith','confirm_password'],
@@ -83,6 +84,19 @@ class UsersTable extends Table
                             'message'=>'As senhas não conferem!',
                     ]
             ])
+            ->add('email',[
+                    'match'=>[
+                            'rule'=> ['compareWith','confirm_email'],
+                            'message'=>'Os e-mails não conferem!',
+                    ]
+            ])
+            ->add('confirm_email',[
+                    'match'=>[
+                            'rule'=> ['compareWith','email'],
+                            'message'=>'Os e-mails não conferem!',
+                    ]
+            ])
+
             ->notEmpty('instrucao', 'Grau de Instrução � obrigat�rio. ')
             
             ->email('email')
