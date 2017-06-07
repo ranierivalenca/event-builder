@@ -114,7 +114,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                 <p>
                   Modelo de ensino desenvolvido para combinar elementos de HACKATONS e WORKSHOPS com o objetivo de introduzir PBL (Project Based Learning) em eventos de ensino de tecnologia. Esta edição do Hack&Learn terá como tema "Mundo dos Bots", portanto os participantes poderão desenvolver interfaces únicas através de "conversas" em plataformas como Messenger, Skype e Google Home.
                 </p>
-                <p>WebSite: <a href="http://www.bananadigital.xyz/" target="_blank">
+                <p>Site: <a href="http://www.bananadigital.xyz/" target="_blank">
                 www.bananadigital.xyz</a></p>
                 <p> Redes Sociais</p>
                 <ul style="list-style-type:none">
@@ -126,6 +126,46 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                   <li ><a href="https://www.linkedin.com/company/banana-digital?report%2Esuccess=6gcCQr75xprPO7XYhvjZ8J37EFZJUBSzv0j34tpx3ZPEn9V1bHBO6CQUThx6KoF16JJFVy" target="_blank">
                   <i class="fa fa-linkedin fa-lg"></i> LinkedIn</a>
                   </li>
+                </ul>'
+        ])
+      ?>
+
+      <?=
+        $this->element('home/participante', [
+            'name' => 'Romero Ayub',
+            'company' => 'ServHost',
+            'year' => '2017',
+            'photo' => 'romero_ayub_210x210.jpg',
+            'text' => '
+                <p>
+                  Sobre <strong>Romero Ayub</strong>
+                </p>
+                <p>
+                  32 anos dos quais 14 dedicados a empresa ServHost, graduado em redes pela Unibratec, Pós-Graduado em segurança da informação pela faculdade Santa Maria. Trabalha com servidores Linux, BSD e Windows. Tem conhecimento em firewall para aplicações web, sistemas de monitoramento, servidores web (Apache, Nginx, Litespeed e IIS), Banco de dados (MySQL, PostgreSQL, SQL Server) virtualização (OpenVZ e KVM), sistema de cache (Litespeed Cache e Varnish), gerenciamento de backups em nuvem.
+                </p>
+                <p>
+                  Palestra: <strong>Segurança para Web Hosting</strong>
+                </p>
+                <p>
+                  Será abordado sistemas específicos para Hosting, segurança web, criptografia, ataques, monitoramentos e cloud.
+                </p>
+                <p>Site: <a href="www.servhost.com.br" target="_blank">
+                www.servhost.com.br</a></p>
+                <p><i class="fa fa-envelope fa-lg"></i> romeroayub@gmail.com</p>
+                <p> Redes Sociais</p>
+                <ul style="list-style-type:none">
+                  
+                  <li ><a href="http://fb.com/romeroayub" target="_blank">
+                  <i class="fa fa-facebook fa-lg"></i> romeroayub</a>
+                  </li>
+                  
+                  <li ><a href="https://br.linkedin.com/in/romero-ayub-82157a33" target="_blank">
+                  <i class="fa fa-linkedin fa-lg"></i> Romero Ayub</a>
+                  </li>
+                  <li ><a href="http://instagram.com/romeroayub" target="_blank">
+                  <i class="fa fa-instagram fa-lg"></i> @romeroayub</a>
+                  </li>
+
                 </ul>'
         ])
       ?>
