@@ -12,12 +12,20 @@ use Cake\Mailer\Email;
 class RegistrationsController extends AppController
 {
 
+     public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+
+        $this->Auth->allow(['indexPaginate']);
+        $this->Auth->deny(['register', 'welcome']);
+    }
+
     /**
      * Index method
      *
      * @return \Cake\Network\Response|null
      */
-    public function index()
+    public function indexPaginate()
     {
         $this->paginate = [
             'contain' => ['Users', 'Events']
@@ -28,13 +36,23 @@ class RegistrationsController extends AppController
         $this->set('_serialize', ['registrations']);
     }
 
-
-
-    public function beforeFilter(Event $event)
+    public function index($event_id = 2)
     {
-        parent::beforeFilter($event);
-        $this->Auth->deny(['register', 'welcome']);
+        $this->paginate = [
+            'contain' => ['Users']
+        ];
+        $count = $this->Registrations->find()->where(['event_id' => $event_id])->count();
+        $registrations = $this->Registrations->find()->where(['event_id' => $event_id])->contain(['Users']);
+
+        $this->set(compact('registrations'));
+        $this->set('count', $count);
+        $this->set('_serialize', ['registrations']);
     }
+
+
+
+
+   
 
     /**
      * View method
@@ -179,7 +197,15 @@ class RegistrationsController extends AppController
             return true;
         }
 
-        
+
+        if ($this->request->action === 'index' ) {
+            $eventId = (int)$this->request->getParam('pass.0');            
+            $userEventRole = $this->Registrations->getUserEventRole($eventId, $user['id']);
+            
+            if ( strpos('owner manager', $userEventRole) !== false){
+                return true;
+            }
+        }
        
         return parent::isAuthorized($user);
     }

@@ -94,4 +94,8 @@ class RegistrationsTable extends Table
     public function isEventOwner($eventId, $userId){
         return $this->exists(['event_id' => $eventId, 'user_id' => $userId, 'role' => 'owner']);
     }
+
+    public function getUserEventRole($eventId, $userId){
+        return $this->find()->select(['role'])->where(['event_id' => $eventId, 'user_id' => $userId])->first()['role'];
+    }
 }
