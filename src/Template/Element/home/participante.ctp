@@ -1,12 +1,12 @@
 <?php
   $id = md5($name);
 ?>
-<div class="col-md-3">
+<div class="col-md-4">
   <div class="row">
     <div class="col-md-10 col-md-offset-1">
       <div class="thumbnail attraction">
         <img src="img/participantes_<?= $year ?>/<?= $photo ?>" alt="" class="img-rounded img-responsive">
-        <div class="caption">
+        <div class="caption text-center">
           <h4>
             <?= $name ?><br>
             <small><?= $company ?></small>
