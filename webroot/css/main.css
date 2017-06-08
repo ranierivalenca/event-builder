@@ -113,3 +113,10 @@ footer hr {
 .main-content {
     padding-top: 50px;
 }
+
+.banner {
+    opacity: 1;
+}
+.banner img {
+    width: 100vw;
+}
