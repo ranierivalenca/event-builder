@@ -286,7 +286,7 @@ $cakeDescription = Configure::read('Event.name');
                         <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a> -->
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a> -->
-                            <a href="https://www.facebook.com/events/433886850319944/?active_tab=posts"><i class="fa fa-4x fa-fw fa-facebook-official"></i></a>
+                            <a href="https://www.facebook.com/events/433886850319944/?active_tab=discussion"><i class="fa fa-4x fa-fw fa-facebook-official"></i></a>
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a> -->
                         </div>
                     </div>
