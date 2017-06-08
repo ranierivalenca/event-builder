@@ -1,7 +1,7 @@
 <?php $this->assign('title', 'ENTEC 2017 - Login'); ?>
 
 <!-- File: src/Template/Users/login.ctp -->
-<div class="container" style="padding-top: 50px; margin-bottom: 40px;">
+<div class="container" style="margin-bottom: 40px;">
   <?= $this->Flash->render()?>
   <div class="row">
     <div class="users form col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-md-6     col-md-offset-3 col-lg-4 col-lg-offset-4">

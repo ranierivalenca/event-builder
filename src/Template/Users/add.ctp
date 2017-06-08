@@ -1,7 +1,7 @@
 <!-- src/Template/Users/add.ctp -->
 <?= $this->assign('title', 'ENTEC 2017 - Cadastrar conta'); ?>
 
-<div class="container" style="padding-top: 50px; margin-bottom: 40px;" id="insc">
+<div class="container" style="margin-bottom: 40px;" id="insc">
 
   <?= $this->Flash->render()?>
   <div class="row align-items-center">
@@ -94,7 +94,7 @@
           <div class="col-xs-6 col-md-6 col-lg-4">
             <?=
               $this->Form->control('estado',
-                array( 'options' => [
+                array('class' => 'form-control', 'options' => [
                   '' => 'Selecione',
                   'Acre'  => 'Acre' ,
                   'Alagoas'  => 'Alagoas',
@@ -171,13 +171,44 @@
 </div>
 
 <script>
+  var estados = {
+    'AC' : 'Acre',
+    'AL' : 'Alagoas',
+    'AP' : 'Amapá',
+    'AM' : 'Amazonas',
+    'BA' : 'Bahia',
+    'CE' : 'Ceará',
+    'DF' : 'Distrito Federal',
+    'ES' : 'Espírito Santo',
+    'GO' : 'Goiás',
+    'MA' : 'Maranhão',
+    'MT' : 'Mato Grosso',
+    'MS' : 'Mato Grosso do Sul',
+    'MG' : 'Minas Gerais',
+    'PA' : 'Pará',
+    'PB' : 'Paraíba',
+    'PR' : 'Paraná',
+    'PE' : 'Pernambuco',
+    'PI' : 'Piauí',
+    'RJ' : 'Rio de Janeiro',
+    'RN' : 'Rio Grande do Norte',
+    'RS' : 'Rio Grande do Sul',
+    'RN' : 'Rondônia',
+    'RR' : 'Roraima',
+    'SC' : 'Santa Catarina',
+    'SP' : 'São Paulo',
+    'SE' : 'Sergipe',
+    'TO' : 'Tocantins'
+}
+
   $('#cep').on('change', function() {
     var cep = $(this).val().replace(/-/g, '')
     if (cep.length == 8) {
       var url = 'https://viacep.com.br/ws/' + cep + '/json';
       $.getJSON(url, function(data) {
         if (!data.erro) {
-          $('#estado').val(data.uf);
+          console.log(data);
+          $('#estado').val(estados[data.uf]);
           $('#cidade').val(data.localidade);
           $('#bairro').val(data.bairro);
           $('#logradouro').val(data.logradouro);

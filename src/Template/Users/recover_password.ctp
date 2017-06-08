@@ -1,7 +1,7 @@
 <!-- src/Template/Users/recover_password.ctp -->
 <?= $this->assign('title', 'ENTEC 2017 - Solicitar Recuperação de Senha'); ?>
 
-<div class="container" style="padding-top: 50px; margin-bottom: 40px;" id="insc">
+<div class="container" style="margin-bottom: 40px;" id="insc">
   <?= $this->Flash->render()?>
   <div class="row">
     <div class="form col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-md-6     col-md-offset-3 col-lg-4 col-lg-offset-4">

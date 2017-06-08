@@ -96,3 +96,20 @@ h5 .where {
 footer hr {
     border-top: 2px groove;
 }
+
+.attraction {
+    position: relative;
+}
+
+.attraction .more {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-content {
+    padding-top: 50px;
+}

@@ -5,7 +5,7 @@
 ?>
 <?= $this->assign('title', 'ENTEC 2017 - Cadastrar conta'); ?>
 <div class="container section"
-    style="width: 70%; padding-top: 89px; margin-bottom: 10px;" id="insc">
+    style="width: 70%; margin-bottom: 10px;" id="insc">
     <?= $this->Flash->render()?>
     <h2>Enviar Artigo:</h2>
     <div class="users form">
@@ -15,7 +15,7 @@
             <li> Extensões aceitas: .docx e doc</li>
             <li> Tamanho máximo aceito: 4Mb <small>(Por favor, compacte as imagens inseridas para deixar o arquivo menor.)</small></li>
         </ul>
-        
+
         <?= $this->Form->create($paper,['type' => 'file', 'class' => 'form-group'])?>
 
             <?= $this->Form->control('title', array('label' => 'Título completo do artigo', 'class' => 'form-control'))?>

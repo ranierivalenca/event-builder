@@ -31,17 +31,17 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
 
 
 
-<div style="padding-top: 50px;"></div>
-<div style="opacity: 1; " id="home">
+<div id="home"></div>
+<div style="opacity: 1;">
   <img src="img/banner_2017_1701x651-min.png" alt="">
   <div class="container">
     <div class="row">
     </div>
   </div>
 </div>
-    
 
-  
+
+
 
 
 <div id="attractions" class="section">
@@ -49,7 +49,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
   <h1 class="text-center">Participações</h1>
   <div class="container">
     <div class="row">
-    
+
       <?=
         $this->element('home/participante', [
             'name' => 'Raquel Lira',
@@ -83,7 +83,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                 </ul>'
         ])
       ?>
-    
+
       <?=
         $this->element('home/participante', [
             'name' => 'Michael Barney',
@@ -95,7 +95,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                   Sobre <strong>Michael Barney</strong>
                 </p>
                 <p>
-                  Graduando no curso de Engenharia da Computação na UFPE e Técnico em Eletrônica pelo IFPE: Campus Recife. Atua no laboratório DEXTER do IFPE, onde trabalhar em diversos projetos de pesquisa (como o Synesthesia Vision). É um dos fundadores da Banana Digital e colaborador do Programa Despertando Vocações de Tecnologia (PDVT) no IFPE. 
+                  Graduando no curso de Engenharia da Computação na UFPE e Técnico em Eletrônica pelo IFPE: Campus Recife. Atua no laboratório DEXTER do IFPE, onde trabalhar em diversos projetos de pesquisa (como o Synesthesia Vision). É um dos fundadores da Banana Digital e colaborador do Programa Despertando Vocações de Tecnologia (PDVT) no IFPE.
                   <br>Site: <a href="michaelbarney.com" target="_blank">
                 michaelbarney.com</a>
                 </p>
@@ -154,11 +154,11 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                 <p><i class="fa fa-envelope fa-lg"></i> romeroayub@gmail.com</p>
                 <p> Redes Sociais</p>
                 <ul style="list-style-type:none">
-                  
+
                   <li ><a href="http://fb.com/romeroayub" target="_blank">
                   <i class="fa fa-facebook fa-lg"></i> romeroayub</a>
                   </li>
-                  
+
                   <li ><a href="https://br.linkedin.com/in/romero-ayub-82157a33" target="_blank">
                   <i class="fa fa-linkedin fa-lg"></i> Romero Ayub</a>
                   </li>
@@ -172,7 +172,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
 
     </div>
   </div>
-</div> 
+</div>
 
 
 <div id="academic" class="section">
@@ -216,7 +216,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </blockquote>
       </div>
     </div>
-    
+
   </div>
 </div>
 
@@ -241,7 +241,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
               array('class'=>'btn btn-lg btn-success btn-md btn-block', 'escape' => false));
             ?>
           </p>
-        
+
           <p class="text-center">
             Não participou da edição anterior? Crie uma conta e inscreva-se no evento!
           </p>
@@ -256,10 +256,10 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         <?php endif; ?>
       </div>
     </div>
-   
+
   </div>
 </div>
- 
+
 
 
 <div id="where" class="section" >
