@@ -33,7 +33,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
 
 <div id="home"></div>
 <div style="opacity: 1;">
-  <img src="img/banner_2017_1701x651-min.png" alt="">
+  <img src="img/banner_2017_1701x651-min.png" style="width: 100%" alt="">
   <div class="container">
     <div class="row">
     </div>
