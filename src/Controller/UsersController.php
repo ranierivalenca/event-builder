@@ -68,8 +68,10 @@ class UsersController extends AppController
     }
 
 
-    public function validacao()
+    public function validacao($nome = null, $email = null)
     {
+        $this->set('nome', $nome);
+        $this->set('email', $email);
     }
 
 
@@ -219,7 +221,7 @@ class UsersController extends AppController
                 ->send();
 
 
-                return $this->redirect(['action' => 'validacao']);
+                return $this->redirect(['action' => 'validacao', $user->nome, $user->email]);
             }
             $this->Flash->error(__('Incrição não realizada, verifique os campos destacados em vermelho.'));
         }
