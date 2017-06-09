@@ -20,7 +20,7 @@ class UsersController extends AppController
         $this->loadModel('Recoverycodes');
     }
 
-    
+
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
@@ -53,7 +53,7 @@ class UsersController extends AppController
      */
     public function view($id = null)
     {
-        
+
         //redirect do login sem id como parametro
         if($id === null){
             $user = $this->Users->get($this->Auth->user('id'));
@@ -67,15 +67,9 @@ class UsersController extends AppController
         }
     }
 
-    
-    public function validacao($id = null)
+
+    public function validacao()
     {
-        
-        
-        
-            $user = $this->Users->get($id);
-            $this->set('user', $user);
-            $this->set('_serialize', ['user']);
     }
 
 
@@ -83,7 +77,7 @@ class UsersController extends AppController
 
     public function recoverPassword()
     {
-                
+
          if ($this->request->is('post')) {
              $user = $this->Users->find()->where(['email' => $this->request->data['email']])->first();
              if($user){
@@ -114,12 +108,12 @@ class UsersController extends AppController
                 }else{
                     $this->Flash->error(__('Aconteceu um erro na geração do código de recuperação, entre em contato com a organização.'));
                 }
-                
+
             }else{
 
                 $this->Flash->error(__('E-mail não encontrado no sistema, por favor verifique e tente novamente.'));
             }
-        }        
+        }
     }
 
 
@@ -127,10 +121,10 @@ class UsersController extends AppController
         $allowPassChange = false;
         if ($this->request->is('get')) {
             $recoverycode = $this->Recoverycodes->find()->where(['user_id' => $user_id, 'code' => $code])->first();
-            if($recoverycode){                
+            if($recoverycode){
                 if(!$recoverycode->used){
                     $dateSub = strtotime(Time::now()->format('Y-m-d H:i:s')) - strtotime($recoverycode->created->format('Y-m-d H:i:s'));
-                
+
                     if($dateSub/3600 < 48){
                         $user = $this->Users->get($recoverycode->user_id);
                         $allowPassChange = true;
@@ -168,10 +162,10 @@ class UsersController extends AppController
             }else{
                 $allowPassChange = true;
                 $this->set('user', $user);
-                $this->set('_serialize', ['user']); 
+                $this->set('_serialize', ['user']);
                 $this->Flash->success(__('As senhas digitadas são diferentes, tente novamente!'));
             }
-        }        
+        }
 
         $this->set('allowPassChange', $allowPassChange);
 
@@ -205,7 +199,7 @@ class UsersController extends AppController
                 $this->Registrations->save($registration);
 
                 //$this->Flash->default(__($user->nome.', a sua inscrição está pendente de validação. Em instantes você receberá um e-mail para '.$user->email.' com instruções para a validação. '));
-                
+
                 $email = new Email('default');
                 $email->from(['entec.ifpe.igarassu@gmail.com' => 'EnTec 2017'])
                 ->emailFormat('html')
@@ -223,9 +217,9 @@ class UsersController extends AppController
                             'mimetype' => 'image/png',
                             'contentId' => 'footer'),))
                 ->send();
-                
 
-                return $this->redirect(['action' => 'validacao',$user->id]);
+
+                return $this->redirect(['action' => 'validacao']);
             }
             $this->Flash->error(__('Incrição não realizada, verifique os campos destacados em vermelho.'));
         }
@@ -243,7 +237,7 @@ class UsersController extends AppController
     public function edit($id = null) {
         $user = $this->Users->get ( $id );
         if ($this->request->is ( [ 'post', 'put'] )) {
-            
+
             $this->Users->patchEntity ( $user, $this->request->data );
             $this->Users->validator()->remove('password');
             $this->Users->validator()->remove('confirm_password');
@@ -347,7 +341,7 @@ class UsersController extends AppController
 
     public function isAuthorized($user)
     {
-        
+
 
         // O próprio usuário pode ver os seus dados
         if ($this->request->action === 'edit' ) {
@@ -405,7 +399,7 @@ class UsersController extends AppController
             $registration->modified = $user->modified;
             $registration->role = 'participant';
             $this->Registrations->save($registration);
-            
+
         }
 
         return $this->redirect($this->referer());

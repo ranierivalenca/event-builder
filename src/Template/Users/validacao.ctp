@@ -12,9 +12,7 @@
             <h3 class="panel-title">Validação pendente!</h3>
           </div>
           <div class="panel-body">
-            <?=
-            $user->nome.', estamos quase lá, a sua inscrição está pendente de validação. Em instantes será enviado um e-mail para <b>'.$user->email.'</b> com instruções para a validação. '
-            ?>
+            Quase lá! A sua inscrição está pendente de validação. Em instantes será enviado um e-mail para seu e-mail com instruções para a validação.
           </div>
         </div>
       </div>
