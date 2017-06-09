@@ -85,8 +85,9 @@ h5 .where {
 	margin-bottom: 10px;
 }
 
-#home img{
-	width: 100%;
+#home {
+    position: absolute;
+    top: -50px;
 }
 
 .section:last-of-type {
