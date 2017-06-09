@@ -13,7 +13,8 @@
         <ul>
             <li> O arquivo enviado deve seguir o Modelo de Resumo:  <a target="blank" href="https://drive.google.com/file/d/0Bzj6EjHbV7WIRkthWEVqUXR1c0k/view?usp=sharing">.DOCX</a></li>
             <li> Extensões aceitas: .docx e doc</li>
-            <li> Tamanho máximo aceito: 4Mb <small>(Por favor, compacte as imagens inseridas para deixar o arquivo menor.)</small></li>
+            <li> Tamanho máximo aceito: 1Mb <small>(Por favor, compacte as imagens inseridas para deixar o arquivo menor. As ferramentas de Ms Office eOpenOffice têm funcionalidades para diminuit o tamanho do arquivo. )</small></li>
+            <li>Em caso de dúvidas ou dificuldades na submissão entre em contato com <strong>dpex@igarassu.ifpe.edu.br <strong></li>
         </ul>
 
         <?= $this->Form->create($paper,['type' => 'file', 'class' => 'form-group'])?>

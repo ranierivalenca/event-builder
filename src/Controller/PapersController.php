@@ -41,8 +41,24 @@ class PapersController extends AppController
     {
         $register = $this->Registrations->find()->select('role')->where(['user_id' => $this->Auth->user('id'),'event_id' => 2]);
         if (strpos('admin', $this->Auth->user('role') !== false || strpos('manager', $register['role']) !== false)){
+                $papers = $this->Papers;
+        }else{
+            $papers = $this->Papers->find()->where(['user_id' => $this->Auth->user('id')])->contain('Users') ;
+
+        }
+
+
+        $this->set(compact('papers'));
+        $this->set('_serialize', ['papers']);
+    }
+
+
+    public function indexAdmin()
+    {
+        $register = $this->Registrations->find()->select('role')->where(['user_id' => $this->Auth->user('id'),'event_id' => 2]);
+        if (strpos('admin', $this->Auth->user('role') !== false || strpos('manager', $register['role']) !== false)){
                 $this->paginate = [
-            'contain' => ['Users']
+            'contain' => ['Users','PapersFiles.Files']
         ];
                 $papers = $this->paginate($this->Papers);
         }else{
@@ -55,7 +71,6 @@ class PapersController extends AppController
         $this->set(compact('papers'));
         $this->set('_serialize', ['papers']);
     }
-
     /**
      * View method
      *
@@ -83,7 +98,7 @@ class PapersController extends AppController
         $paper = $this->Papers->newEntity();
         if ($this->request->is('post')) {
             //$this->Flash->error(__('Tamanho do arquivo : '.$this->request->data['arquivo']['tmp_name'])/pow(1024, 2)) ;
-            if(filesize($this->request->data['arquivo']['tmp_name'])/pow(1024, 2) < 4){
+            if(filesize($this->request->data['arquivo']['tmp_name'])/pow(1024, 2) < 1.2){
                 $extension = pathinfo($this->request->data['arquivo']['name'], PATHINFO_EXTENSION);
                 $arquivo = $this->Files->uploadAndSaveFile($this->request->data['arquivo']['tmp_name'],'events/papers/','paper_'.$this->Auth->user('email').'_'.Time::now()->format('Y-m-d_H_i_s').'.'.$extension);
                 if($arquivo){
@@ -106,6 +121,7 @@ class PapersController extends AppController
                                 ->subject('[EnTec 2017] [Mostra Acadêmica] Artigo recebido (ID:'.$paper->id.')')
                                 ->viewVars(['nome' => $this->Auth->user('nome'),'paper' => $paper])
                                 ->attachments(array(
+                                    WWW_ROOT.$arquivo->path.$arquivo->name,
                                     'header_email.png' => array(
                                         'file' => WWW_ROOT.'img/email-header-1000.png',
                                         'mimetype' => 'image/png',
@@ -113,26 +129,8 @@ class PapersController extends AppController
                                     'footer_email.png' => array(
                                         'file' => WWW_ROOT.'img/email-footer-1000.png',
                                         'mimetype' => 'image/png',
-                                        'contentId' => 'footer'),))
+                                        'contentId' => 'footer')))
                                 ->send();
-                            $email->from(['entec.ifpe.igarassu@gmail.com' => 'EnTec 2017'])
-                                ->emailFormat('html')
-                                ->to(strtolower('strapacao@gmail.com'))
-                                ->template('default','recibo_coord_mostra')
-                                ->subject('[EnTec 2017] [Mostra Acadêmica] Artigo recebido (ID:'.$paper->id.')')
-                                ->viewVars(['usernome' => $this->Auth->user('nome'),'useremail' => $this->Auth->user('email'),'paper' => $paper])
-                                ->attachments(WWW_ROOT.$arquivo->path.$arquivo->name)
-                                ->attachments(array(
-                                    'header_email.png' => array(
-                                        'file' => WWW_ROOT.'img/email-header-1000.png',
-                                        'mimetype' => 'image/png',
-                                        'contentId' => 'header'),
-                                    'footer_email.png' => array(
-                                        'file' => WWW_ROOT.'img/email-footer-1000.png',
-                                        'mimetype' => 'image/png',
-                                        'contentId' => 'footer'),))
-                                ->send();
-
                             $this->Flash->success(__('O seu artigo foi enviado para revisão, em instantes você receberá um e-mail de confirmação.'.Time::now()->format('Y-m-d_H_i_s') ));
                             return $this->redirect(['action' => 'index']);
                         }else{

@@ -189,9 +189,36 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           A submissão de trabalhos deve ser feita através de um resumo contendo uma página sobre o projeto. Os projetos selecionados pela comissão acadêmica farão uma apresentação oral sobre o projeto com <strong>10 minutos</strong> de duração e <strong>5 minutos</strong> para perguntas.
         </p>
         <blockquote>
-          <p>
-            Em breve estará disponível no website o sistema de submissão dos resumos. </strong>.
-          </p>
+          <div class="row">
+          <div class="col-md-8 col-md-offset-2 col-sm-8  col-sm-offset-2 col-xs-8 col-xs-offset-2">
+            <div class="btn-group btn-block">
+            <button type="button" class="btn btn-block btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fa fa-book fa-lg"></i> SUBMISSÕES  <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu inverse-dropdown" role="menu">
+              <li>
+                <?php
+                  echo $this->Html->link ( '<i class="fa fa-upload fa-lg"></i> '.' Enviar Artigo', array (
+                      'controller' => 'papers',
+                      'action' => 'add'), array('escape' => false) );
+                  ?>
+
+
+              </li>
+              
+              <li>
+                <?php
+                  echo $this->Html->link ( '<i class="fa fa-list fa-lg"></i> '.' Listar Meus Envios', array (
+                      'controller' => 'papers',
+                      'action' => 'index'), array('escape' => false) );
+                  ?>
+
+
+                  </li>   
+            </ul>
+            </div>
+          </div>
+
+        </div>
 
           <ul>
             <li>Modelo de Resumo:
@@ -214,6 +241,12 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             </ul>
           </p>
         </blockquote>
+        
+        
+        
+
+        
+
       </div>
     </div>
 

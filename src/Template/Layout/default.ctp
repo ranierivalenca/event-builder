@@ -219,7 +219,8 @@ $cakeDescription = Configure::read('Event.name');
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i>
  Menu <span class="caret"></span></a>
                         <ul class="dropdown-menu inverse-dropdown">
-                        <li><?= $loguser ['username'] ?></li>
+                        <li class="dropdown-header"><?= $loguser ['username'] ?></li>
+                        
                         <li role="separator" class="divider"></li>
                         <li>
                             <?php
