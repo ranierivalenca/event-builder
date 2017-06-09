@@ -19,17 +19,23 @@
     <title><?= $this->fetch('title') ?></title>
 </head>
 <body>
-<img src="cid:header" width="600px">
-<p>Olá <?= $nome ?>,</p>
+<table border="0">
+    <tr>
+        <td align="center">
+            <img src="cid:header" width="600px">
+            <p>Olá <?= $nome ?>,</p>
 
-<p>você realizou um pedido de recuperação de senha.</p>
-<p>Clique no link para criar uma nova senha: <?= $recovery_link ?></p>
-<p>Este link ficará disponível por 48 horas.</p>
-<hr style="border:none;color:#909090;background-color:#b0b0b0;min-height:1px;width:99%">
-<p>II Encontro de Tecnologia da Informação do IFPE - EnTec 2017
-<br>Dias 21 e 21 de junho de 2017
-<br>Igarassu - PE
-<br>http://entec.ifpe.edu.br<p>
-<img src="cid:footer" width="600px">
+            <p>você realizou um pedido de recuperação de senha.</p>
+            <p>Clique no link para criar uma nova senha: <br><?= $recovery_link ?></p>
+            <p>Este link ficará disponível por 48 horas.</p>
+            <hr style="border:none;color:#909090;background-color:#b0b0b0;min-height:1px;width:99%">
+            <p>II Encontro de Tecnologia da Informação do IFPE - EnTec 2017
+            <br>Dias 21 e 21 de junho de 2017
+            <br>Igarassu - PE
+            <br>http://entec.ifpe.edu.br<p>
+            <img src="cid:footer" width="600px">
+        </td>
+    </tr>
+</table>
 </body>
 </html>
