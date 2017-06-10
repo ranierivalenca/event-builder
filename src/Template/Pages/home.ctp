@@ -176,7 +176,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
       <?=
         $this->element('home/participante', [
             'name' => 'Simone Amorin',
-            'company' => 'ServHost',
+            'company' => '',
             'year' => '2017',
             'photo' => 'simone_210x210.png',
             'text' => '
