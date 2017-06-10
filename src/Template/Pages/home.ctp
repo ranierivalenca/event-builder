@@ -113,6 +113,9 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                 </p>
                 <p>
                   Modelo de ensino desenvolvido para combinar elementos de HACKATONS e WORKSHOPS com o objetivo de introduzir PBL (Project Based Learning) em eventos de ensino de tecnologia. Esta edição do Hack&Learn terá como tema "Mundo dos Bots", portanto os participantes poderão desenvolver interfaces únicas através de "conversas" em plataformas como Messenger, Skype e Google Home.
+                    <br> Assista o vídeo e saiba mais sobre o Hack&Learn<strong> 
+                    <br> <a href="https://www.youtube.com/watch?v=tYE1hDW-84k" target="_blank">
+                 www.youtube.com/watch?v=tYE1hDW-84k</a> </strong> 
                 </p>
                 <p>Site: <a href="http://www.bananadigital.xyz/" target="_blank">
                 www.bananadigital.xyz</a></p>
@@ -149,7 +152,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                 <p>
                   Será abordado sistemas específicos para Hosting, segurança web, criptografia, ataques, monitoramentos e cloud.
                 </p>
-                <p>Site: <a href="www.servhost.com.br" target="_blank">
+                <p>Site: <a href="http://www.servhost.com.br" target="_blank">
                 www.servhost.com.br</a></p>
                 <p><i class="fa fa-envelope fa-lg"></i> romeroayub@gmail.com</p>
                 <p> Redes Sociais</p>
@@ -164,6 +167,49 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                   </li>
                   <li ><a href="http://instagram.com/romeroayub" target="_blank">
                   <i class="fa fa-instagram fa-lg"></i> @romeroayub</a>
+                  </li>
+
+                </ul>'
+        ])
+      ?>
+
+      <?=
+        $this->element('home/participante', [
+            'name' => 'Simone Amorin',
+            'company' => 'ServHost',
+            'year' => '2017',
+            'photo' => 'simone_210x210.png',
+            'text' => '
+                <p>
+                  Sobre <strong>Simone Amorin</strong>
+                </p>
+                <p>
+                  Software engineer que largou tudo em prol do amor pelo desenvolvimento Front-End em especial CSS. Atualmente vem atuando como CSS Evangelist e mesmo com pouco tempo de estudo já consegue impactar milhares de pessoal no Brasil. Além disso é uma WWCode Leader, organização mundial com a missão de fomentar o conhecimento de tecnologia para mulheres e incentivá-las a ingressar nessa área.
+                </p>
+                <p>
+                  Workshop: <strong>Dominando CSS Layouts na prática com Grid Layout</strong>
+                </p>
+                <p>
+                  Um mini-workshop sobre como trabalhar e pensar no desenvolvimento de layout de forma moderna. Apresentando de forma prática os conceitos por trás da nova especificação de CSS Grid, aplicando esse conhecimento em um projetinho básico do zero, criando uma interface responsiva de maneira rápida e simples.
+
+                </p>
+                <p>Site: <a href="https://simoneas02.github.io/" target="_blank">
+                simoneas02.github.io/</a></p>
+
+
+
+                <p><i class="fa fa-envelope fa-lg"></i> simoneas02@hotmail.com</p>
+                <p> Redes Sociais</p>
+                <ul style="list-style-type:none">
+
+                  
+
+                  <li ><a href="https://www.linkedin.com/in/simone-amorim-311a3a87/" target="_blank">
+                  <i class="fa fa-linkedin fa-lg"></i> Simone Amorim</a>
+                  </li>
+                  <li><a href="https://twitter.com/samorim02" target="_blank"><i class="fa fa-twitter"></i> @samorim02</a>
+                  </li>
+                  <li><a href="https://github.com/simoneas02/" target="_blank"><i class="fa fa-github"></i> simoneas02</a>
                   </li>
 
                 </ul>'
