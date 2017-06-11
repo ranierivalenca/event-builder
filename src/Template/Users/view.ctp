@@ -1,62 +1,48 @@
 <!-- src/Template/Users/view.ctp -->
-<?= $this->assign('title', 'ENTEC 2017 - Visualizar dados de usuário'); ?>
-<div class="container" style="width:80%; margin-bottom: 10px; ">
-<?= $this->Flash->render()?>
-<?= $this->Flash->render('auth') ?>
-<form>
-
-<?php
-$loguser = $this->request->session ()->read ( 'Auth.User' );
-if (strpos('admin', $loguser ['role']) !== false || $loguser ['id'] === $user->id) {
-    echo $this->Html->link(
-              '<i class="fa fa-2x fa-fw fa-pencil-square-o"></i>'.' EDITAR DADOS',
-              array('controller'=>'Users','action'=>'edit', $user->id),
-              array('class'=>'btn btn-primary btn-md', 'escape' => false));
-}
-?>
-
-    <fieldset>
-        <legend>Dados da Inscrição: </legend>
-            <b>Nº Inscrição : </b> <?= h($user->id)?>
-            <br> <b>Login : </b> <?= h($user->username) ?>
-            <br> <b>Data Inscrição : </b> <?= $user->created->format('d/m/Y - H:i:s') ?>
-            <br> <b>Modificado em : </b> <?= $user->modified->format('d/m/Y - H:i:s') ?>
-    </fieldset>
-
-
-    <fieldset>
-        <legend>Dados pessoais: </legend>
-            <b>Nome : </b> <?= h($user->nome) ?>
-            <br> <b>Telefone : </b> <?= h($user->telefone) ?>
-            <br> <b>Sexo : </b> <?= h($user->sexo) ?>
-            <br> <b>Nascimento : </b> <?= h($user->nascimento->format('d/m/Y')) ?>
-            <br> <b>e-mail : </b> <?= h($user->email) ?>
-    </fieldset>
-    <fieldset>
-        <legend>Endereço: </legend>
-            <b>CEP : </b>
-            <?= h($user->cep)?>
-            <br> <b>Estado : </b>
-            <?= h($user->estado)?>
-            <br> <b>Cidade : </b>
-            <?= h($user->cidade)?>
-            <br> <b>Bairro : </b>
-            <?= h($user->bairro)?>
-            <br> <b>logradouro : </b>
-            <?= h($user->logradouro)?>
-            <br> <b>Número : </b>
-            <?= h($user->numero)?>
-            <br> <b>Complemento : </b>
-            <?= h($user->complemento)?>
-    </fieldset>
-    <fieldset>
-        <legend>Dados Profissionais: </legend>
-            <b>Instituição : </b>
-            <?= h($user->instituicao)?>
-            <br> <b>Grau de Instrução : </b>
-            <?= h($user->instrucao)?>
-    </fieldset>
-</form>
-
-
+<?= $this->assign('title', 'ENTEC 2017 - Dashboard'); ?>
+<div class="row" style="margin-bottom: 10px;">
+  <div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2">
+    <?= $this->Flash->render()?>
+    <?= $this->Flash->render('auth') ?>
+    <div class="row" class="dashboard-header">
+      <div class="col-xs-3">
+        <fieldset>
+          <div>
+            <h3 class="text-center text-danger">Inscrição</h3>
+            <h1 class="text-center text-danger"><strong><?=h($user->id)?></strong></h1>
+          </div>
+        </fieldset>
+      </div>
+      <div class="col-xs-9">
+        <fieldset>
+          <div>
+            <dl class="dl-horizontal">
+              <dt>Login</dt>
+              <dd><?= h($user->username) ?></dd>
+              <dt>Data Inscrição</dt>
+              <dd><?= $user->created->format('d/m/Y - H:i:s') ?></dd>
+              <dt>Modificado em</dt>
+              <dd><?= $user->modified->format('d/m/Y - H:i:s') ?></dd>
+            </dl>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <div class="row dashboard-options">
+      <div class="col-xs-6 col-md-4 col-md-offset-2">
+        <?=$this->Html->link(
+          '<span class="text-primary"><i class="fa fa-2x fa-fw fa-pencil-square-o"></i><br>Dados do usuário</span>',
+          array('controller'=>'Users','action'=>'userData'),
+          array('class'=>'btn btn-block btn-default btn-lg', 'escape' => false));
+        ?>
+      </div>
+      <div class="col-xs-6 col-md-4">
+        <?=$this->Html->link(
+          '<span class="text-primary"><i class="fa fa-2x fa-fw fa-book"></i><br>Mostra acadêmica - Submissões</span>',
+          array('controller'=>'Papers'),
+          array('class'=>'btn btn-block btn-default btn-lg', 'escape' => false));
+        ?>
+      </div>
+    </div>
+  </div>
 </div>

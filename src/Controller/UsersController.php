@@ -53,7 +53,22 @@ class UsersController extends AppController
      */
     public function view($id = null)
     {
+        //redirect do login sem id como parametro
+        if($id === null){
+            $user = $this->Users->get($this->Auth->user('id'));
+            $this->set('user', $user);
+            $this->set('_serialize', ['user']);
+        }else{// redirect com id no get
 
+            $user = $this->Users->get($id);
+            $this->set('user', $user);
+            $this->set('_serialize', ['user']);
+        }
+    }
+
+
+    public function userData($id = null)
+    {
         //redirect do login sem id como parametro
         if($id === null){
             $user = $this->Users->get($this->Auth->user('id'));
@@ -343,8 +358,6 @@ class UsersController extends AppController
 
     public function isAuthorized($user)
     {
-
-
         // O próprio usuário pode ver os seus dados
         if ($this->request->action === 'edit' ) {
             $userId = (int)$this->request->params['pass'][0];
@@ -354,10 +367,9 @@ class UsersController extends AppController
             if($user['role'] === 'admin'){
                 return true;
             }
-
         }
 
-        if ($this->request->action === 'view' ) {
+        if ($this->request->action === 'view' || $this->request->action === 'userData') {
             if(isset($this->request->params['pass'][0])){
                 $userId = (int)$this->request->params['pass'][0];
                 if ($userId === $user['id']) {
