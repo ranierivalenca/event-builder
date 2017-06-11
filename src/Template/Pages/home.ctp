@@ -113,9 +113,9 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                 </p>
                 <p>
                   Modelo de ensino desenvolvido para combinar elementos de HACKATONS e WORKSHOPS com o objetivo de introduzir PBL (Project Based Learning) em eventos de ensino de tecnologia. Esta edição do Hack&Learn terá como tema "Mundo dos Bots", portanto os participantes poderão desenvolver interfaces únicas através de "conversas" em plataformas como Messenger, Skype e Google Home.
-                    <br> Assista o vídeo e saiba mais sobre o Hack&Learn<strong> 
+                    <br> Assista o vídeo e saiba mais sobre o Hack&Learn<strong>
                     <br> <a href="https://www.youtube.com/watch?v=tYE1hDW-84k" target="_blank">
-                 www.youtube.com/watch?v=tYE1hDW-84k</a> </strong> 
+                 www.youtube.com/watch?v=tYE1hDW-84k</a> </strong>
                 </p>
                 <p>Site: <a href="http://www.bananadigital.xyz/" target="_blank">
                 www.bananadigital.xyz</a></p>
@@ -202,7 +202,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                 <p> Redes Sociais</p>
                 <ul style="list-style-type:none">
 
-                  
+
 
                   <li ><a href="https://www.linkedin.com/in/simone-amorim-311a3a87/" target="_blank">
                   <i class="fa fa-linkedin fa-lg"></i> Simone Amorim</a>
@@ -212,6 +212,48 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                   <li><a href="https://github.com/simoneas02/" target="_blank"><i class="fa fa-github"></i> simoneas02</a>
                   </li>
 
+                </ul>'
+        ])
+      ?>
+
+      <?=
+        $this->element('home/participante', [
+            'name' => 'Talita Oliveira',
+            'company' => '',
+            'year' => '2017',
+            'photo' => 'talita_210x210.png',
+            'text' => '
+                <p>
+                  Sobre <strong>Talita Oliveira</strong>
+                </p>
+                <p>
+                  Talita tem 25 anos é formada em Sistemas de Informação e Pós Graduanda em Design de Web Apps.
+                  <br>
+                  Está começando a adotar a corrida como hobbie para parar de ser sedentária. Descobriu-se no mundo da tecnologia apenas porque gostava de computador. Hoje é programadora Back-End, apaixonada por Front-End e buscando sempre aprimorar-se em ambas as áreas
+                </p>
+                <p>
+                  Palestra: <strong>Mulher na área de T.I.</strong>
+                </p>
+                <p>
+                  Mostrando mais ou menos como é a vida de uma mulher na área de T.I., uma área com alguns tabus, esteriótipos e dominado por homens, onde estamos cada vez mais tentando conquistar nosso espaço como mulher e buscando a igualdade de gêneros. Além da luta externa para conquistar nosso espaço, há também a luta contra si mesma, com pensamentos negativos a respeito do que faz na área em comparação com outras pessoas.
+                </p>
+                <p>Redes Sociais</p>
+                <ul style="list-style-type:none">
+                  <li>
+                    <a href="https://br.linkedin.com/in/litaaoliveira" target="_blank">
+                      <i class="fa fa-linkedin"></i> litaaoliveira
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/talitaoliveira" target="_blank">
+                      <i class="fa fa-github"></i> talitaoliveira
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://codepen.io/talitaoliveira" target="_blank">
+                      <i class="fa fa-codepen"></i> talitaoliveira
+                    </a>
+                  </li>
                 </ul>'
         ])
       ?>
@@ -273,23 +315,23 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                         'action' => 'add'), array('escape' => false) );
                   ?>
                 </li>
-                
+
                 <li>
                   <?php
                     echo $this->Html->link ( '<i class="fa fa-list fa-lg"></i> '.' Listar Meus Envios', array (
                         'controller' => 'papers',
                         'action' => 'index'), array('escape' => false) );
                   ?>
-                </li>   
+                </li>
               </ul>
             <?php endif ?>
           </div>
         </div>
-        
-        
-        
 
-        
+
+
+
+
 
       </div>
     </div>
