@@ -122,12 +122,12 @@ footer hr {
     width: 100vw;
 }
 
-.dashboard-header {
+.dashboard-header fieldset {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    height: 230px;
+    height: 200px;
 }
 
 .dashboard-options a {

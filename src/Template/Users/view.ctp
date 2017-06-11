@@ -4,7 +4,7 @@
   <div class="col-xs-12 col-md-10 col-md-offset-1 col-xl-8 col-xl-offset-2">
     <?= $this->Flash->render()?>
     <?= $this->Flash->render('auth') ?>
-    <div class="row" class="dashboard-header">
+    <div class="row dashboard-header">
       <div class="col-xs-3">
         <fieldset>
           <div>
