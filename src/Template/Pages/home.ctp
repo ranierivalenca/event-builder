@@ -56,32 +56,30 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             'company' => 'IFPE - Campus Igarassu',
             'year' => '2017',
             'photo' => 'raquel_210x210.jpg',
-            'text' => '
-                <p>
-                  Sobre <strong>Raquel Lira</strong>
-                </p>
-                <p>
-                  Professora de Gestão e Negócios do Instituto Federal de Pernambuco - IFPE, Campus Igarassu. Graduada e Mestre em Administração (PROPAD/UFPE). Atualmente, está engajada no ensino de ferramentas de gestão voltadas para inovação e empreendedorismo. É pesquisadora das temáticas que envolvem Políticas Públicas, Economia Criativa e Empreendedorismo.
-                </p>
-                <p>
-                  Mini-curso: <strong>Ensinamentos Jedi para Gestão de Equipes</strong>
-                </p>
-                <p>
-                  O que podemos aprender com ensinamentos da \'ordem Jedi\' para o mundo das empresas? O mini-curso tratará do assunto relacionando-o com falas dos mestres da \'ordem\' para lidar com o universo das organizações, das startups e dos desafios que enfrentamos em tempos sombrios. Conviver com a diversidade de opiniões, com diferente tipos de pessoas, culturas, povos e línguas. O foco é trabalhar aspectos individuais do comportamento dos participantes na suas relações com os colegas de trabalho. A \'brincadeira\' visa aproximar o universo estranho das organizações à realidade de programadores, desenvolvedores em outros tipos de profissionais em TI.
-                </p>
-
-                <p> Redes Sociais</p>
-                <ul style="list-style-type:none">
-                  <li><a href="https://twitter.com/raquellirax" target="_blank"><i class="fa fa-twitter"></i> @raquellirax</a>
-                  </li>
-                  <li ><a href="https://www.facebook.com/profaraquel.lira" target="_blank">
-                  <i class="fa fa-facebook fa-lg"></i>profaraquel.lira </a>
-                  </li>
-                  <li ><a href="https://www.instagram.com/raquellirax" target="_blank">
-                  <i class="fa fa-instagram fa-lg"></i> @raquellirax</a>
-                  </li>
-                </ul>'
-        ])
+            'about' => [
+              'Raquel Lira' => 'Professora de Gestão e Negócios do Instituto Federal de Pernambuco - IFPE, Campus Igarassu. Graduada e Mestre em Administração (PROPAD/UFPE). Atualmente, está engajada no ensino de ferramentas de gestão voltadas para inovação e empreendedorismo. É pesquisadora das temáticas que envolvem Políticas Públicas, Economia Criativa e Empreendedorismo.'
+            ],
+            'activity' => [
+              'type' => 'Mini-curso',
+              'title' => 'Ensinamentos Jedi para Gestão de Equipes',
+              'desc' => 'O que podemos aprender com ensinamentos da \'ordem Jedi\' para o mundo das empresas? O mini-curso tratará do assunto relacionando-o com falas dos mestres da \'ordem\' para lidar com o universo das organizações, das startups e dos desafios que enfrentamos em tempos sombrios. Conviver com a diversidade de opiniões, com diferente tipos de pessoas, culturas, povos e línguas. O foco é trabalhar aspectos individuais do comportamento dos participantes na suas relações com os colegas de trabalho. A \'brincadeira\' visa aproximar o universo estranho das organizações à realidade de programadores, desenvolvedores em outros tipos de profissionais em TI.'
+            ],
+            'social' => [
+              'twitter' => [
+                'url' => 'https://twitter.com/raquellirax',
+                'title' => '@raquellirax'
+              ],
+              'facebook' => [
+                'url' => 'https://www.facebook.com/profaraquel.lira',
+                'title' => 'profaraquel.lira'
+              ],
+              'instagram' => [
+                'url' => 'https://www.instagram.com/raquellirax',
+                'title' => '@raquellirax'
+              ]
+            ]
+          ]
+        )
       ?>
 
       <?=
@@ -90,47 +88,39 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             'company' => 'Banana Digital',
             'year' => '2017',
             'photo' => 'banana_210x210.jpg',
-            'text' => '
-                <p>
-                  Sobre <strong>Michael Barney</strong>
-                </p>
-                <p>
-                  Graduando no curso de Engenharia da Computação na UFPE e Técnico em Eletrônica pelo IFPE: Campus Recife. Atua no laboratório DEXTER do IFPE, onde trabalhar em diversos projetos de pesquisa (como o Synesthesia Vision). É um dos fundadores da Banana Digital e colaborador do Programa Despertando Vocações de Tecnologia (PDVT) no IFPE.
-                  <br>Site: <a href="michaelbarney.com" target="_blank">
-                michaelbarney.com</a>
-                </p>
-
-                <p>
-                  Sobre <strong>Banana Digital</strong>
-                </p>
-                <p>
-                  A Banana Digital é um grupo especializado em Educação Tecnológica. Com lema "Aprender, Fazer, Mudar o Mundo!", planejamos novas maneiras de aprender de modo interativo e eficiente.
-                </p>
-
-
-                <p>
-                  Atividade: <strong>HACK&LEARN: Workshop + Hackaton</strong>
-                </p>
-                <p>
-                  Modelo de ensino desenvolvido para combinar elementos de HACKATONS e WORKSHOPS com o objetivo de introduzir PBL (Project Based Learning) em eventos de ensino de tecnologia. Esta edição do Hack&Learn terá como tema "Mundo dos Bots", portanto os participantes poderão desenvolver interfaces únicas através de "conversas" em plataformas como Messenger, Skype e Google Home.
-                    <br> Assista o vídeo e saiba mais sobre o Hack&Learn<strong>
-                    <br> <a href="https://www.youtube.com/watch?v=tYE1hDW-84k" target="_blank">
-                 www.youtube.com/watch?v=tYE1hDW-84k</a> </strong>
-                </p>
-                <p>Site: <a href="http://www.bananadigital.xyz/" target="_blank">
-                www.bananadigital.xyz</a></p>
-                <p> Redes Sociais</p>
-                <ul style="list-style-type:none">
-                  <li><a href="https://www.youtube.com/channel/UCQxAaBFeP4Zx8fRoDgBIMwQ" target="_blank"><i class="fa fa-youtube"></i> YouTube</a>
-                  </li>
-                  <li ><a href="https://www.facebook.com/bananadigital.inc" target="_blank">
-                  <i class="fa fa-facebook fa-lg"></i> Facebook</a>
-                  </li>
-                  <li ><a href="https://www.linkedin.com/company/banana-digital?report%2Esuccess=6gcCQr75xprPO7XYhvjZ8J37EFZJUBSzv0j34tpx3ZPEn9V1bHBO6CQUThx6KoF16JJFVy" target="_blank">
-                  <i class="fa fa-linkedin fa-lg"></i> LinkedIn</a>
-                  </li>
-                </ul>'
-        ])
+            'about' => [
+              'Michael Barney' => 'Graduando no curso de Engenharia da Computação na UFPE e Técnico em Eletrônica pelo IFPE: Campus Recife. Atua no laboratório DEXTER do IFPE, onde trabalhar em diversos projetos de pesquisa (como o Synesthesia Vision). É um dos fundadores da Banana Digital e colaborador do Programa Despertando Vocações de Tecnologia (PDVT) no IFPE.',
+              'Banana Digital' => 'A Banana Digital é um grupo especializado em Educação Tecnológica. Com lema "Aprender, Fazer, Mudar o Mundo!", planejamos novas maneiras de aprender de modo interativo e eficiente.'
+            ],
+            'activity' => [
+              'type' => 'Workshop & Hackaton',
+              'title' => 'HACK&LEARN: Workshop + Hackaton',
+              'desc' => 'Modelo de ensino desenvolvido para combinar elementos de HACKATONS e WORKSHOPS com o objetivo de introduzir PBL (Project Based Learning) em eventos de ensino de tecnologia. Esta edição do Hack&Learn terá como tema "Mundo dos Bots", portanto os participantes poderão desenvolver interfaces únicas através de "conversas" em plataformas como Messenger, Skype e Google Home.
+                <br> Assista o vídeo e saiba mais sobre o Hack&Learn:
+                <br>
+                <strong><a href="https://www.youtube.com/watch?v=tYE1hDW-84k" target="_blank">
+                 www.youtube.com/watch?v=tYE1hDW-84k</a></strong>'
+            ],
+            'sites' => [
+              ['url' => 'michaelbarney.com'],
+              ['url' => 'www.bananadigital.xyz']
+            ],
+            'social' => [
+              'youtube' => [
+                'url' => 'https://www.youtube.com/channel/UCQxAaBFeP4Zx8fRoDgBIMwQ',
+                'title' => 'YouTube'
+              ],
+              'facebook' => [
+                'url' => 'https://www.facebook.com/bananadigital.inc',
+                'title' => 'Facebook'
+              ],
+              'linkedin' => [
+                'url' => 'https://www.linkedin.com/company/banana-digital?report%2Esuccess=6gcCQr75xprPO7XYhvjZ8J37EFZJUBSzv0j34tpx3ZPEn9V1bHBO6CQUThx6KoF16JJFVy',
+                'title' => 'LinkedIn'
+              ]
+            ]
+          ]
+        )
       ?>
 
       <?=
@@ -139,38 +129,35 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             'company' => 'ServHost',
             'year' => '2017',
             'photo' => 'romero_ayub_210x210.jpg',
-            'text' => '
-                <p>
-                  Sobre <strong>Romero Ayub</strong>
-                </p>
-                <p>
-                  32 anos dos quais 14 dedicados a empresa ServHost, graduado em redes pela Unibratec, Pós-Graduado em segurança da informação pela faculdade Santa Maria. Trabalha com servidores Linux, BSD e Windows. Tem conhecimento em firewall para aplicações web, sistemas de monitoramento, servidores web (Apache, Nginx, Litespeed e IIS), Banco de dados (MySQL, PostgreSQL, SQL Server) virtualização (OpenVZ e KVM), sistema de cache (Litespeed Cache e Varnish), gerenciamento de backups em nuvem.
-                </p>
-                <p>
-                  Palestra: <strong>Segurança para Web Hosting</strong>
-                </p>
-                <p>
-                  Será abordado sistemas específicos para Hosting, segurança web, criptografia, ataques, monitoramentos e cloud.
-                </p>
-                <p>Site: <a href="http://www.servhost.com.br" target="_blank">
-                www.servhost.com.br</a></p>
-                <p><i class="fa fa-envelope fa-lg"></i> romeroayub@gmail.com</p>
-                <p> Redes Sociais</p>
-                <ul style="list-style-type:none">
-
-                  <li ><a href="http://fb.com/romeroayub" target="_blank">
-                  <i class="fa fa-facebook fa-lg"></i> romeroayub</a>
-                  </li>
-
-                  <li ><a href="https://br.linkedin.com/in/romero-ayub-82157a33" target="_blank">
-                  <i class="fa fa-linkedin fa-lg"></i> Romero Ayub</a>
-                  </li>
-                  <li ><a href="http://instagram.com/romeroayub" target="_blank">
-                  <i class="fa fa-instagram fa-lg"></i> @romeroayub</a>
-                  </li>
-
-                </ul>'
-        ])
+            'about' =>  [
+              'Romero Ayub' => '32 anos dos quais 14 dedicados a empresa ServHost, graduado em redes pela Unibratec, Pós-Graduado em segurança da informação pela faculdade Santa Maria. Trabalha com servidores Linux, BSD e Windows. Tem conhecimento em firewall para aplicações web, sistemas de monitoramento, servidores web (Apache, Nginx, Litespeed e IIS), Banco de dados (MySQL, PostgreSQL, SQL Server) virtualização (OpenVZ e KVM), sistema de cache (Litespeed Cache e Varnish), gerenciamento de backups em nuvem.'
+            ],
+            'activity' => [
+              'type' => 'Palestra',
+              'title' => 'Segurança para Web Hosting',
+              'desc' => 'Será abordado sistemas específicos para Hosting, segurança web, criptografia, ataques, monitoramentos e cloud.'
+            ],
+            'email' => 'romeroayub@gmail.com',
+            'site' => [
+              'url' => 'http://www.servhost.com.br',
+              'title' => 'www.servhost.com.br'
+            ],
+            'social' => [
+              'facebook' => [
+                'url' => 'http://fb.com/romeroayub',
+                'title' => 'romeroayub'
+              ],
+              'linkedin' => [
+                'url' => 'https://br.linkedin.com/in/romero-ayub-82157a33',
+                'title' => 'Romero Ayub'
+              ],
+              'instagram' => [
+                'url' => 'http://instagram.com/romeroayub',
+                'title' => '@romeroayub'
+              ],
+            ]
+          ]
+        )
       ?>
 
       <?=
@@ -179,41 +166,35 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             'company' => '',
             'year' => '2017',
             'photo' => 'simone_210x210.png',
-            'text' => '
-                <p>
-                  Sobre <strong>Simone Amorin</strong>
-                </p>
-                <p>
-                  Software engineer que largou tudo em prol do amor pelo desenvolvimento Front-End em especial CSS. Atualmente vem atuando como CSS Evangelist e mesmo com pouco tempo de estudo já consegue impactar milhares de pessoal no Brasil. Além disso é uma WWCode Leader, organização mundial com a missão de fomentar o conhecimento de tecnologia para mulheres e incentivá-las a ingressar nessa área.
-                </p>
-                <p>
-                  Workshop: <strong>Dominando CSS Layouts na prática com Grid Layout</strong>
-                </p>
-                <p>
-                  Um mini-workshop sobre como trabalhar e pensar no desenvolvimento de layout de forma moderna. Apresentando de forma prática os conceitos por trás da nova especificação de CSS Grid, aplicando esse conhecimento em um projetinho básico do zero, criando uma interface responsiva de maneira rápida e simples.
-
-                </p>
-                <p>Site: <a href="https://simoneas02.github.io/" target="_blank">
-                simoneas02.github.io/</a></p>
-
-
-
-                <p><i class="fa fa-envelope fa-lg"></i> simoneas02@hotmail.com</p>
-                <p> Redes Sociais</p>
-                <ul style="list-style-type:none">
-
-
-
-                  <li ><a href="https://www.linkedin.com/in/simone-amorim-311a3a87/" target="_blank">
-                  <i class="fa fa-linkedin fa-lg"></i> Simone Amorim</a>
-                  </li>
-                  <li><a href="https://twitter.com/samorim02" target="_blank"><i class="fa fa-twitter"></i> @samorim02</a>
-                  </li>
-                  <li><a href="https://github.com/simoneas02/" target="_blank"><i class="fa fa-github"></i> simoneas02</a>
-                  </li>
-
-                </ul>'
-        ])
+            'about' => [
+              'Simone Amorin' => 'Software engineer que largou tudo em prol do amor pelo desenvolvimento Front-End em especial CSS. Atualmente vem atuando como CSS Evangelist e mesmo com pouco tempo de estudo já consegue impactar milhares de pessoal no Brasil. Além disso é uma WWCode Leader, organização mundial com a missão de fomentar o conhecimento de tecnologia para mulheres e incentivá-las a ingressar nessa área.'
+            ],
+            'activity' => [
+              'type' => 'Workshop',
+              'title' => 'Dominando CSS Layouts na prática com Grid Layout',
+              'desc' => 'Um mini-workshop sobre como trabalhar e pensar no desenvolvimento de layout de forma moderna. Apresentando de forma prática os conceitos por trás da nova especificação de CSS Grid, aplicando esse conhecimento em um projetinho básico do zero, criando uma interface responsiva de maneira rápida e simples.'
+            ],
+            'email' => 'simoneas02@hotmail.com',
+            'site' => [
+              'url' => 'https://simoneas02.github.io/',
+              'title' => 'simoneas02.github.io'
+            ],
+            'social' => [
+              'linkedin' => [
+                'url' => 'https://www.linkedin.com/in/simone-amorim-311a3a87/',
+                'title' => 'Simone Amorim'
+              ],
+              'twitter' => [
+                'url' => 'https://twitter.com/samorim02',
+                'title' => '@samorim02'
+              ],
+              'github' => [
+                'url' => 'https://github.com/simoneas02/',
+                'title' => 'simoneas02'
+              ]
+            ]
+          ]
+        )
       ?>
 
       <?=
@@ -222,40 +203,32 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             'company' => '',
             'year' => '2017',
             'photo' => 'talita_210x210.png',
-            'text' => '
-                <p>
-                  Sobre <strong>Talita Oliveira</strong>
-                </p>
-                <p>
-                  Talita tem 25 anos é formada em Sistemas de Informação e Pós Graduanda em Design de Web Apps.
-                  <br>
-                  Está começando a adotar a corrida como hobbie para parar de ser sedentária. Descobriu-se no mundo da tecnologia apenas porque gostava de computador. Hoje é programadora Back-End, apaixonada por Front-End e buscando sempre aprimorar-se em ambas as áreas
-                </p>
-                <p>
-                  Palestra: <strong>Mulher na área de T.I.</strong>
-                </p>
-                <p>
-                  Mostrando mais ou menos como é a vida de uma mulher na área de T.I., uma área com alguns tabus, esteriótipos e dominado por homens, onde estamos cada vez mais tentando conquistar nosso espaço como mulher e buscando a igualdade de gêneros. Além da luta externa para conquistar nosso espaço, há também a luta contra si mesma, com pensamentos negativos a respeito do que faz na área em comparação com outras pessoas.
-                </p>
-                <p>Redes Sociais</p>
-                <ul style="list-style-type:none">
-                  <li>
-                    <a href="https://br.linkedin.com/in/litaaoliveira" target="_blank">
-                      <i class="fa fa-linkedin"></i> litaaoliveira
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/talitaoliveira" target="_blank">
-                      <i class="fa fa-github"></i> talitaoliveira
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://codepen.io/talitaoliveira" target="_blank">
-                      <i class="fa fa-codepen"></i> talitaoliveira
-                    </a>
-                  </li>
-                </ul>'
-        ])
+            'about' => [
+              'Talita Oliveira' => 'Talita tem 25 anos é formada em Sistemas de Informação e Pós Graduanda em Design de Web Apps.
+                <br>
+                Está começando a adotar a corrida como hobbie para parar de ser sedentária. Descobriu-se no mundo da tecnologia apenas porque gostava de computador. Hoje é programadora Back-End, apaixonada por Front-End e buscando sempre aprimorar-se em ambas as áreas'
+            ],
+            'activity' => [
+              'type' => 'Palestra',
+              'title' => 'Mulher na área de T.I.',
+              'desc' => 'Mostrando mais ou menos como é a vida de uma mulher na área de T.I., uma área com alguns tabus, esteriótipos e dominado por homens, onde estamos cada vez mais tentando conquistar nosso espaço como mulher e buscando a igualdade de gêneros. Além da luta externa para conquistar nosso espaço, há também a luta contra si mesma, com pensamentos negativos a respeito do que faz na área em comparação com outras pessoas.'
+            ],
+            'social' => [
+              'linkedin' => [
+                'url' => 'https://br.linkedin.com/in/litaaoliveira',
+                'title' => 'Talita Oliveira'
+              ],
+              'github' => [
+                'url' => 'https://github.com/talitaoliveira',
+                'title' => 'talitaoliveira'
+              ],
+              'codepen' => [
+                'url' => 'https://codepen.io/talitaoliveira',
+                'title' => 'talitaoliveira'
+              ]
+            ]
+          ]
+        )
       ?>
 
     </div>

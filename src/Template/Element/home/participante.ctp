@@ -22,7 +22,60 @@
                   <h4 class="modal-title" id="pablo_title"><?= $name ?></h4>
                 </div>
                 <div class="modal-body">
-                  <?= $text ?>
+                  <?php foreach ($about as $title => $text): ?>
+                    <p>Sobre <strong><?= $title ?></strong></p>
+                    <p>
+                      <?= $text ?>
+                    </p>
+                  <?php endforeach ?>
+                  <?php if (isset($activities)): ?>
+                    <?php foreach ($activities as $activity): ?>
+                      <p>
+                        <?= $activity['type'] ?>: <strong><?= $activity['title'] ?></strong>
+                      </p>
+                      <p>
+                        <?= $activity['desc'] ?>
+                      </p>
+                    <?php endforeach ?>
+                  <?php elseif (isset($activity)): ?>
+                    <p>
+                      <?= $activity['type'] ?>: <strong><?= $activity['title'] ?></strong>
+                    </p>
+                    <p>
+                      <?= $activity['desc'] ?>
+                    </p>
+                  <?php endif ?>
+
+                  <hr>
+
+                  <?php if (isset($sites)): ?>
+                    <p>
+                    <?php foreach ($sites as $site): ?>
+                        Site: <a href="<?= $site['url'] ?>" target="_blank"><?= isset($site['title']) ? $site['title'] : $site['url'] ?></a>
+                        <br>
+                      <?php endforeach ?>
+                    </p>
+                  <?php elseif (isset($site)): ?>
+                    <p>
+                      Site: <a href="<?= $site['url'] ?>" target="_blank"><?= isset($site['title']) ? $site['title'] : $site['url'] ?></a>
+                    </p>
+                  <?php endif ?>
+
+                  <?php if (isset($email)): ?>
+                    <p><i class="fa fa-envelope"></i> <?= $email ?></p>
+                  <?php endif ?>
+
+                  <?php if (isset($social)): ?>
+                    <ul class="list-unstyled">
+                      <?php foreach ($social as $type => $socialLink): ?>
+                        <li>
+                          <a href="<?= $socialLink['url'] ?>" target="_blank">
+                            <i class="fa fa-<?= $type ?>"></i> <?= $socialLink['title'] ?>
+                          </a>
+                        </li>
+                      <?php endforeach ?>
+                    </ul>
+                  <?php endif ?>
                 </div>
               </div>
             </div>
