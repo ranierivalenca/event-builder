@@ -265,9 +265,9 @@ class UsersController extends AppController
             $user->email = strtolower($user->email);
             $user->username = $user->email;
             if ($this->Users->save ( $user )) {
-                $this->Flash->success ( __ ( 'Inscrição atualizada com sucesso.' ) );
+                $this->Flash->success ( __ ( 'Dados da inscrição atualizados com sucesso.' ) );
                 return $this->redirect ( [
-                        'action' => 'view', $user->id
+                    'action' => 'userData', $user->id
                 ] );
             }
             $this->Flash->error ( __ ( 'Não foi possivel atualizar a inscrição.' ) );
