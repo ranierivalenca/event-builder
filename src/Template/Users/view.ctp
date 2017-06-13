@@ -29,21 +29,21 @@
       </div>
     </div>
     <div class="row dashboard-options">
-      <div class="col-xs-6 col-md-4">
+      <div class="col-xs-12 col-sm-6 col-md-4">
         <?=$this->Html->link(
           '<span class="text-primary"><i class="fa fa-2x fa-fw fa-pencil-square-o"></i><br>Dados do usuário</span>',
           array('controller'=>'Users','action'=>'userData'),
           array('class'=>'btn btn-block btn-default btn-lg', 'escape' => false));
         ?>
       </div>
-      <div class="col-xs-6 col-md-4">
+      <div class="col-xs-12 col-sm-6 col-md-4">
         <?=$this->Html->link(
           '<span class="text-primary"><i class="fa fa-2x fa-fw fa-book"></i><br>Mostra acadêmica - Submissões</span>',
           array('controller'=>'Papers'),
           array('class'=>'btn btn-block btn-default btn-lg', 'escape' => false));
         ?>
       </div>
-      <div class="col-xs-6 col-xs-offset-3 col-md-4 col-md-offset-0">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0">
         <?=$this->Html->link(
           '<span class="text-primary"><i class="fa fa-2x fa-fw fa-linux"></i><br>Escovando bits - Propostas</span>',
           array('controller'=>'proposals'),

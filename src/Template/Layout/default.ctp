@@ -298,7 +298,7 @@ $cakeDescription = Configure::read('Event.name');
         <div class="col-sm-12">
             <hr style="height: 10px;">
             <div class="row">
-                <div class="col-sm-10">
+                <div class="col-xs-10">
                     <h4>II ENTEC</h4>
                     <p class="small">
                         Instituto Federal de Pernambuco Campus Igarassu
@@ -307,12 +307,12 @@ $cakeDescription = Configure::read('Event.name');
                         <br><i class="fa fa-envelope-o"> </i> contatoentec@igarassu.ifpe.edu.br
                     </p>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-xs-2">
                     <div class="row">
                         <div class="col-md-12 hidden-lg hidden-md hidden-sm text-left">
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a> -->
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a> -->
-                            <a href="https://www.facebook.com/events/433886850319944/?active_tab=discussion"></i></a>
+                            <a target="_blank" href="https://www.facebook.com/events/433886850319944/?active_tab=discussion"><i class="fa fa-4x fa-fw fa-facebook-official"></i></a>
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a> -->
                         </div>
                     </div>
