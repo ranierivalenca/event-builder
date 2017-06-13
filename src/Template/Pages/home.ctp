@@ -283,6 +283,39 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         )
       ?>
 
+      <?=
+        $this->element('home/participante', [
+            'name' => 'Abdala Cerqueira',
+            'company' => '',
+            'year' => '2017',
+            'photo' => 'abdala_210x210.png',
+            'about' => [
+              'Leandro Almeida' => '
+              Pai de três, marido de uma e feliz proprietário de um fusca 69. 
+              <br>Tem leve tendências a passar o dia escrevendo e lendo códigos. 
+              <br>Apaixonado pela filosofia software livre, adora comunidades e liberdade. '
+            ],
+            'activity' => [
+              'type' => 'Palestra',
+              'title' => 'O que é Composer e como aproveitá-lo',
+              'desc' => 'O Composer é uma excelente ferramenta para começar e buscar bibliotecas para compor o seu projeto. Vamos explorar todo esse potencial.'
+            ],
+            'email' => 'abdala.cerqueira@gmail.com',
+            'site' => [
+              'url' => 'http://abda.la',
+              'title' => 'abda.la
+'
+            ],
+            'social' => [
+              'github' => [
+                'url' => 'https://github.com/abdala',
+                'title' => 'abdala'
+              ]
+            ]
+          ]
+        )
+      ?>
+
 
 
 
