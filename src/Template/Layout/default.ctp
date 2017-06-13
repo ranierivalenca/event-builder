@@ -122,7 +122,7 @@ $cakeDescription = Configure::read('Event.name');
 
                         <li>
                             <?php
-                    echo $this->Html->link ( '<i class="fa fa-linux fa-lg"></i>' . ' Escovando Bits', ($this->fetch ( 'title' ) === 'home') ? '#escovandobits' : '/#escovandobits', array (
+                    echo $this->Html->link ( '<i class="fa fa-linux"></i>' . ' Escovando Bits', ($this->fetch ( 'title' ) === 'home') ? '#escovandobits' : '/#escovandobits', array (
                             'escape' => false,
                             'id' => 'escovandobits-link'
                     ) );
