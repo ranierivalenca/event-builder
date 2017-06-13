@@ -119,22 +119,22 @@ $cakeDescription = Configure::read('Event.name');
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus" aria-hidden="true"></i>
  Atividades <span class="caret"></span></a>
                         <ul class="dropdown-menu inverse-dropdown">
-                        
+
                         <li>
                             <?php
-                    echo $this->Html->link ( '<i class="fa fa-linux fa-lg"></i>' . ' Escovando Bits', ($this->fetch ( 'title' ) === 'home') ? '#escovandobits' : '/#escovandobits', array (
+                    echo $this->Html->link ( '<i class="fa fa-linux"></i>' . ' Escovando Bits', ($this->fetch ( 'title' ) === 'home') ? '#escovandobits' : '/#escovandobits', array (
                             'escape' => false,
                             'id' => 'escovandobits-link'
                     ) );
                     ?>
                         </li>
 
-                        
+
                         <li class="dropdown-header">QuizNerd (em Breve)</li>
                         <li class="dropdown-header">Games (em Breve)</li>
                         <li class="dropdown-header">Competições (em Breve)</li>
-                        
-                        
+
+
                       </ul>
                     </li>
 
@@ -245,11 +245,11 @@ $cakeDescription = Configure::read('Event.name');
  Menu <span class="caret"></span></a>
                         <ul class="dropdown-menu inverse-dropdown">
                         <li class="dropdown-header"><?= $loguser ['username'] ?></li>
-                        
+
                         <li role="separator" class="divider"></li>
                         <li>
                             <?php
-                            echo $this->Html->link ( '<i class="fa fa-lg fa-pencil"></i> '.' Minha Inscrição', array (
+                            echo $this->Html->link ( 'Minha Inscrição', array (
                                 'controller' => 'users',
                                 'action' => 'view',
                                 $loguser ['id']), array('escape' => false) );
@@ -258,7 +258,7 @@ $cakeDescription = Configure::read('Event.name');
 
                         <li>
                         <?php
-                            echo $this->Html->link ( '<i class="fa fa-sign-out fa-lg"></i>' . ' Sair', array (
+                            echo $this->Html->link ( 'Sair', array (
                                 'controller' => 'users',
                                 'action' => 'logout'
                             ), array ('escape' => false ) );
