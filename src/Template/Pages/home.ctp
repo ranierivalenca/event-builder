@@ -231,6 +231,31 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         )
       ?>
 
+
+      <?=
+        $this->element('home/participante', [
+            'name' => 'Leandro Almeida',
+            'company' => '',
+            'year' => '2017',
+            'photo' => 'leandro_210x210.png',
+            'about' => [
+              'Leandro Almeida' => 'Graduado em Redes de Computadores, especialista em Segurança da Informação, mestre em Informática pela Universidade Federal da Paraíba, certificado ITILv3 e CCNA, atualmente é Professor no Instituto Federal de Educação, Ciência e Tecnologia da Paraíba e instrutor oficial do programa Cisco Networking Academy. Tem interesse nas áreas de Redes de Computadores, Software Livre, Educação à Distância, Governança de TI, Cloud Computing, Software Defined Network e Segurança da Informação. '
+            ],
+            'activity' => [
+              'type' => 'Oficina',
+              'title' => 'Disponibilidade em Redes Locais',
+              'desc' => 'O objetivo é realizar uma oficina totalmente prática (hands-on), abordando os principais temas acerca da disponibilidade em redes locais, desde os dispositivos, passando pelos protocolos e chegando até as aplicações.'
+            ],
+            'email' => 'lcavalcanti.almeida@gmail.com',
+            'site' => [
+              'url' => 'http://www.leandrocalmeida.com',
+              'title' => 'www.leandrocalmeida.com
+'
+            ]
+          ]
+        )
+      ?>
+
     </div>
   </div>
 </div>
@@ -351,6 +376,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
 
   </div>
 </div>
+
 
 
 

@@ -234,8 +234,7 @@ CREATE TABLE `users` (
   `sexo` enum('Masculino','Feminino') NOT NULL,
   `cep` varchar(10) NOT NULL,
   `estado` enum('Acre','Alagoas','Amapá','Amazonas','Bahia','Ceará','Distrito Federal','Espírito Santo','Goiás','Maranhão','Mato Grosso','Mato Grosso do Sul','Minas Gerais','Pará','Paraíba','Paraná','Pernambuco','Piauí','Rio de Janeiro','Rio Grande do Norte','Rio Grande do Sul','Rondônia','Roraima','Santa Catarina','São Paulo','Sergipe','Tocantins') NOT NULL,
-  `cidade` varchar(35) NOT NULL,
-  `bairro` varchar(45) NOT NULL,
+  `cidade` varchar(35) NOT NULLs,
   `logradouro` varchar(80) NOT NULL,
   `numero` varchar(8) NOT NULL,
   `complemento` varchar(8) NOT NULL,
@@ -269,3 +268,17 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2017-06-06  1:03:08
+
+CREATE TABLE `Proposals` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(120) NOT NULL,
+  `user_id` int(11) unsigned NOT NULL,
+  `description` text,
+  `status` enum('pendente','aceito','rejeitado') NOT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `paper_user_id` (`user_id`),
+  CONSTRAINT `paper_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
