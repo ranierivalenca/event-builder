@@ -165,6 +165,7 @@ CREATE TABLE `proposals` (
   `user_id` int(11) unsigned NOT NULL,
   `description` text,
   `status` enum('pendente','aceito','rejeitado') NOT NULL,
+  `trilha`  varchar(120) NOT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),

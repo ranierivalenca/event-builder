@@ -70,6 +70,10 @@ class ProposalsTable extends Table
             ->requirePresence('status', 'create')
             ->notEmpty('status');
 
+        $validator 
+            ->requirePresence('trilha', 'create')
+            ->notEmpty('status');
+
         return $validator;
     }
 

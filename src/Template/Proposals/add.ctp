@@ -17,9 +17,24 @@
 
         <?= $this->Form->create($proposal,['class' => 'form-group'])?>
 
-            <?= $this->Form->control('title', array('label' => 'Título da Palestra', 'class' => 'form-control'))?>
-            <?= $this->Form->control('description',['label' => 'Breve Descrição da Palestra 300 - 500 palavras', 'class' => 'form-control']) ?>
+        <?= $this->Form->control('title', array('label' => 'Título da Palestra', 'class' => 'form-control'))?>
+        <?= $this->Form->control('description',['label' => 'Breve Descrição da Palestra 300 - 500 palavras', 'class' => 'form-control']) ?>
+        
+        <?=
+        $this->Form->control('estado',
+          array('class' => 'form-control', 'options' => [
+            '' => 'Selecione',
+            'Software Livre'=>'Software Livre', 
+            'Desenvolvimento'=>'Desenvolvimento',
+            'Segurança'=>'Segurança', 
+            'Robótica'=>'Robótica',
+            'Educação e Inclusão Digital'=>'Educação e Inclusão Digital',
+            'Mercado'=>'Mercado',
+            'Corporativo'=> 'Corporativo'
             
+          ]), ['required' => true]
+        )
+      ?>   
 
         </fieldset>
 
