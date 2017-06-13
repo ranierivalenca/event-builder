@@ -7,7 +7,7 @@
     <?= $this->Flash->render('auth') ?>
 
     <div class="row">
-      <div class="col-xs-6 col-md-4 col-md-offset-2">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
         <?php
           $loguser = $this->request->session ()->read ( 'Auth.User' );
           if (strpos('admin', $loguser ['role']) !== false || $loguser ['id'] === $user->id) {
@@ -18,7 +18,7 @@
           }
         ?>
       </div>
-      <div class="col-xs-6 col-md-4">
+      <div class="col-xs-12 col-sm-6 col-md-4">
         <?php
           $loguser = $this->request->session ()->read ( 'Auth.User' );
           if (strpos('admin', $loguser ['role']) !== false || $loguser ['id'] === $user->id) {
