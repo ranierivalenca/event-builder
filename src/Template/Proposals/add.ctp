@@ -10,7 +10,6 @@
     <div class="proposal form">
         <h4><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Atenção</h4>
         <ul>
-            <li> Consulte o Regulamento em:  <a target="blank" href="">REGULAMENTO</a></li>
             <li> Envie a sua proposta com Título e uma Breve Descrição </li>
             <li> A descrição deve apontar qual a trilha: Software Livre, Desenvolvimento, Segurança, Robótica, Educação e Inclusão Digital, Mercado e Corporativo</li>
             <li> Em caso de dúvidas ou dificuldades na submissão entre em contato com <strong>ramon.farias@igarassu.ifpe.edu.br <strong></li>
