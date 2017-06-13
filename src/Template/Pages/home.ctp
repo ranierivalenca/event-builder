@@ -647,7 +647,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
               <div class="col-md-6 col-md-offset-3">
                 <div class="row">
                   <div class="col-md-6 col-md-offset-3">
-                    <img src="img/facig.jpg" alt="" class="img-rounded img-responsive">
+                    <img src="img/facig.png" alt="" class="img-rounded img-responsive">
                   </div>
                 </div>
               </div>
