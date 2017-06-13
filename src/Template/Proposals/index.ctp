@@ -12,8 +12,9 @@
             <tr>
                 <th scope="col" style="width:5%;">ID</th>
                 <th scope="col" >TÍTULO</th>
-                <th scope="col" style="width:10%;">STATUS</th>
-                <th scope="col" style="width:20%;">DATA ENVIO</th>
+                <th scope="col" style="width:20%;">TRILHA</th>
+                <th scope="col" style="width:8%;">STATUS</th>
+                <th scope="col" style="width:18%;">DATA ENVIO</th>
                 <th scope="col" class="actions" style="width:15%;"><?= __('ações') ?></th>
             </tr>
         </thead>
@@ -22,6 +23,7 @@
             <tr>
                 <td><?= $this->Number->format($proposal->id) ?></td>
                 <td><?= h($proposal->title) ?></td>
+                <td><?= h($proposal->trilha) ?></td>
                 <td><?= h($proposal->status) ?></td>
                 <td><?= h($proposal->created->format('d/m/Y - H:i:s')) ?></td>
                 <td class="actions">

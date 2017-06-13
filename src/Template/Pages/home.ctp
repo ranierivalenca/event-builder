@@ -302,7 +302,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </p>
 
         <p>
-          A submissão de trabalhos deve ser feita através de um resumo contendo uma página sobre o projeto. Os projetos selecionados pela comissão acadêmica farão uma apresentação oral sobre o projeto com <strong>10 minutos</strong> de duração e <strong>5 minutos</strong> para perguntas.
+          A submissão de trabalhos deve ser feita através de um resumo contendo duas páginas sobre o projeto. Os projetos selecionados pela comissão acadêmica farão uma apresentação oral sobre o projeto com <strong>10 minutos</strong> de duração e <strong>5 minutos</strong> para perguntas.
         </p>
         <blockquote>
           <ul>
@@ -318,8 +318,8 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             Datas Importantes
 
             <ul>
-              <li><strong>14 de Junho</strong> - Fim do prazo para entrega dos resumos</li>
-              <li><strong>16 de Junho</strong> - Divulgação dos trabalhos aceitos</li>
+              <li><strong>16 de Junho</strong> - Fim do prazo para entrega dos resumos</li>
+              <li><strong>18 de Junho</strong> - Divulgação dos trabalhos aceitos</li>
               <li><strong>21 e 22 de Junho</strong> - Apresentação oral dos artigos</li>
               <li><strong>30 de junho</strong> - Fim do prazo para entrega da versão final dos resumos (a ser publicada nos anais do evento).</li>
               <li><strong>31 de Julho</strong> - Lançamento dos Anais no site do ENTEC.</li>
