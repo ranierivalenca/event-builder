@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Proposals Controller
@@ -13,6 +14,18 @@ use App\Controller\AppController;
 class ProposalsController extends AppController
 {
 
+
+    public function initialize(){
+        parent::initialize();
+        $this->loadModel('Registrations');
+    }
+
+    
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->deny(['add','edit', 'index','view','delete']);
+    }
     /**
      * Index method
      *
@@ -20,10 +33,9 @@ class ProposalsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Users']
-        ];
-        $proposals = $this->paginate($this->Proposals);
+         
+        $proposals = $this->Proposals->find()->where(['user_id' => $this->Auth->user('id')]);
+        
 
         $this->set(compact('proposals'));
         $this->set('_serialize', ['proposals']);
@@ -56,15 +68,16 @@ class ProposalsController extends AppController
         $proposal = $this->Proposals->newEntity();
         if ($this->request->is('post')) {
             $proposal = $this->Proposals->patchEntity($proposal, $this->request->getData());
+            $proposal->status = 'pendente';
+            $proposal->user_id = $this->Auth->user('id');
             if ($this->Proposals->save($proposal)) {
-                $this->Flash->success(__('The proposal has been saved.'));
+                $this->Flash->success(__('Proposta Salva com sucesso!'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The proposal could not be saved. Please, try again.'));
+            $this->Flash->error(__('A proposta não pode ser salva.'));
         }
-        $users = $this->Proposals->Users->find('list', ['limit' => 200]);
-        $this->set(compact('proposal', 'users'));
+        $this->set(compact('proposal'));
         $this->set('_serialize', ['proposal']);
     }
 
@@ -113,4 +126,38 @@ class ProposalsController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function isAuthorized($user)
+    {
+
+        if (    $this->request->action === 'add'
+            ||  $this->request->action === 'index') {
+            return true;
+        }
+
+        if (    $this->request->action === 'view'
+            ||  $this->request->action === 'edit'
+            ||  $this->request->action === 'delete') {
+
+            if(isset($this->request->params['pass'][0])){
+                $userId = (int)$this->request->params['pass'][0];
+                if ($userId === $user['id']) {
+                    return true;
+                }
+            }
+
+        }
+
+
+        if (    $this->request->action === 'view'
+            ||  $this->request->action === 'edit') {
+            if (strpos('admin ', $user['role']) !== false){
+                return true;
+            }
+        }
+        return parent::isAuthorized($user);
+    }
 }
+
+
+

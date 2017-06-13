@@ -114,6 +114,31 @@ $cakeDescription = Configure::read('Event.name');
                     ) );
                     ?>
                     </li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus" aria-hidden="true"></i>
+ Atividades <span class="caret"></span></a>
+                        <ul class="dropdown-menu inverse-dropdown">
+                        
+                        <li>
+                            <?php
+                    echo $this->Html->link ( '<i class="fa fa-linux fa-lg"></i>' . ' Escovando Bits', ($this->fetch ( 'title' ) === 'home') ? '#escovandobits' : '/#escovandobits', array (
+                            'escape' => false,
+                            'id' => 'escovandobits-link'
+                    ) );
+                    ?>
+                        </li>
+
+                        
+                        <li class="dropdown-header">QuizNerd (em Breve)</li>
+                        <li class="dropdown-header">Games (em Breve)</li>
+                        <li class="dropdown-header">Competições (em Breve)</li>
+                        
+                        
+                      </ul>
+                    </li>
+
+
                     <li>
                     <?php
                     echo $this->Html->link ( '<i class="fa fa-lg fa-pencil"></i>' . ' Inscrições', ($this->fetch ( 'title' ) === 'home') ? '#register' : '/#register', array (
@@ -296,7 +321,7 @@ $cakeDescription = Configure::read('Event.name');
                             <br>
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-instagram text-inverse"></i></a> -->
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-twitter text-inverse"></i></a> -->
-                            <a target="blank" href="https://www.facebook.com/events/1554970081462660/?active_tab=posts"><i class="fa fa-4x fa-fw fa-facebook-official"></i></a>
+                            <a target="blank" href="https://www.facebook.com/events/433886850319944/?active_tab=discussion"><i class="fa fa-4x fa-fw fa-facebook-official"></i></a>
 <!--                            <a href="#"><i class="fa fa-3x fa-fw fa-github text-inverse"></i></a> -->
                         </div>
                     </div>
@@ -326,6 +351,7 @@ $cakeDescription = Configure::read('Event.name');
           registerScroll("#program-link",      "#program",  400);
           registerScroll("#attractions-link",  "#attractions",  400);
           registerScroll("#academic-link",     "#academic", 400);
+          registerScroll("#escovandobits-link",     "#escovandobits", 400);
           registerScroll("#where-link",        "#where",    1000);
           registerScroll("#support-link",      "#support",  1200);
           registerScroll("#people-link",       "#people",   400);

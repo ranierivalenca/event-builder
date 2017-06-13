@@ -60,10 +60,11 @@ class ProposalsTable extends Table
 
         $validator
             ->requirePresence('title', 'create')
-            ->notEmpty('title');
+            ->notEmpty('title','Título Vazio');
 
         $validator
-            ->allowEmpty('description');
+            ->requirePresence('description', 'create')
+            ->notEmpty('description','Descrição Vazia');
 
         $validator
             ->requirePresence('status', 'create')

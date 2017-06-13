@@ -6,15 +6,17 @@
 <?= $this->assign('title', 'ENTEC 2017 - Cadastrar Proposta'); ?>
 <div class="container section" style="width: 70%; margin-bottom: 10px;">
     <?= $this->Flash->render()?>
-    <h2>Minha Lista de Propostas:</h2>
+    <h2>Lista de Propostas:</h2>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th scope="col" style="width:5%;">ID</th>
-                <th scope="col" >TÍTULO</th>
-                <th scope="col" style="width:10%;">STATUS</th>
-                <th scope="col" style="width:20%;">DATA ENVIO</th>
-                <th scope="col" class="actions" style="width:15%;"><?= __('ações') ?></th>
+                <th scope="col">ID</th>
+                <th scope="col">TÍTULO</th>
+                <th scope="col">USUÁRIO</th>
+                <th scope="col">STATUS</th>
+                <th scope="col">CRIAÇÃO</th>
+                <th scope="col">MODIFICAÇÃO</th>
+                <th scope="col" class="actions"><?= __('ações') ?></th>
             </tr>
         </thead>
         <tbody>
@@ -22,8 +24,10 @@
             <tr>
                 <td><?= $this->Number->format($proposal->id) ?></td>
                 <td><?= h($proposal->title) ?></td>
+                <td><?= $proposal->has('user') ? $this->Html->link($proposal->user->nome, ['controller' => 'Users', 'action' => 'view', $proposal->user->id]) : '' ?></td>
                 <td><?= h($proposal->status) ?></td>
-                <td><?= h($proposal->created->format('d/m/Y - H:i:s')) ?></td>
+                <td><?= h($proposal->created) ?></td>
+                <td><?= h($proposal->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Ver'), ['action' => 'view', $proposal->id]) ?>
                     <?= $this->Html->link(__('Editar'), ['action' => 'edit', $proposal->id]) ?>
