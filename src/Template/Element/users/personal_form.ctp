@@ -56,18 +56,18 @@
     </div>
 
     <?php if ($showEmail === true): ?>
-      <div class="col-12 col-sm-6">
+      <div class="col-xs-12 col-md-6">
         <?=$this->Form->control ( 'email', array ('class' => 'form-control','id' => 'email' ) )?>
       </div>
 
-      <div class="col-12 col-sm-6">
-        <?=$this->Form->control ( 'confirm_email', array ('label' => 'Confirmar e-mail','class' => 'form-control','id' => 'email' ) )?>
+      <div class="col-xs-12 col-md-6">
+        <?=$this->Form->control ( 'confirm_email', array ('label' => 'Confirmar e-mail','class' => 'form-control','id' => 'confirm_email' ) )?>
       </div>
 
-      <div class="col-12 col-sm-6">
+      <div class="col-xs-12 col-md-6">
         <?= $this->Form->control('password', array('label' => 'Senha', 'class' => 'form-control'))?>
       </div>
-      <div class="col-12 col-sm-6">
+      <div class="col-xs-12 col-md-6">
         <?= $this->Form->control('confirm_password',array('label' => 'Confirmar Senha', 'type'  =>  'password','class' => 'form-control'))?>
       </div>
     <?php endif ?>
