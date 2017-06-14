@@ -128,6 +128,14 @@ $cakeDescription = Configure::read('Event.name');
                     ) );
                     ?>
                         </li>
+                        <li>
+                            <?php
+                    echo $this->Html->link ( '<i class="fa fa-paint-brush"></i>' . ' Concurso de Desenho Nerd', ($this->fetch ( 'title' ) === 'home') ? '#desenhonerd' : '/#desenhonerd', array (
+                            'escape' => false,
+                            'id' => 'desenhonerd-link'
+                    ) );
+                    ?>
+                        </li>
 
 
                         <li class="dropdown-header">QuizNerd (em Breve)</li>
@@ -356,6 +364,7 @@ $cakeDescription = Configure::read('Event.name');
           registerScroll("#support-link",      "#support",  1200);
           registerScroll("#people-link",       "#people",   400);
           registerScroll("#register-link",       "#register",   400);
+          registerScroll("#desenhonerd-link",       "#desenhonerd",   400);
       <?php
         }
       ?>

@@ -227,7 +227,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
       <?=
         $this->element('home/participante', [
             'name' => 'Talita Oliveira',
-            'company' => '',
+            'company' => 'JC Online',
             'year' => '2017',
             'photo' => 'talita_210x210.png',
             'about' => [
@@ -290,7 +290,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             'year' => '2017',
             'photo' => 'abdala_210x210.png',
             'about' => [
-              'Leandro Almeida' => '
+              'Abdala Cerqueira' => '
               Pai de três, marido de uma e feliz proprietário de um fusca 69. 
               <br>Tem leve tendências a passar o dia escrevendo e lendo códigos. 
               <br>Apaixonado pela filosofia software livre, adora comunidades e liberdade. '
@@ -446,8 +446,18 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
 <div id="escovandobits" class="section">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
         <?=$this->element('activities/escovandobits') ?>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="desenhonerd" class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <?=$this->element('activities/desenhonerd') ?>
       </div>
     </div>
   </div>
