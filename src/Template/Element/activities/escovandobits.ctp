@@ -26,7 +26,7 @@
         </div>
         <div class="modal-body text-justify">
           <h5><strong>OBJETIVO</strong></h5>
-          <p>Permitir que os participantes do ENTEC 2017 p possam apresentar seus trabalhos, atividades e curiosidades na área de informática nas seguintes trilhas: Software Livre, Desenvolvimento, Segurança, Robótica, Educação e Inclusão Digital, Mercado e Corporativo.</p>
+          <p>Permitir que os participantes do ENTEC 2017 possam apresentar seus trabalhos, atividades e curiosidades na área de informática nas seguintes trilhas: Software Livre, Desenvolvimento, Segurança, Robótica, Educação e Inclusão Digital, Mercado e Corporativo.</p>
 
           <h5><strong>FORMATO</strong></h5>
           <p>Os Participantes que tiverem interesse em apresentar seus trabalhos, divulgar alguma tecnologia ou compartilhar conhecimentos e curiosidades poderão submeter suas propostas para o Escovando bits - versão 1.0. As falas terão um tempo de 15 minutos com mais 5 minutos de perguntas. Qualquer Participante inscrito no ENTEC 2017 pode submeter uma ou mais palestras dentro das trilhas do Escovando bits - versão 1.0: Software Livre, Desenvolvimento, Segurança, Robótica, Educação e Inclusão Digital, Mercado e Corporativo.</p>

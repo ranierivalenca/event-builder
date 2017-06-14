@@ -96,7 +96,7 @@ $cakeDescription = Configure::read('Event.name');
                     ) );
                     ?>
                     </li>
-                    <!--
+                    
                     <li>
                     <?php
                     echo $this->Html->link ( '<i class="fa fa-lg fa-list-alt"></i>' . ' Programação', ($this->fetch ( 'title' ) === 'home') ? '#program' : '/#program', array (
@@ -105,7 +105,7 @@ $cakeDescription = Configure::read('Event.name');
                     ) );
                     ?>
                     </li>
-                    -->
+                    
                     <li>
                     <?php
                     echo $this->Html->link ( '<i class="fa fa-book fa-lg"></i>' . ' Mostra Acadêmica', ($this->fetch ( 'title' ) === 'home') ? '#academic' : '/#academic', array (
@@ -130,6 +130,14 @@ $cakeDescription = Configure::read('Event.name');
                         </li>
                         <li>
                             <?php
+                    echo $this->Html->link ( '<i class="fa fa-hand-spock-o" aria-hidden="true"></i>' . ' Quiz Nerd', ($this->fetch ( 'title' ) === 'home') ? '#quiznerd' : '/#quiznerd', array (
+                            'escape' => false,
+                            'id' => 'quiznerd-link'
+                    ) );
+                    ?>
+                        </li>
+                        <li>
+                            <?php
                     echo $this->Html->link ( '<i class="fa fa-paint-brush"></i>' . ' Concurso de Desenho Nerd', ($this->fetch ( 'title' ) === 'home') ? '#desenhonerd' : '/#desenhonerd', array (
                             'escape' => false,
                             'id' => 'desenhonerd-link'
@@ -137,10 +145,16 @@ $cakeDescription = Configure::read('Event.name');
                     ?>
                         </li>
 
+                        <li>
+                            <?php
+                    echo $this->Html->link ( '<i class="fa fa-trophy"></i>' . ' Torneio LoL', ($this->fetch ( 'title' ) === 'home') ? '#torneiolol' : '/#torneiolol', array (
+                            'escape' => false,
+                            'id' => 'torneiolol-link'
+                    ) );
+                    ?>
+                        </li>
+                        
 
-                        <li class="dropdown-header">QuizNerd (em Breve)</li>
-                        <li class="dropdown-header">Games (em Breve)</li>
-                        <li class="dropdown-header">Competições (em Breve)</li>
 
 
                       </ul>

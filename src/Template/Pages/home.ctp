@@ -315,9 +315,58 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           ]
         )
       ?>
+      <?=
+        $this->element('home/participante', [
+            'name' => 'Diógenes de Souza Leão Filho',
+            'company' => '',
+            'year' => '2017',
+            'photo' => 'diogenes_207x207.jpg',
+            'about' => [
+              'Diógenes de Souza Leão Filho' => '
+              Diógenes de Souza Leão Filho é entusiasta e divulgador comprometido com o desenvolvimento do software livre. Analista de Sistemas pela NIC (Núcleo de Informática da Católica), graduado em Tecnologia da Informação, é atualmente diretor de negócios da Fuctura Tecnologia, empresa  de consultoria e treinamento em Software Livre, Partner Ubuntu e Partner LPI. Atua desde 2008 como Proctor LPI, divulgando a importância da certificação LPI, sendo responsável pela aplicação de provas LPI no NE. Sua maior contribuição com o movimento SL é através da coordenação do CONSOLINE, Congresso de Software Livre do NE, <a href="www.softwarelivrene.org">www.softwarelivrene.org</a>.'
+            ],
+            'activity' => [
+              'type' => 'Mesa Redonda',
+              'title' => 'Certificações na área de TI',
+              'desc' => 'Nesta atividade os participantes da mesa apresentarão informações sobre a importância das certificações para os profissionais da área de TI. Certificações Cisco e GNU/Linux serão debatidas junto com o público presente.
+              <br>Mediador
+              <br>Ramon Mota
+              <br><strong>Convidados</strong>
+              
+                <br>Leandro Almeida
+                <br>Diógenes de Souza Leão Filho
+                <br>Marco Eugênio
+              
 
+              '
+            ],
+            'site' => [
+              'url' => 'http://www.fuctura.com.br/recife/',
+              'title' => 'www.fuctura.com.br/recife/'
+            ]
+          ]
+        )
+      ?>
 
-
+      <?=
+        $this->element('home/participante', [
+            'name' => 'Felipe Omena Marques Alves ',
+            'company' => 'IFSertão',
+            'year' => '2017',
+            'photo' => 'felipe_210_210.jpg',
+            'about' => [
+              'Felipe Omena Marques Alves' => '
+              Professor do IFSertão-PE/Floresta. Atualmente, é vice-coordenador do Curso Técnico de Nível Médio Integrado em Informática, além de lecionar em disciplinas relacionadas à Engenharia de Software e Engenharia de Qualidade no curso superior de Gestão de Tecnologia de Informação. É mestre em Engenharia da Computação pela Escola Politécnica de Pernambuco (POLI/UPE) onde atuou na linha de Pesquisa de Inteligência Computacional. As pesquisas realizadas nesse período basearam-se na aplicação de princípios da Orientação a Aspectos na modularização de Sistemas Multiagentes. '
+            ],
+            'activity' => [
+              'type' => 'Palestra',
+              'title' => 'Fábrica de Software',
+              'desc' => ''
+              ],
+            'email' => 'felipe.alves@ifsertao-pe.edu.br'
+            ]
+        )
+      ?>
 
     </div>
   </div>
@@ -400,6 +449,283 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
   </div>
 </div>
 
+<div class="section" id="program">
+      <h1 class="text-center">Programação</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="text-success text-uppercase">Quarta-feira, 21 de Junho</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <h5><strong>08:00h às 09:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+              Mesa de Abertura <span class="where"> (Auditório) </span>
+            </h5>
+          </div>
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>09:00h às 10:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+              Palestra: <strong>Indústria 4.0 - O que significa e o que esperar</strong> - Rafael Melo Macieira
+            </h5>
+          </div>
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>10:00h às 11:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+            Palestra: <strong>Segurança para Web Hosting</strong> - Romero Ayub <span class="where"> (Auditório) </span>
+            </h5>
+          </div>
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>11:00h às 12:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+              Mesa de Redonda: <strong>Certificações na área de TI</strong> - Leandro Almeida, Marco Eugênio, Diógenes de Souza Leão Filho <span class="where"> (Auditório) </span>
+            </h5>
+          </div>
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>11:00h às 12:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+              Workshop: <strong>Dominando CSS Layouts na prática com Grid Layout</strong> - Simone Amorin <span class="where"> (Laboratório) </span>
+            </h5>
+          </div>
+
+          
+            <div class="col-md-12"><hr></div>
+            <div class="col-md-2">
+              <h5><strong>12:00h às 13:00h</strong></h5>
+            </div>
+            <div class="col-md-10">
+              <h5>
+                Intervalo para Almoço <span class="where"> (Hall) </span>
+              </h5>
+            </div>
+          
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>13:00h às 15:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+              Mini-curso: <strong>Disponibilidade em Redes Locais</strong> - Leandro Almeida <span class="where"> (Laboratório) </span>
+            </h5>
+          </div>
+
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>13:20h às 16:20h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+               <strong>Escovando Bits</strong>  <span class="where"> (Sala) </span>
+            </h5>
+          </div>
+
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>13:30h às 16:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+               <strong>Mostra Acadêmica - Seção 01</strong>  <span class="where"> (Sala) </span>
+            </h5>
+          </div>
+
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>13:00h às 15:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+                 <strong>Quiz Nerd - 1º Rodada</strong>  <span class="where"> (Espaço Nerd) </span>
+            </h5>
+          </div>
+
+
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>13:00h às 15:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+               <strong>Concurso de Desenho Nerd - 1º Fase </strong>  <span class="where"> (Espaço Nerd) </span>
+            </h5>
+          </div>
+
+
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>15:00h às 17:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+               <strong>Torneio de League of Legends - 1º Rodada</strong>  <span class="where"> (Laboratório) </span>
+            </h5>
+          </div>
+
+          <div class="col-md-12"><hr></div>
+
+          <div class="col-md-2">
+            <h5><strong>12:00h às 17:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+              Games <span class="where"> (Corredor, Espaço Nerd)</span>
+            </h5>
+            <p>
+              Espaço Nerd, com consoles rodando emuladores e jogos modernos (Mortal Kombat X, FIFA 2016, Just Dance) 
+            </p>
+          </div>
+        
+        </div>
+        
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="text-success text-uppercase">Quinta-feira, 22 de Junho</h3>
+          </div>
+        </div>
+        <div class="row">
+        
+        <div class="col-md-2">
+          <h5><strong>8:00h às 9:00h</strong></h5>
+        </div>
+        <div class="col-md-10">
+          <h5>
+            Palestra: <i class="fa fa-hourglass-half" aria-hidden="true"></i>Em breve... -  <span class="where"> (Auditório) </span>
+          </h5>
+          </div>
+        <div class="col-md-12"><hr></div><div class="col-md-2">
+          <h5><strong>9:00h às 10:00h</strong></h5>
+        </div>
+        <div class="col-md-10">
+          <h5>
+            Palestra: <strong>Fábrica de Software</strong> - Felipe Alves <span class="where"> (Auditório) </span>
+          </h5>
+          </div>
+        <div class="col-md-12"><hr></div><div class="col-md-2">
+          <h5><strong>10:00h às 11:00h</strong></h5>
+        </div>
+        <div class="col-md-10">
+          <h5>
+            Palestra: <strong>Mulher na área de T.I.</strong> - Talita Oliveira <span class="where"> (Auditório) </span>
+          </h5>
+          </div>
+        <div class="col-md-12"><hr></div><div class="col-md-2">
+          <h5><strong>11:00h às 12:00h</strong></h5>
+        </div>
+        <div class="col-md-10">
+          <h5>
+            Palestra: <strong>O que é Composer e como aproveitá-lo</strong> - Abdala Cerqueira  <span class="where"> (Auditório) </span>
+          </h5>
+          </div>
+        
+
+        <div class="col-md-12"><hr></div>
+        <div class="col-md-2">
+          <h5><strong>11:00h às 12:00h</strong></h5>
+        </div>
+        <div class="col-md-10">
+          <h5>
+            Workshop: <strong>Hack&Learn - Parte 01</strong> - Michael Barney  <span class="where"> (Laboratório) </span>
+          </h5>
+          </div>
+        
+
+        <div class="col-md-12"><hr></div>
+        <div class="col-md-2">
+          <h5><strong>12:00h às 13:00h</strong></h5>
+        </div>
+        <div class="col-md-10">
+          <h5>
+            Intervalo para Almoço <span class="where"> (Hall) </span>
+          </h5>
+        </div>
+        <div class="col-md-12"><hr></div>
+        <div class="col-md-2">
+          <h5><strong>13:00h às 15:00h</strong></h5>
+        </div>
+        <div class="col-md-10">
+          <h5>
+            Workshop: <strong>Hack&Learn - Parte 02</strong> - Michael Barney  <span class="where"> (Laboratório) </span>
+          </h5>
+          </div>
+
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>13:00h às 15:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+               Mini-curso <strong>Ensinamentos Jedi para Gestão de Equipes</strong> - Raquel Lira  <span class="where"> (Sala) </span>
+            </h5>
+          </div>
+
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>13:30h às 16:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+               <strong>Mostra Acadêmica - Seção 02</strong>  <span class="where"> (Sala) </span>
+            </h5>
+          </div>
+
+
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>13:00h às 15:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+               <strong>Concurso de Desenho Nerd - 2º Fase</strong>  <span class="where"> (Espaço Nerd) </span>
+            </h5>
+          </div>
+
+
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>15:00h às 17:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+               <strong>Torneio de League of Legends - Finais</strong>  <span class="where"> (Laboratório) </span>
+            </h5>
+          </div>
+
+          <div class="col-md-12"><hr></div>
+
+          <div class="col-md-2">
+            <h5><strong>12:00h às 17:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+              Games <span class="where"> (Corredor, Espaço Nerd)</span>
+            </h5>
+            <p>
+              Espaço Nerd, com consoles rodando emuladores e jogos modernos (Mortal Kombat X, FIFA 2016, Just Dance) 
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+
+
 <div id="register" class="section">
   <div class="container">
     <div class="row">
@@ -453,16 +779,39 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
   </div>
 </div>
 
-<div id="desenhonerd" class="section">
-  <div class="container">
+<div  id="quiznerd"  class="section">
+  <div class="container" >
     <div class="row">
-      <div class="col-xs-12 col-md-6 col-md-offset-3">
-        <?=$this->element('activities/desenhonerd') ?>
+      <div  class="col-xs-12 col-md-8 col-md-offset-2">
+        <?=$this->element('activities/quiznerd') ?>
       </div>
+      
     </div>
   </div>
 </div>
 
+
+<div  id="desenhonerd"  class="section">
+  <div class="container" >
+    <div class="row">
+      <div  class="col-xs-12 col-md-8 col-md-offset-2">
+        <?=$this->element('activities/desenhonerd') ?>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<div id="torneiolol" class="section">
+  <div class="container">
+    <div class="row">
+      <div  class="col-xs-12 col-md-8 col-md-offset-2">
+        <?=$this->element('activities/torneiolol') ?>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <div id="where" class="section" >
