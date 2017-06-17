@@ -442,9 +442,9 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
               <ul class="dropdown-menu inverse-dropdown" role="menu">
                 <li>
                   <?php
-                    echo $this->Html->link ( '<i class="fa fa-upload fa-lg"></i> '.' Enviar Artigo', array (
+                    echo $this->Html->link ( '<i class="fa fa-upload fa-lg"></i> '.' Enviar Artigo - (até 16/06)', array (
                         'controller' => 'papers',
-                        'action' => 'add'), array('escape' => false) );
+                        'action' => 'add'), array('escape' => false, 'onclick' => 'return false') );
                   ?>
                 </li>
 
