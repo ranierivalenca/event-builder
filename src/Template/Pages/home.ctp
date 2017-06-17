@@ -636,7 +636,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </div>
         <div class="col-md-10">
           <h5>
-            Palestra: <strong>Fábrica de Software</strong> - Felipe Alves <span class="where"> (Auditório) </span>
+            Palestra: <strong>Cycle Dev: Uma Fábrica de Software no Sertão Pernambucano</strong> - Felipe Alves <span class="where"> (Auditório) </span>
           </h5>
           </div>
         <div class="col-md-12"><hr></div><div class="col-md-2">
