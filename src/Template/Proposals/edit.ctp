@@ -2,6 +2,7 @@
 /**
   * @var \App\View\AppView $this
   */
+    $loguser = $this->request->session ()->read ( 'Auth.User' );
 ?>
 <?= $this->assign('title', 'ENTEC 2017 - Cadastrar Proposta'); ?>
 <div class="container section" style="width: 70%; margin-bottom: 10px;">
@@ -19,7 +20,13 @@
         <?= $this->Form->create($proposal,['class' => 'form-group'])?>
 
             <?= $this->Form->control('title', array('label' => 'Título da Palestra', 'class' => 'form-control'))?>
-            <?= $this->Form->control('description',['label' => 'Breve Descrição da Palestra 300 - 500 palavras', 'class' => 'form-control']) ?>s            
+            <?= $this->Form->control('description',['label' => 'Breve Descrição da Palestra 300 - 500 palavras', 'class' => 'form-control']) ?>
+        <?php
+            if(strpos('owner manager ', $loguser['entecrole']) !== false){
+                echo $this->Form->control ('status',
+                array ('class' => 'form-control', 'options' => ['pendente' => 'pendente' , 'aceito' => 'aceito', 'rejeitado' => 'rejeitado'] ), ['required' => true]);
+            }
+        ?>
 
         </fieldset>
 

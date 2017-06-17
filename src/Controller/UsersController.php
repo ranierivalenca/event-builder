@@ -307,7 +307,9 @@ class UsersController extends AppController
                 if($event) $user['isInscrito'] = true;
                 else $user['isInscrito'] = false;
 
-                
+                //corrigir para papel de todos os evento mais tarde
+                $user['entecrole'] = $this->Registrations->getUserEventRole(2,$user['id']);
+                 
                 $this->Auth->setUser($user);
                 return $this->redirect($this->Auth->redirectUrl());
             }
