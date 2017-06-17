@@ -50,10 +50,6 @@ class RegistrationsController extends AppController
     }
 
 
-
-
-   
-
     /**
      * View method
      *

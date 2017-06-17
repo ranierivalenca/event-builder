@@ -98,4 +98,7 @@ class RegistrationsTable extends Table
     public function getUserEventRole($eventId, $userId){
         return $this->find()->select(['role'])->where(['event_id' => $eventId, 'user_id' => $userId])->first()['role'];
     }
+    public function getUserRoles($userId){
+        return $this->find()->select(['event_id','role'])->where(['user_id' => $userId]);
+    }
 }

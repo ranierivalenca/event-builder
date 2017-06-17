@@ -24,7 +24,7 @@ class ProposalsController extends AppController
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->deny(['add','edit', 'index','view','delete']);
+        $this->Auth->deny(['add','edit', 'index','view','delete','indexAdmin']);
     }
     /**
      * Index method
@@ -33,8 +33,18 @@ class ProposalsController extends AppController
      */
     public function index()
     {
-         
+        
         $proposals = $this->Proposals->find()->where(['user_id' => $this->Auth->user('id')]);
+        
+
+        $this->set(compact('proposals'));
+        $this->set('_serialize', ['proposals']);
+    }
+
+    public function indexAdmin()
+    {  
+        
+        $proposals = $this->Proposals->find()->contain(['Users']);
         
 
         $this->set(compact('proposals'));
@@ -147,17 +157,16 @@ class ProposalsController extends AppController
             }
 
         }
-
-
+        $role = $this->Registrations->getUserEventRole(2,$this->Auth->user('id'));
         if (    $this->request->action === 'view'
-            ||  $this->request->action === 'edit') {
-            if (strpos('admin ', $user['role']) !== false){
+            ||  $this->request->action === 'edit'
+            ||  $this->request->action === 'delete'
+            ||  $this->request->action === 'indexAdmin'
+            ) {
+            if (strpos('manager owner', $role) !== false){
                 return true;
             }
         }
         return parent::isAuthorized($user);
     }
 }
-
-
-

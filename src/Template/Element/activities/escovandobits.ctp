@@ -11,6 +11,7 @@
   <p>
     O Escovando Bits é para você que tem algum projeto, pesquisa ou conhecimento técnico em temas na área de TI e quer <strong>compatilhar</strong> com a comunidade!
     <br>O ENTEC 2017 disponibiliza uma seção para que os participantes possam apresentar seus trabalhos, atividades e curiosidades na área de informática nas seguintes trilhas: Software Livre, Desenvolvimento, Segurança, Robótica, Educação e Inclusão Digital, Mercado e Corporativo.
+    <br> Prazo de submissão até 19 de Junho (segunda-feira)
   </p>
   <h5 class="text-center">
     <a href="#" data-toggle="modal" data-target="#modal_escovandobits">

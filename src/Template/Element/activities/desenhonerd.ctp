@@ -4,7 +4,7 @@
 
 <div class="text-justify">
 
-<h2 class="text-center">CONCURSO DE DESENHO NERD</h2>
+<h2 class="text-center"><i class="fa fa-paint-brush"></i>CONCURSO DE DESENHO NERD</h2>
 <img src="img/desenhonerd-800.jpg" alt="">
   <p>
     Nem só de código fonte e a luz dos terminais vivem os nerds! Mostre as suas habilidades artísticas no concurso de desenho nerd do ENTEC 2017. Este desafio é aberto para todos os participantes e ocorrerá durante os dois dias do ENTEC 2017...

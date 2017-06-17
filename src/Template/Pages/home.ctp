@@ -194,7 +194,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             'year' => '2017',
             'photo' => 'simone_210x210.png',
             'about' => [
-              'Simone Amorin' => 'Software engineer que largou tudo em prol do amor pelo desenvolvimento Front-End em especial CSS. Atualmente vem atuando como CSS Evangelist e mesmo com pouco tempo de estudo já consegue impactar milhares de pessoal no Brasil. Além disso é uma WWCode Leader, organização mundial com a missão de fomentar o conhecimento de tecnologia para mulheres e incentivá-las a ingressar nessa área.'
+              'Simone Amorin' => 'Software engineer que largou tudo em prol do amor pelo desenvolvimento Front-End em especial CSS. Atualmente vem atuando como CSS Evangelist e mesmo com pouco tempo de estudo já consegue impactar milhares de pessoas no Brasil. Além disso é uma WWCode Leader, organização mundial com a missão de fomentar o conhecimento de tecnologia para mulheres e incentivá-las a ingressar nessa área.'
             ],
             'activity' => [
               'type' => 'Workshop',
@@ -360,10 +360,32 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             ],
             'activity' => [
               'type' => 'Palestra',
-              'title' => 'Fábrica de Software',
-              'desc' => ''
+              'title' => 'Cycle Dev: Uma Fábrica de Software no Sertão Pernambucano
+',
+              'desc' => 'Cycle Dev é um grupo de fábrica de software do município de Floresta. A ideia surgiu no intuito de vivenciar a realidade profissional e as necessidades do mercado dentro do universo de ensino. Em menos de um ano, já temos dois clientes firmados e um software implementado já em utilização. Na palestra, falaremos um pouco das demandas e desafios que temos enfrentado no dia a dia mostrando que é possível surpreender e inovar apesar das limitações.
+'
               ],
             'email' => 'felipe.alves@ifsertao-pe.edu.br'
+            ]
+        )
+      ?>
+
+      <?=
+        $this->element('home/participante', [
+            'name' => 'Denys Alexandre B. da Silva',
+            'company' => 'IFRN/Currais Novos',
+            'year' => '2017',
+            'photo' => 'denys_210x210.jpg',
+            'about' => [
+              'Denys Alexandre B. da Silva' => '
+             Possui graduação em Tecnólogo em Processamento de Dados - Associação Paraibana de Ensino Renovado (2005) e Especialização em Gestão da Segurança da Informação pelo CEFET-PB e UFCG (2007). Desempenhou o papel de Gerente de Suporte atuando na gerência e administração do Sistemas Operacionais Abertos e Proprietários e na administração de redes de computadores por mais de 6 anos. Possui experiência em Administração de Redes e Sistemas Operacionais. Atualmente é Professor efetivo no IFRN (Campus Currais Novos), ministrando aulas nos cursos de Técnico em Informática (Subsequente e Integrado) e Superior em Sistemas para Internet. Mestrando na área de Computação Distribuída no PPGI - Programa de Pós-Graduação em Informática na Universidade Federal da Paraíba.'
+            ],
+            'activity' => [
+              'type' => 'Mini-curso',
+              'title' => 'Entendendo a exploração de vulnerabilidades em ambiente computacional.',
+              'desc' => 'A exploração de vulnerabilidades cibernéticas é cada vez mais comum nos dias atuais, entender como esses eventos são descobertos e acontecem é o primeiro passo para criar-se um mecanismo de defesa. Esse minicurso tem a finalidade de introduzir como esses eventos são difundidos pela rede, o passo a passo de uma exploração de vulnerabilidade e quais os mecanismos de defesa que um usuário final pode utilizar para defender-se.'
+              ],
+            'email' => 'denys.silva@ifrn.edu.br'
             ]
         )
       ?>

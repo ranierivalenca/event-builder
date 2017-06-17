@@ -104,11 +104,11 @@ class UsersController extends AppController
                 $recoverycode->code = md5(time());;
                 if($this->Recoverycodes->save($recoverycode)){
                     $email = new Email('default');
-                    $email->from(['entec.ifpe.igarassu@gmail.com' => 'EnTec 2017'])
+                    $email->from(['entec.ifpe.igarassu@gmail.com' => 'ENTEC 2017'])
                             ->emailFormat('html')
                             ->to(strtolower($user->email))
                             ->template('default','codigo_recuperacao')
-                            ->subject('[EnTec 2017] Recuperação de senha')
+                            ->subject('[ENTEC 2017] Recuperação de senha')
                             ->viewVars(['nome' => $user->nome,'recovery_link' => 'http://entec.ifpe.edu.br/users/edit-password/'.$user->id.'/'.$recoverycode->code])
                             ->attachments(array(
                                     'header_email.png' => array(
@@ -218,11 +218,11 @@ class UsersController extends AppController
                 //$this->Flash->default(__($user->nome.', a sua inscrição está pendente de validação. Em instantes você receberá um e-mail para '.$user->email.' com instruções para a validação. '));
 
                 $email = new Email('default');
-                $email->from(['entec.ifpe.igarassu@gmail.com' => 'EnTec 2017'])
+                $email->from(['entec.ifpe.igarassu@gmail.com' => 'ENTEC 2017'])
                 ->emailFormat('html')
                 ->to(strtolower($user->email))
                 ->template('default','confirma_insc')
-                ->subject('[EnTec 2017] Inscrição pendente de validação')
+                ->subject('[ENTEC 2017] Inscrição pendente de validação')
                 ->viewVars(['nome' => $user->nome,'activation_link' => 'http://entec.ifpe.edu.br/users/activate/'.$user->id.'/'.$user->activation_code])
                 ->attachments(array(
                         'header_email.png' => array(
@@ -306,6 +306,8 @@ class UsersController extends AppController
                 $event = $this->Registrations->find()->where(['user_id' => $user['id'], 'event_id' => '2'])->first();
                 if($event) $user['isInscrito'] = true;
                 else $user['isInscrito'] = false;
+
+                
                 $this->Auth->setUser($user);
                 return $this->redirect($this->Auth->redirectUrl());
             }
@@ -329,11 +331,11 @@ class UsersController extends AppController
             $this->Users->updateAll(['ativo' => 1], ['id' => $user_id]);
 
             $email = new Email('default');
-            $email->from(['entec.ifpe.igarassu@gmail.com' => 'EnTec 2017'])
+            $email->from(['entec.ifpe.igarassu@gmail.com' => 'ENTEC 2017'])
             ->emailFormat('html')
             ->to(strtolower($user->email))
             ->template('default','insc_sucesso')
-            ->subject('[EnTec 2017] Inscrição confirmada')
+            ->subject('[ENTEC 2017] Inscrição confirmada')
             ->viewVars(['nome' => $user->nome,'ninscricao' => $user->id])
             ->attachments(array(
                     'header_email.png' => array(
@@ -368,6 +370,7 @@ class UsersController extends AppController
                 return true;
             }
         }
+
 
         if ($this->request->action === 'view' || $this->request->action === 'userData') {
             if(isset($this->request->params['pass'][0])){

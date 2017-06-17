@@ -40,7 +40,7 @@ class PapersController extends AppController
     public function index()
     {
         $register = $this->Registrations->find()->select('role')->where(['user_id' => $this->Auth->user('id'),'event_id' => 2]);
-        if (strpos('admin', $this->Auth->user('role') !== false || strpos('manager', $register['role']) !== false)){
+        if (strpos('admin', $this->Auth->user('role') !== false || strpos('manager owner', $register['role']) !== false)){
                 $papers = $this->Papers;
         }else{
             $papers = $this->Papers->find()->where(['user_id' => $this->Auth->user('id')])->contain('Users') ;
