@@ -39,10 +39,10 @@
         <col style="width: 10% ;"/>
         <col style="width: 10% ;"/>
         <tr>
-            <th >Nº</th>
-            <th >Nome</th>
-            <th >Criado</th>
-            <th  >Ações</th>
+            <th>Nº</th>
+            <th>Nome</th>
+            <th>Papel</th>
+            <th>Ações</th>
             <th style="text-align:center;">Status</th>
             <th style="text-align:center;">Credenciado</th>
         </tr>
@@ -52,8 +52,12 @@
             <tr style="border: 1px solid #ddd;">
                 <td><?= $registration->user->id ?></td>
                 <td><?= $registration->user->nome ?></td>               
-                <td > <?= $registration->created->format('d/m/Y - H:i:s')?> </td> 
-                <td></td>
+                <td > 
+                <?= $this->Html->link($registration->role.'<i class="fa fa-pencil"></i>', ['action' => 'editRole', $registration->event_id,  $registration->user_id], ['escape' => false]) ?> 
+                </td>
+                  
+                <td> 
+
                 
                 <td style="text-align:center;">
                     <div  style="<?php echo $registration->user->ativo ? 'background-color:#b3ffb3;':'background-color:#ddd;';?>  width: 40px; height: 40px; line-height: 40px; margin:auto; border: 0px; border-radius: 6px;font-size: 1.5em; text-align:center;">

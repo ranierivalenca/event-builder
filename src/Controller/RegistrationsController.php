@@ -16,8 +16,8 @@ class RegistrationsController extends AppController
     {
         parent::beforeFilter($event);
 
-        $this->Auth->allow(['indexPaginate']);
-        $this->Auth->deny(['register', 'welcome']);
+        $this->Auth->allow();
+        $this->Auth->deny(['register', 'welcome','index','editRole']);
     }
 
     /**
@@ -145,23 +145,21 @@ class RegistrationsController extends AppController
      * @return \Cake\Network\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
+    public function editRole($event_id = null, $user_id = null)
     {
-        $registration = $this->Registrations->get($id, [
-            'contain' => []
-        ]);
+        $registration = $this->Registrations->find()->where(['event_id' => $event_id, 'user_id' => $user_id])->contain(['Users'])->first();
+
         if ($this->request->is(['patch', 'post', 'put'])) {
             $registration = $this->Registrations->patchEntity($registration, $this->request->data);
             if ($this->Registrations->save($registration)) {
-                $this->Flash->success(__('The registration has been saved.'));
+                $this->Flash->success(__('Papel Atualizado!'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The registration could not be saved. Please, try again.'));
+            $this->Flash->error(__('Aconteceu algum erro a inscrição não foi alterada!'));
         }
-        $users = $this->Registrations->Users->find('list', ['limit' => 200]);
-        $events = $this->Registrations->Events->find('list', ['limit' => 200]);
-        $this->set(compact('registration', 'users', 'events'));
+        
+        $this->set(compact('registration'));
         $this->set('_serialize', ['registration']);
     }
 
@@ -185,6 +183,8 @@ class RegistrationsController extends AppController
         return $this->redirect(['action' => 'index']);
     }
 
+    
+
 
     public function isAuthorized($user)
     {
@@ -195,6 +195,15 @@ class RegistrationsController extends AppController
 
 
         if ($this->request->action === 'index' ) {
+            $eventId = (int)$this->request->getParam('pass.0');            
+            $userEventRole = $this->Registrations->getUserEventRole($eventId, $user['id']);
+            
+            if ( strpos('owner manager', $userEventRole) !== false){
+                return true;
+            }
+        }
+
+        if ($this->request->action === 'editRole' ) {
             $eventId = (int)$this->request->getParam('pass.0');            
             $userEventRole = $this->Registrations->getUserEventRole($eventId, $user['id']);
             
