@@ -14,21 +14,9 @@
 <h2>Inscritos <small> Total válidas: <?= $count ?></small></h2> 
 <div  class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1" style="padding: 0;">
 
-    <div  style="width:100%;  text-align: center; background-color: #ddd;">
-        <?php echo $this->Html->link('<i class="fa fa-file-excel-o fa-2x"> Certificados Participante</i>',array('controller'=>'users','action'=>'certificadoParticipante'), array('class'=>'btn btn-default btn-sm col-xs-4', 'escape' => false));?>
+    
+
         
-
-        <?php echo $this->Html->link('<i class="fa fa-file-excel-o fa-2x"> Certificados Minicursos</i>',array('controller'=>'users','action'=>'certificadoOuvinteMinicurso'), array('class'=>'btn btn-default btn-sm col-xs-4', 'escape' => false));?>  
-    </div>  
-
-        <div style="width: 100%; text-align: center; ">
-            <div style="width: 16%;float: left;"><i class="fa fa-fw fa-search"></i><br>Visualizar</div>
-            <div style="width: 16%;float: left;"><i class="fa fa-fw fa-pencil-square-o"></i><br>Editar </div>
-            <div style="width: 16%;float: left;"><i class="fa fa-fw fa-trash"> </i><br>Remover</div>
-            <div style="width: 16%;float: left;"><i class="fa fa-fw fa-check"> </i><br>Email validado</div>
-            <div style="width: 16%;float: left;"><i class="fa fa-fw fa-flag-checkered"> </i><br>Credenciado</div>
-            <div style="width: 16%;float: left;"><i class="fa fa-fw fa-print"> </i><br>Imprimir certificado</div>
-        </div>
 
     <table style="width: 100%;"> 
         <col style="width: 5% ;"/>

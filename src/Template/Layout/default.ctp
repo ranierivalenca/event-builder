@@ -268,6 +268,31 @@ $cakeDescription = Configure::read('Event.name');
                         <ul class="dropdown-menu inverse-dropdown">
                         <li class="dropdown-header"><?= $loguser ['username'] ?></li>
 
+                        
+
+                        <?php if(strpos('owner manager ', $loguser['entecrole']) !== false){?>
+                        <li role="separator" class="divider"></li>
+
+                        <li>
+                            <?php
+                            echo $this->Html->link ( 'Lista Escovando Bits', array (
+                                'controller' => 'proposals',
+                                'action' => 'index_admin'), array('escape' => false) );
+                            ?>
+                        </li>
+
+                        <li>
+                            <?php
+                            echo $this->Html->link ( 'Lista Inscritos', array (
+                                'controller' => 'registrations',
+                                'action' => 'index'), array('escape' => false) );
+                            ?>
+                        </li>
+
+
+                        <?php } ?>
+
+
                         <li role="separator" class="divider"></li>
                         <li>
                             <?php
@@ -286,6 +311,11 @@ $cakeDescription = Configure::read('Event.name');
                             ), array ('escape' => false ) );
                         ?>
                         </li>
+                        
+
+
+
+
                       </ul>
                     </li>
 
