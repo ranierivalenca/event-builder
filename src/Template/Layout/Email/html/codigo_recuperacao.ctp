@@ -26,7 +26,8 @@
             <p>Olá <?= $nome ?>,</p>
 
             <p>você realizou um pedido de recuperação de senha.</p>
-            <p>Clique no link para criar uma nova senha: <br><?= $recovery_link ?></p>
+            <p>Clique no link para criar uma nova senha: <a href="<?= $recovery_link ?>" target="_blank">Aqui</a></p>
+            <p>(Se o link não estiver disponível, copie e cole este caminho na sua barra de endereço: <?= $recovery_link ?>)</p>
             <p>Este link ficará disponível por 48 horas.</p>
             <hr style="border:none;color:#909090;background-color:#b0b0b0;min-height:1px;width:99%">
             <p>II Encontro de Tecnologia da Informação do IFPE - EnTec 2017
