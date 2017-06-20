@@ -223,7 +223,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
       <?=
         $this->element('home/participante', [
             'name' => 'Talita Oliveira',
-            'company' => 'JC Online',
+            'company' => 'Sistema Jornal do Comércio de Comunicação',
             'year' => '2017',
             'photo' => 'talita_210x210.png',
             'about' => [
@@ -287,8 +287,8 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             'photo' => 'abdala_210x210.png',
             'about' => [
               'Abdala Cerqueira' => '
-              Pai de três, marido de uma e feliz proprietário de um fusca 69. 
-              <br>Tem leve tendências a passar o dia escrevendo e lendo códigos. 
+              Pai de três, marido de uma e feliz proprietário de um fusca 69.
+              <br>Tem leve tendências a passar o dia escrevendo e lendo códigos.
               <br>Apaixonado pela filosofia software livre, adora comunidades e liberdade. '
             ],
             'activity' => [
@@ -328,11 +328,11 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
               <br>Mediador
               <br>Ramon Mota
               <br><strong>Convidados</strong>
-              
+
                 <br>Leandro Almeida
                 <br>Diógenes de Souza Leão Filho
                 <br>Marco Eugênio
-              
+
 
               '
             ],
@@ -458,7 +458,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             </h5>
           </div>
 
-          
+
             <div class="col-md-12"><hr></div>
             <div class="col-md-2">
               <h5><strong>12:00h às 13:00h</strong></h5>
@@ -468,7 +468,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                 Intervalo para Almoço <span class="where"> (Hall) </span>
               </h5>
             </div>
-          
+
           <div class="col-md-12"><hr></div>
           <div class="col-md-2">
             <h5><strong>13:00h às 15:00h</strong></h5>
@@ -541,12 +541,12 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
               Games <span class="where"> (Corredor, Espaço Nerd)</span>
             </h5>
             <p>
-              Espaço Nerd, com consoles rodando emuladores e jogos modernos (Mortal Kombat X, FIFA 2016, Just Dance) 
+              Espaço Nerd, com consoles rodando emuladores e jogos modernos (Mortal Kombat X, FIFA 2016, Just Dance)
             </p>
           </div>
-        
+
         </div>
-        
+
       </div>
       <div class="container">
         <div class="row">
@@ -555,7 +555,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
         </div>
         <div class="row">
-        
+
         <div class="col-md-2">
           <h5><strong>8:00h às 9:00h</strong></h5>
         </div>
@@ -596,9 +596,9 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             Minicurso: <strong>Entendendo a exploração de vulnerabilidades em ambiente computacional</strong> - Denys Alexandre B. da Silva<span class="where"> (Laboratório) </span>
           </h5>
         </div>
-        
 
-                
+
+
 
         <div class="col-md-12"><hr></div>
         <div class="col-md-2">
@@ -671,7 +671,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
               Games <span class="where"> (Corredor, Espaço Nerd)</span>
             </h5>
             <p>
-              Espaço Nerd, com consoles rodando emuladores e jogos modernos (Mortal Kombat X, FIFA 2016, Just Dance) 
+              Espaço Nerd, com consoles rodando emuladores e jogos modernos (Mortal Kombat X, FIFA 2016, Just Dance)
             </p>
           </div>
         </div>
@@ -739,7 +739,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
       <div  class="col-xs-12 col-md-8 col-md-offset-2">
         <?=$this->element('activities/quiznerd') ?>
       </div>
-      
+
     </div>
   </div>
 </div>
@@ -751,7 +751,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
       <div  class="col-xs-12 col-md-8 col-md-offset-2">
         <?=$this->element('activities/desenhonerd') ?>
       </div>
-      
+
     </div>
   </div>
 </div>
