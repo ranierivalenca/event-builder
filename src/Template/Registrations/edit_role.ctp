@@ -1,3 +1,4 @@
+
 <?= $this->assign('title', 'ENTEC 2017 - Editar dados de usuário'); ?>
 
 <div class="container" style="margin-bottom: 40px; " id="insc">
@@ -11,6 +12,8 @@
     <fieldset>
         <legend><?= __('Editar Papel') ?></legend>
         <?php
+            echo $this->Form->control('checkin');
+            echo $this->Form->control('certificate');
             echo $this->Form->control ('role', array ('class' => 'form-control', 'label' => 'Papel', 'options' => ['owner' => 'owner' , 'manager' => 'manager', 'supervisor' => 'supervisor', 'speaker' => 'speaker', 'participant' => 'participant'] ));
         ?>
     </fieldset>

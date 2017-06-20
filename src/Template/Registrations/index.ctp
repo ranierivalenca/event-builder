@@ -2,6 +2,7 @@
 /**
   * @var \App\View\AppView $this
   */
+$loguser = $this->request->session ()->read ( 'Auth.User' );
 ?>
 
 <!-- src/Template/Users/index.ctp -->
@@ -39,9 +40,19 @@
             
             <tr style="border: 1px solid #ddd;">
                 <td><?= $registration->user->id ?></td>
-                <td><?= $registration->user->nome ?></td>               
+                <td>
+                    
+                    <?= $this->Html->link($registration->user->nome .'<i class="fa fa-pencil"></i>', ['controller'=>'users', 'action' => 'edit', $registration->user_id], ['escape' => false]) ?> 
+                </td>               
                 <td > 
-                <?= $this->Html->link($registration->role.'<i class="fa fa-pencil"></i>', ['action' => 'editRole', $registration->event_id,  $registration->user_id], ['escape' => false]) ?> 
+                <?php 
+                if(strpos('owner', $loguser['entecrole']) !== false){
+                    echo $this->Html->link($registration->role.'<i class="fa fa-pencil"></i>', ['action' => 'editRole', $registration->event_id,  $registration->user_id], ['escape' => false]); 
+                }else{
+                    echo $registration->role;
+                }
+
+                    ?> 
                 </td>
                   
                 <td> 

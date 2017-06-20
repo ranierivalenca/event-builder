@@ -12,6 +12,11 @@ use Cake\Mailer\Email;
 class RegistrationsController extends AppController
 {
 
+    public function initialize(){
+        parent::initialize();
+        $this->loadModel('Users');
+    }
+
      public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
@@ -38,9 +43,7 @@ class RegistrationsController extends AppController
 
     public function index($event_id = 2)
     {
-        $this->paginate = [
-            'contain' => ['Users']
-        ];
+        
         $count = $this->Registrations->find()->where(['event_id' => $event_id])->count();
         $registrations = $this->Registrations->find()->where(['event_id' => $event_id])->contain(['Users']);
 
@@ -135,7 +138,29 @@ class RegistrationsController extends AppController
 
     }
 
-    
+    public function checkin($event_id = 2)
+    {
+
+        $count = $this->Registrations->find()->where(['event_id' => $event_id])->count();
+        
+        $count_in = $this->Registrations->find()->where(['event_id' => $event_id,'checkin' => '1'])->count();
+
+        $registrations = $this->Registrations->find()->where(['event_id' => $event_id])->contain(['Users']);
+                                       ;
+
+        $this->paginate = array(
+                'limit' => 900,
+                'order' => array(
+                        'nome' => 'asc'
+                )
+        );
+        $registrations = $this->paginate($registrations);
+        $this->set(compact('registrations'));
+        $this->set('_serialize', ['registrations']);
+        
+        $this->set('count', $count);
+        $this->set('count_in', $count_in);
+    }
 
 
     /**
@@ -181,6 +206,22 @@ class RegistrationsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function checkinajax( $user_id)
+    {
+        $event_id=2;
+        $this->Flash->error(__('Entrou checkin'));
+        $this->Flash->error(__('Entrou checkin'));
+        $registration = $this->Registrations->find()->where(['event_id' => $event_id, 'user_id' => $user_id])->first();
+        if($registration->checkin){
+            $this->Registrations->updateAll(['checkin' => 0], ['user_id' => $user_id, 'event_id' => $event_id]);
+        }else{
+            $this->Registrations->updateAll(['checkin' => 1], ['user_id' => $user_id, 'event_id' => $event_id]);
+        }
+
+        return $this->redirect($this->referer());
+        
     }
 
     

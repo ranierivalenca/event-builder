@@ -195,68 +195,7 @@ $cakeDescription = Configure::read('Event.name');
                     ?>
                     </li> -->
 
-                    <!-- <li><a href="#insc" id="insc-link"><i class="fa fa-lg fa-pencil"></i> -->
-                    <!--                            Inscrições</a></li> -->
-                    <!-- $this->Html->italic('',['class' => 'fa fa-lg fa-pencil']) -->
-                    <!--
-                    <li><?php
-                    if ($loguser) {
-
-                        echo $this->Html->link ( '<i class="fa fa-lg fa-pencil"></i> '.' Minha Inscrição', array (
-                                'controller' => 'users',
-                                'action' => 'view',
-                                $loguser ['id']
-                        ), array('escape' => false) );
-                    }else{
-                        echo $this->Html->link ( '<i class="fa fa-lg fa-pencil"></i>' . ' Inscrições', [
-                                'controller' => 'users',
-                                'action' => 'add'
-                        ], array (
-                                'escape' => false,
-                                'id' => 'insc-link'
-                        ) );
-                    }
-                    ?></li>
-                    -->
-                    <li><?php
-                    if (strpos('admin', $loguser ['role']) !== false) {
-                        echo $this->Html->link ( '<i class="fa fa-lg fa-fw fa-cog"></i> '.' Gerenciar', array (
-                                'controller' => 'users',
-                                'action' => 'index'
-                        ), array('escape' => false) );
-                    }
-                    ?></li>
-
-                    <li><?php
-                    if (strpos('admin', $loguser ['role']) !== false) {
-                        echo $this->Html->link ( '<i class="fa fa-lg fa-fw fa-certificate"></i> '.' Certificados', array (
-                                'controller' => 'users',
-                                'action' => 'certificados'
-                        ), array('escape' => false) );
-                    }
-                    ?></li>
-
-                    <li><?php
-                    if (strpos('admin supervisor', $loguser ['role']) !== false) {
-                        echo $this->Html->link ( '<i class="fa fa-lg fa-fw fa-tags"></i> '.' Credenciamento', array (
-                                'controller' => 'users',
-                                'action' => 'credenciamento'
-                        ), array('escape' => false) );
-                    }
-                    ?></li>
-
-                    <li><?php
-                    if (strpos('admin supervisor', $loguser ['role']) !== false) {
-                        echo $this->Html->link ( '<i class="fa fa-lg fa-fw fa-graduation-cap"></i> '.' Minicursos', array (
-                                'controller' => 'minicursos',
-                                'action' => 'index'
-                        ), array('escape' => false) );
-                    }
-                    ?></li>
-
-
-
-
+                    
 
                     <?php
                         if ($loguser) {
@@ -272,10 +211,10 @@ $cakeDescription = Configure::read('Event.name');
 
                         <?php if(strpos('owner manager ', $loguser['entecrole']) !== false){?>
                         <li role="separator" class="divider"></li>
-
+                        <li class="dropdown-header">Administrar...</li>
                         <li>
                             <?php
-                            echo $this->Html->link ( 'Lista Escovando Bits', array (
+                            echo $this->Html->link ( '<i class="fa fa-lg fa-linux"></i>' .' Lista Escovando Bits', array (
                                 'controller' => 'proposals',
                                 'action' => 'index_admin'), array('escape' => false) );
                             ?>
@@ -283,9 +222,23 @@ $cakeDescription = Configure::read('Event.name');
 
                         <li>
                             <?php
-                            echo $this->Html->link ( 'Lista Inscritos', array (
+                            echo $this->Html->link ( '<i class="fa fa-lg fa-users"></i>' .' Lista Inscritos', array (
                                 'controller' => 'registrations',
                                 'action' => 'index'), array('escape' => false) );
+                            ?>
+                        </li>
+
+
+                        <?php } ?>
+
+                        <?php if(strpos('owner manager superisor', $loguser['entecrole']) !== false){?>
+                        
+                        
+                        <li>
+                            <?php
+                            echo $this->Html->link ( '<i class="fa fa-lg fa-tags"></i>'.' Credenciamento', array (
+                                'controller' => 'registrations',
+                                'action' => 'checkin'), array('escape' => false) );
                             ?>
                         </li>
 

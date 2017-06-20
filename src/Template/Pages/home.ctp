@@ -87,9 +87,9 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
               'Raquel Lira' => 'Professora de Gestão e Negócios do Instituto Federal de Pernambuco - IFPE, Campus Igarassu. Graduada e Mestre em Administração (PROPAD/UFPE). Atualmente, está engajada no ensino de ferramentas de gestão voltadas para inovação e empreendedorismo. É pesquisadora das temáticas que envolvem Políticas Públicas, Economia Criativa e Empreendedorismo.'
             ],
             'activity' => [
-              'type' => 'Mini-curso',
+              'type' => 'Minicurso',
               'title' => 'Ensinamentos Jedi para Gestão de Equipes',
-              'desc' => 'O que podemos aprender com ensinamentos da \'ordem Jedi\' para o mundo das empresas? O mini-curso tratará do assunto relacionando-o com falas dos mestres da \'ordem\' para lidar com o universo das organizações, das startups e dos desafios que enfrentamos em tempos sombrios. Conviver com a diversidade de opiniões, com diferente tipos de pessoas, culturas, povos e línguas. O foco é trabalhar aspectos individuais do comportamento dos participantes na suas relações com os colegas de trabalho. A \'brincadeira\' visa aproximar o universo estranho das organizações à realidade de programadores, desenvolvedores em outros tipos de profissionais em TI.'
+              'desc' => 'O que podemos aprender com ensinamentos da \'ordem Jedi\' para o mundo das empresas? O minicurso tratará do assunto relacionando-o com falas dos mestres da \'ordem\' para lidar com o universo das organizações, das startups e dos desafios que enfrentamos em tempos sombrios. Conviver com a diversidade de opiniões, com diferente tipos de pessoas, culturas, povos e línguas. O foco é trabalhar aspectos individuais do comportamento dos participantes na suas relações com os colegas de trabalho. A \'brincadeira\' visa aproximar o universo estranho das organizações à realidade de programadores, desenvolvedores em outros tipos de profissionais em TI.'
             ],
             'social' => [
               'twitter' => [
@@ -120,13 +120,9 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
               'Banana Digital' => 'A Banana Digital é um grupo especializado em Educação Tecnológica. Com lema "Aprender, Fazer, Mudar o Mundo!", planejamos novas maneiras de aprender de modo interativo e eficiente.'
             ],
             'activity' => [
-              'type' => 'Workshop & Hackaton',
-              'title' => 'HACK&LEARN: Workshop + Hackaton',
-              'desc' => 'Modelo de ensino desenvolvido para combinar elementos de HACKATONS e WORKSHOPS com o objetivo de introduzir PBL (Project Based Learning) em eventos de ensino de tecnologia. Esta edição do Hack&Learn terá como tema "Mundo dos Bots", portanto os participantes poderão desenvolver interfaces únicas através de "conversas" em plataformas como Messenger, Skype e Google Home.
-                <br> Assista o vídeo e saiba mais sobre o Hack&Learn:
-                <br>
-                <strong><a href="https://www.youtube.com/watch?v=tYE1hDW-84k" target="_blank">
-                 www.youtube.com/watch?v=tYE1hDW-84k</a></strong>'
+              'type' => 'Minicurso',
+              'title' => 'Aprendendo a Aprender',
+              'desc' => 'O minicurso aborda diversas estratégias de organização de projetos e de tempo para que os participantes possam definir seus próprios planos e realizá-los por conta própria. Seja isso passar no Vestibular ou aprender do zero a criar um site.'
             ],
             'sites' => [
               ['url' => 'michaelbarney.com'],
@@ -381,7 +377,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
              Possui graduação em Tecnólogo em Processamento de Dados - Associação Paraibana de Ensino Renovado (2005) e Especialização em Gestão da Segurança da Informação pelo CEFET-PB e UFCG (2007). Desempenhou o papel de Gerente de Suporte atuando na gerência e administração do Sistemas Operacionais Abertos e Proprietários e na administração de redes de computadores por mais de 6 anos. Possui experiência em Administração de Redes e Sistemas Operacionais. Atualmente é Professor efetivo no IFRN (Campus Currais Novos), ministrando aulas nos cursos de Técnico em Informática (Subsequente e Integrado) e Superior em Sistemas para Internet. Mestrando na área de Computação Distribuída no PPGI - Programa de Pós-Graduação em Informática na Universidade Federal da Paraíba.'
             ],
             'activity' => [
-              'type' => 'Mini-curso',
+              'type' => 'Minicurso',
               'title' => 'Entendendo a exploração de vulnerabilidades em ambiente computacional.',
               'desc' => 'A exploração de vulnerabilidades cibernéticas é cada vez mais comum nos dias atuais, entender como esses eventos são descobertos e acontecem é o primeiro passo para criar-se um mecanismo de defesa. Esse minicurso tem a finalidade de introduzir como esses eventos são difundidos pela rede, o passo a passo de uma exploração de vulnerabilidade e quais os mecanismos de defesa que um usuário final pode utilizar para defender-se.'
               ],
@@ -389,6 +385,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             ]
         )
       ?>
+
 
     </div>
   </div>
@@ -399,77 +396,13 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2 text-justify">
-      <br>
-        <h2 class="text-center">Mostra de Trabalho de Pesquisa e Extensão em Tecnologia</h2>
-        <p>
-          A <strong>Mostra de Trabalho de Pesquisa e Extensão em Tecnologia</strong> no ENTEC oferece aos professores, técnicos e alunos da área de TI a oportunidade de divulgar os seus projetos, receber feedback e realizar networking entre pesquisadores e extensionistas da área de TI.
-        </p>
-
-        <p>
-          A submissão de trabalhos deve ser feita através de um resumo contendo duas páginas sobre o projeto. Os projetos selecionados pela comissão acadêmica farão uma apresentação oral sobre o projeto com <strong>10 minutos</strong> de duração e <strong>5 minutos</strong> para perguntas.
-        </p>
-        <blockquote>
-          <ul>
-            <li>Modelo de Resumo:
-              <a target="blank" href="https://drive.google.com/file/d/0Bzj6EjHbV7WIRkthWEVqUXR1c0k/view?usp=sharing">.DOCX</a>
-            </li>
-            <li>Modelo de Apresentação:
-              <a target="blank" href="https://drive.google.com/file/d/0Bzj6EjHbV7WIQXJyNi1zTlJ1TDg/view?usp=sharing">.PPTX</a>
-            </li>
-          </ul>
-
-          <p>
-            Datas Importantes
-
-            <ul>
-              <li><strong>16 de Junho</strong> - Fim do prazo para entrega dos resumos</li>
-              <li><strong>18 de Junho</strong> - Divulgação dos trabalhos aceitos</li>
-              <li><strong>21 e 22 de Junho</strong> - Apresentação oral dos artigos</li>
-              <li><strong>30 de junho</strong> - Fim do prazo para entrega da versão final dos resumos (a ser publicada nos anais do evento).</li>
-              <li><strong>31 de Julho</strong> - Lançamento dos Anais no site do ENTEC.</li>
-            </ul>
-          </p>
-        </blockquote>
-
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2 col-sm-8  col-sm-offset-2 col-xs-8 col-xs-offset-2">
-            <button type="button" class="btn btn-block btn-primary dropdown-toggle" <?= is_null($loguser) ? 'disabled="disabled"' : ''?> data-toggle="dropdown">
-              Submissões  <span class="caret"></span>
-            </button>
-            <?php if (is_null($loguser)): ?>
-              <p class="text-small text-center text-danger" disabled>Faça <?=$this->Html->link('login', array('controller' => 'users', 'action'=> 'login'))?> para acessar o sistema de submissão</p>
-            <?php else: ?>
-              <ul class="dropdown-menu inverse-dropdown" role="menu">
-                <li>
-                  <?php
-                    echo $this->Html->link ( '<i class="fa fa-upload fa-lg"></i> '.' Enviar Artigo - (até 16/06)', array (
-                        'controller' => 'papers',
-                        'action' => 'add'), array('escape' => false, 'onclick' => 'return false') );
-                  ?>
-                </li>
-
-                <li>
-                  <?php
-                    echo $this->Html->link ( '<i class="fa fa-list fa-lg"></i> '.' Listar Meus Envios', array (
-                        'controller' => 'papers',
-                        'action' => 'index'), array('escape' => false) );
-                  ?>
-                </li>
-              </ul>
-            <?php endif ?>
-          </div>
-        </div>
-
-
-
-
-
-
+        <?=$this->element('activities/mostra') ?>
       </div>
     </div>
-
   </div>
 </div>
+
+
 
 <div class="section" id="program">
       <h1 class="text-center">Programação</h1>
@@ -542,7 +475,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-              Mini-curso: <strong>Disponibilidade em Redes Locais</strong> - Leandro Almeida <span class="where"> (Laboratório) </span>
+              Minicurso: <strong>Disponibilidade em Redes Locais</strong> - Leandro Almeida <span class="where"> (Laboratório) </span>
             </h5>
           </div>
 
@@ -562,7 +495,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-               <strong>Mostra Acadêmica - Seção 01</strong>  <span class="where"> (Sala) </span>
+               <strong>Mostra Acadêmica - Seção 01</strong>  <span class="where"> (Auditório) </span>
             </h5>
           </div>
 
@@ -628,17 +561,17 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </div>
         <div class="col-md-10">
           <h5>
-            Palestra: <i class="fa fa-hourglass-half" aria-hidden="true"></i>Em breve... -  <span class="where"> (Auditório) </span>
+            Palestra: <strong>Cycle Dev: Uma Fábrica de Software no Sertão Pernambucano</strong> - Felipe Alves <span class="where"> (Auditório) </span>
           </h5>
-          </div>
+        </div>
         <div class="col-md-12"><hr></div><div class="col-md-2">
           <h5><strong>9:00h às 10:00h</strong></h5>
         </div>
         <div class="col-md-10">
           <h5>
-            Palestra: <strong>Cycle Dev: Uma Fábrica de Software no Sertão Pernambucano</strong> - Felipe Alves <span class="where"> (Auditório) </span>
+            Palestra: <strong>O que é Composer e como aproveitá-lo</strong> - Abdala Cerqueira  <span class="where"> (Auditório) </span>
           </h5>
-          </div>
+        </div>
         <div class="col-md-12"><hr></div><div class="col-md-2">
           <h5><strong>10:00h às 11:00h</strong></h5>
         </div>
@@ -652,21 +585,20 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </div>
         <div class="col-md-10">
           <h5>
-            Palestra: <strong>O que é Composer e como aproveitá-lo</strong> - Abdala Cerqueira  <span class="where"> (Auditório) </span>
+            Palestra: <strong> Fabricação Digital e Fab Labs </strong> Cris Lacerda- Fab Lab Recife <span class="where"> (Auditório) </span>
           </h5>
-          </div>
-        
-
-        <div class="col-md-12"><hr></div>
-        <div class="col-md-2">
+        </div>
+        <div class="col-md-12"><hr></div><div class="col-md-2">
           <h5><strong>11:00h às 12:00h</strong></h5>
         </div>
         <div class="col-md-10">
           <h5>
-            Workshop: <strong>Hack&Learn - Parte 01</strong> - Michael Barney  <span class="where"> (Laboratório) </span>
+            Minicurso: <strong>Entendendo a exploração de vulnerabilidades em ambiente computacional</strong> - Denys Alexandre B. da Silva<span class="where"> (Laboratório) </span>
           </h5>
-          </div>
+        </div>
         
+
+                
 
         <div class="col-md-12"><hr></div>
         <div class="col-md-2">
@@ -674,7 +606,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </div>
         <div class="col-md-10">
           <h5>
-            Intervalo para Almoço <span class="where"> (Hall) </span>
+            Intervalo para Almoço <span class="where">  </span>
           </h5>
         </div>
         <div class="col-md-12"><hr></div>
@@ -683,7 +615,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </div>
         <div class="col-md-10">
           <h5>
-            Workshop: <strong>Hack&Learn - Parte 02</strong> - Michael Barney  <span class="where"> (Laboratório) </span>
+            Minicurso: <strong>Aprendendo a Aprender</strong> - Michael Barney  <span class="where"> (Laboratório) </span>
           </h5>
           </div>
 
@@ -693,7 +625,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-               Mini-curso <strong>Ensinamentos Jedi para Gestão de Equipes</strong> - Raquel Lira  <span class="where"> (Sala) </span>
+               Minicurso <strong>Ensinamentos Jedi para Gestão de Equipes</strong> - Raquel Lira  <span class="where"> (Sala) </span>
             </h5>
           </div>
 
@@ -703,7 +635,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-               <strong>Mostra Acadêmica - Seção 02</strong>  <span class="where"> (Sala) </span>
+               <strong>Mostra Acadêmica - Seção 02</strong>  <span class="where"> (Auditório) </span>
             </h5>
           </div>
 
