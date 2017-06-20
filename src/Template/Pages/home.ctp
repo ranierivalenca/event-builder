@@ -410,6 +410,32 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         )
       ?>
 
+      <?=
+        $this->element('home/participante', [
+            'name' => 'Cris Lacerda',
+            'company' => 'Fab Lab Recife',
+            'year' => '2017',
+            'photo' => 'crislacerda_210x210.jpg',
+            'about' => [
+              'Cris Lacerda' => '
+                Sócia e Estrategista de Ciência, Tecnologia e Inovação do Fab Lab Recife, é Designer de Produto e mestranda em Design, Tecnologia e Cultura pela UFPE. Atua em projetos de PD&I com uso de tecnologias de Fabricação Digital e processos colaborativos cidadãos na interface Academia & Mercado, articulando Design Transdisciplinar, Inovação Social e Inteligência Coletiva para a melhoria da qualidade de vida nas cidades. É membro da Rede Recife 500 Anos, fundadora do Movimento Mulheres Makers, produtora do TEDxRecife, organizadora do Startup Weekend Recife Smart Cities, membro da STEM To STEAM Organization e colaboradora da ABNT/ISO em Gestão de P&D em Inovação, sendo certificada em Intellectual Property Management pela WIPO e Human-Centered Design pela IDEO. 
+              '
+            ],
+            'activity' => [
+              'type' => 'Palestra',
+              'title' => 'A Fabricação Digital e os Fab Labs.',
+              'desc' => 'Nesta palestra, estudantes poderão compreender um pouco mais sobre a Revolução Digital e entrarão em contato com conceitos da Cultura Maker, aprendendo quais as principais técnicas e equipamentos da Fabricação Digital. Além disso, serão levados a conhecer as potencialidades da tecnologia e visualizar como transformar essas novas ferramentas em projetos inovadores e com propósito, por meio de exemplos de diversas inciativas desenvolvidas no Fab Lab Recife.'
+              ],
+            'email' => 'redes@fablabrecife.com '
+            ,
+            'site' => [
+              'url' => 'http://www.fablabrecife.com',
+              'title' => 'www.fablabrecife.com'
+            ]
+            ]
+        )
+      ?>
+
 
     </div>
   </div>
@@ -621,7 +647,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </div>
         <div class="col-md-10">
           <h5>
-            Palestra: <strong> Fabricação Digital e Fab Labs </strong> Cris Lacerda- Fab Lab Recife <span class="where"> (Auditório) </span>
+            Palestra: <strong> A Fabricação Digital e os Fab Labs </strong> Cris Lacerda- Fab Lab Recife <span class="where"> (Auditório) </span>
           </h5>
         </div>
        
