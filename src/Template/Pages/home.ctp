@@ -503,6 +503,15 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             </h5>
           </div>
 
+          <div class="col-md-12"><hr></div><div class="col-md-2">
+          <h5><strong>13:00h às 14:20h</strong></h5>
+        </div>
+        <div class="col-md-10">
+          <h5>
+            Minicurso: <strong>Entendendo a exploração de vulnerabilidades em ambiente computacional</strong> - Denys Alexandre B. da Silva<span class="where"> (Sala) </span>
+          </h5>
+        </div>
+
           <div class="col-md-12"><hr></div>
           <div class="col-md-2">
             <h5><strong>13:20h às 16:20h</strong></h5>
@@ -512,7 +521,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                <strong>Escovando Bits</strong>  <span class="where"> (Sala) </span>
             </h5>
           </div>
-
+           
           <div class="col-md-12"><hr></div>
           <div class="col-md-2">
             <h5><strong>13:30h às 16:00h</strong></h5>
@@ -536,7 +545,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
 
           <div class="col-md-12"><hr></div>
           <div class="col-md-2">
-            <h5><strong>13:00h às 15:00h</strong></h5>
+            <h5><strong>15:00h às 17:00h</strong></h5>
           </div>
           <div class="col-md-10">
             <h5>
@@ -554,6 +563,9 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                <strong>Torneio de League of Legends - 1º Rodada</strong>  <span class="where"> (Laboratório) </span>
             </h5>
           </div>
+
+          
+
 
           <div class="col-md-12"><hr></div>
 
@@ -612,14 +624,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             Palestra: <strong> Fabricação Digital e Fab Labs </strong> Cris Lacerda- Fab Lab Recife <span class="where"> (Auditório) </span>
           </h5>
         </div>
-        <div class="col-md-12"><hr></div><div class="col-md-2">
-          <h5><strong>11:00h às 12:00h</strong></h5>
-        </div>
-        <div class="col-md-10">
-          <h5>
-            Minicurso: <strong>Entendendo a exploração de vulnerabilidades em ambiente computacional</strong> - Denys Alexandre B. da Silva<span class="where"> (Laboratório) </span>
-          </h5>
-        </div>
+       
 
 
 
@@ -653,6 +658,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             </h5>
           </div>
 
+
           <div class="col-md-12"><hr></div>
           <div class="col-md-2">
             <h5><strong>13:30h às 16:00h</strong></h5>
@@ -663,10 +669,19 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             </h5>
           </div>
 
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>15:00h às 16:30h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+              Minicurso: <strong>Arte para Jogos</strong> - Ramony Evan <span class="where"> (Sala) </span>
+            </h5>
+          </div>
 
           <div class="col-md-12"><hr></div>
           <div class="col-md-2">
-            <h5><strong>13:00h às 15:00h</strong></h5>
+            <h5><strong>15:00h às 17:00h</strong></h5>
           </div>
           <div class="col-md-10">
             <h5>
@@ -822,18 +837,19 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </div>
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <div class="row">
-
-              <div class="col-md-6 col-md-offset-3">
-                <div class="row">
-                  <div class="col-md-6 col-md-offset-3">
-                    <img src="img/facig.png" alt="" class="img-rounded img-responsive">
-                  </div>
+            
+              <div class="row">
+                <div class="col-md-4 col-md-offset-0">
+                  <img src="img/vitarella_250x250-min.png" alt="" class="img-rounded img-responsive">
                 </div>
-              </div>
-
+                <div class="col-md-4 col-md-offset-0">
+                  <img src="img/facig.png" alt="" class="img-rounded img-responsive">
+                </div>
+                <div class="col-md-4 col-md-offset-0">
+                  <img src="img/soabraz_250_190-min.png" alt="" class="img-rounded img-responsive">
+                </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
+  </div>
