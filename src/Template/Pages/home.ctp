@@ -386,6 +386,30 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         )
       ?>
 
+      <?=
+        $this->element('home/participante', [
+            'name' => 'Ramony Evan',
+            'company' => 'Manifesto Games',
+            'year' => '2017',
+            'photo' => 'ramony_210x210.jpg',
+            'about' => [
+              'Ramony Evan' => '
+                Ilustradora e animadora digital, formada em Sistemas para Internet (Marista) e em Cinema de Animação (AESO), atualmente trabalhando com jogos na empresa Manifesto Games e cursando Gestão Ágil de Projetos (CESAR EDU).
+                <br>
+                Procura produzir arte - unindo ideias criativas, técnicas e pessoas para deixar ainda mais atrativo os projetos que desenvolve.
+              '
+            ],
+            'activity' => [
+              'type' => 'Minicurso',
+              'title' => 'Arte para Jogos',
+              'desc' => 'Esse curso irá abordar as várias áreas em Arte que contém o mercado de jogos.
+                <br>Daremos enfoque aos mais variados profissionais, áreas de conhecimento, processos de produção que são essenciais para o sucesso da criação de um jogo.'
+              ],
+            'email' => 'ramonyevan13@gmail.com'
+            ]
+        )
+      ?>
+
 
     </div>
   </div>
