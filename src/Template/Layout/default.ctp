@@ -242,6 +242,14 @@ $cakeDescription = Configure::read('Event.name');
                             ?>
                         </li>
 
+                         <li>
+                            <?php
+                            echo $this->Html->link ( '<i class="fa fa-graduation-cap" aria-hidden="true"></i>'.' Atividades', array (
+                                'controller' => 'minicursos',
+                                'action' => 'index'), array('escape' => false) );
+                            ?>
+                        </li>
+
 
                         <?php } ?>
 

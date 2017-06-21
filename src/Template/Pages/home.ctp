@@ -436,6 +436,27 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         )
       ?>
 
+      <?=
+        $this->element('home/participante', [
+            'name' => 'Denis Alustau',
+            'company' => '',
+            'year' => '2017',
+            'photo' => 'denisalustral_201x210.jpg',
+            'about' => [
+              'Denis Alustau' => '
+               Sou programador backend, trabalho home office para uma empresa norte-americana chamada Boatsetter, adoro fazer network e agregar novos conhecimentos e valores. 
+              '
+            ],
+            'activity' => [
+              'type' => 'Minicurso',
+              'title' => 'Laravel: Criando aplicações seguras com agilidade e beleza.',
+              'desc' => 'A proposta da oficina é demonstrar o Laravel, um dos frameworks PHP mais populares do mercado. Com uma comunidade em constante crescimento o Laravel fica cada vez mais popular devido a características como: facilidade de desenvolver aplicações seguras e performáticas de forma rápida, código limpo e simples, e com forte  incentivo ao uso de boas práticas de programação. O framework é construído em cima de vários componentes Symfony que garantem uma estrutura sólida para a produção de código bem testado e confiável.'
+              ]
+            
+            ]
+        )
+      ?>
+
 
     </div>
   </div>
@@ -618,6 +639,19 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             Palestra: <strong>Cycle Dev: Uma Fábrica de Software no Sertão Pernambucano</strong> - Felipe Alves <span class="where"> (Auditório) </span>
           </h5>
         </div>
+        
+        <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>8:30h às 10:30h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+              Workshop: <strong>Dominando CSS Layouts na prática com Grid Layout</strong> - Simone Amorin <span class="where"> (Laboratório) </span>
+            </h5>
+          </div>
+
+
+
         <div class="col-md-12"><hr></div><div class="col-md-2">
           <h5><strong>9:00h às 10:00h</strong></h5>
         </div>
@@ -626,15 +660,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             Palestra: <strong>O que é Composer e como aproveitá-lo</strong> - Abdala Cerqueira  <span class="where"> (Auditório) </span>
           </h5>
         </div>
-        <div class="col-md-12"><hr></div>
-          <div class="col-md-2">
-            <h5><strong>11:00h às 12:00h</strong></h5>
-          </div>
-          <div class="col-md-10">
-            <h5>
-              Workshop: <strong>Dominando CSS Layouts na prática com Grid Layout</strong> - Simone Amorin <span class="where"> (Laboratório) </span>
-            </h5>
-          </div>
+        
 
         <div class="col-md-12"><hr></div><div class="col-md-2">
           <h5><strong>10:00h às 11:00h</strong></h5>
@@ -644,6 +670,17 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             Palestra: <strong>Mulher na área de T.I.</strong> - Talita Oliveira <span class="where"> (Auditório) </span>
           </h5>
           </div>
+
+          <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>10:30h às 12:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+              Minicurso: <strong>Laravel: Criando aplicações seguras com agilidade e beleza.</strong> - Denis Alustau <span class="where"> (Laboratório) </span>
+            </h5>
+          </div>
+
         <div class="col-md-12"><hr></div><div class="col-md-2">
           <h5><strong>11:00h às 12:00h</strong></h5>
         </div>
