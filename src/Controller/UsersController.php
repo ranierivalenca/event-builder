@@ -371,6 +371,10 @@ class UsersController extends AppController
             if($user['role'] === 'admin'){
                 return true;
             }
+            $role = $this->Registrations->getUserEventRole(2,$this->Auth->user('id'));
+            if (strpos('manager owner', $role) !== false){
+                return true;
+            }
         }
 
 

@@ -498,15 +498,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
               Mesa de Redonda: <strong>Certificações na área de TI</strong> - Leandro Almeida, Marco Eugênio, Diógenes de Souza Leão Filho <span class="where"> (Auditório) </span>
             </h5>
           </div>
-          <div class="col-md-12"><hr></div>
-          <div class="col-md-2">
-            <h5><strong>11:00h às 12:00h</strong></h5>
-          </div>
-          <div class="col-md-10">
-            <h5>
-              Workshop: <strong>Dominando CSS Layouts na prática com Grid Layout</strong> - Simone Amorin <span class="where"> (Laboratório) </span>
-            </h5>
-          </div>
+          
 
 
             <div class="col-md-12"><hr></div>
@@ -634,6 +626,16 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             Palestra: <strong>O que é Composer e como aproveitá-lo</strong> - Abdala Cerqueira  <span class="where"> (Auditório) </span>
           </h5>
         </div>
+        <div class="col-md-12"><hr></div>
+          <div class="col-md-2">
+            <h5><strong>11:00h às 12:00h</strong></h5>
+          </div>
+          <div class="col-md-10">
+            <h5>
+              Workshop: <strong>Dominando CSS Layouts na prática com Grid Layout</strong> - Simone Amorin <span class="where"> (Laboratório) </span>
+            </h5>
+          </div>
+
         <div class="col-md-12"><hr></div><div class="col-md-2">
           <h5><strong>10:00h às 11:00h</strong></h5>
         </div>
