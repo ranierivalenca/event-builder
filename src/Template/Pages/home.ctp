@@ -418,7 +418,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             'photo' => 'crislacerda_210x210.jpg',
             'about' => [
               'Cris Lacerda' => '
-                Sócia e Estrategista de Ciência, Tecnologia e Inovação do Fab Lab Recife, é Designer de Produto e mestranda em Design, Tecnologia e Cultura pela UFPE. Atua em projetos de PD&I com uso de tecnologias de Fabricação Digital e processos colaborativos cidadãos na interface Academia & Mercado, articulando Design Transdisciplinar, Inovação Social e Inteligência Coletiva para a melhoria da qualidade de vida nas cidades. É membro da Rede Recife 500 Anos, fundadora do Movimento Mulheres Makers, produtora do TEDxRecife, organizadora do Startup Weekend Recife Smart Cities, membro da STEM To STEAM Organization e colaboradora da ABNT/ISO em Gestão de P&D em Inovação, sendo certificada em Intellectual Property Management pela WIPO e Human-Centered Design pela IDEO. 
+                Sócia e Estrategista de Ciência, Tecnologia e Inovação do Fab Lab Recife, é Designer de Produto e mestranda em Design, Tecnologia e Cultura pela UFPE. Atua em projetos de PD&I com uso de tecnologias de Fabricação Digital e processos colaborativos cidadãos na interface Academia & Mercado, articulando Design Transdisciplinar, Inovação Social e Inteligência Coletiva para a melhoria da qualidade de vida nas cidades. É membro da Rede Recife 500 Anos, fundadora do Movimento Mulheres Makers, produtora do TEDxRecife, organizadora do Startup Weekend Recife Smart Cities, membro da STEM To STEAM Organization e colaboradora da ABNT/ISO em Gestão de P&D em Inovação, sendo certificada em Intellectual Property Management pela WIPO e Human-Centered Design pela IDEO.
               '
             ],
             'activity' => [
@@ -444,7 +444,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
             'photo' => 'denisalustral_201x210.jpg',
             'about' => [
               'Denis Alustau' => '
-               Sou programador backend, trabalho home office para uma empresa norte-americana chamada Boatsetter, adoro fazer network e agregar novos conhecimentos e valores. 
+               Sou programador backend, trabalho home office para uma empresa norte-americana chamada Boatsetter, adoro fazer network e agregar novos conhecimentos e valores.
               '
             ],
             'activity' => [
@@ -452,7 +452,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
               'title' => 'Laravel: Criando aplicações seguras com agilidade e beleza.',
               'desc' => 'A proposta da oficina é demonstrar o Laravel, um dos frameworks PHP mais populares do mercado. Com uma comunidade em constante crescimento o Laravel fica cada vez mais popular devido a características como: facilidade de desenvolver aplicações seguras e performáticas de forma rápida, código limpo e simples, e com forte  incentivo ao uso de boas práticas de programação. O framework é construído em cima de vários componentes Symfony que garantem uma estrutura sólida para a produção de código bem testado e confiável.'
               ]
-            
+
             ]
         )
       ?>
@@ -489,7 +489,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-              Mesa de Abertura <span class="where"> (Auditório) </span>
+              Mesa de Abertura <span class="where"> (Auditório Mestre Yoda) </span>
             </h5>
           </div>
           <div class="col-md-12"><hr></div>
@@ -498,7 +498,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-              Palestra: <strong>Indústria 4.0 - O que significa e o que esperar</strong> - Rafael Melo Macieira
+              Palestra: <strong>Indústria 4.0 - O que significa e o que esperar</strong> - Rafael Melo Macieira (Auditório Mestre Yoda)
             </h5>
           </div>
           <div class="col-md-12"><hr></div>
@@ -507,7 +507,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-            Palestra: <strong>Segurança para Web Hosting</strong> - Romero Ayub <span class="where"> (Auditório) </span>
+            Palestra: <strong>Segurança para Web Hosting</strong> - Romero Ayub <span class="where"> (Auditório Mestre Yoda) </span>
             </h5>
           </div>
           <div class="col-md-12"><hr></div>
@@ -516,10 +516,10 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-              Mesa de Redonda: <strong>Certificações na área de TI</strong> - Leandro Almeida, Marco Eugênio, Diógenes de Souza Leão Filho <span class="where"> (Auditório) </span>
+              Mesa de Redonda: <strong>Certificações na área de TI</strong> - Leandro Almeida, Marco Eugênio, Diógenes de Souza Leão Filho <span class="where"> (Auditório Mestre Yoda) </span>
             </h5>
           </div>
-          
+
 
 
             <div class="col-md-12"><hr></div>
@@ -538,7 +538,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-              Minicurso: <strong>Disponibilidade em Redes Locais</strong> - Leandro Almeida <span class="where"> (Laboratório) </span>
+              Minicurso: <strong>Disponibilidade em Redes Locais</strong> - Leandro Almeida <span class="where"> (Sala Obi-Wan Kenobi) </span>
             </h5>
           </div>
 
@@ -547,7 +547,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </div>
         <div class="col-md-10">
           <h5>
-            Minicurso: <strong>Entendendo a exploração de vulnerabilidades em ambiente computacional</strong> - Denys Alexandre B. da Silva<span class="where"> (Sala) </span>
+            Minicurso: <strong>Entendendo a exploração de vulnerabilidades em ambiente computacional</strong> - Denys Alexandre B. da Silva<span class="where"> (Sala Anakin Skywalker) </span>
           </h5>
         </div>
 
@@ -557,17 +557,17 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-               <strong>Escovando Bits</strong>  <span class="where"> (Sala) </span>
+               <strong>Escovando Bits</strong>  <span class="where"> (Sala Anakin Skywalker) </span>
             </h5>
           </div>
-           
+
           <div class="col-md-12"><hr></div>
           <div class="col-md-2">
             <h5><strong>13:30h às 16:00h</strong></h5>
           </div>
           <div class="col-md-10">
             <h5>
-               <strong>Mostra Acadêmica - Seção 01</strong>  <span class="where"> (Auditório) </span>
+               <strong>Mostra Acadêmica - Seção 01</strong>  <span class="where"> (Auditório Mestre Yoda) </span>
             </h5>
           </div>
 
@@ -577,7 +577,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-                 <strong>Quiz Nerd - 1º Rodada</strong>  <span class="where"> (Espaço Nerd) </span>
+                 <strong>Quiz Nerd - 1º Rodada</strong>  <span class="where"> (Sala Luke Skywalker) </span>
             </h5>
           </div>
 
@@ -588,7 +588,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-               <strong>Concurso de Desenho Nerd - 1º Fase </strong>  <span class="where"> (Espaço Nerd) </span>
+               <strong>Concurso de Desenho Nerd - 1º Fase </strong>  <span class="where"> (Sala Luke Skywalker) </span>
             </h5>
           </div>
 
@@ -599,11 +599,11 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-               <strong>Torneio de League of Legends - 1º Rodada</strong>  <span class="where"> (Laboratório) </span>
+               <strong>Torneio de League of Legends - 1º Rodada</strong>  <span class="where"> (Sala Obi-Wan Kenobi) </span>
             </h5>
           </div>
 
-          
+
 
 
           <div class="col-md-12"><hr></div>
@@ -613,10 +613,10 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-              Games <span class="where"> (Corredor, Espaço Nerd)</span>
+              Games <span class="where"> (Corredor, Sala Luke Skywalker)</span>
             </h5>
             <p>
-              Espaço Nerd, com consoles rodando emuladores e jogos modernos (Mortal Kombat X, FIFA 2016, Just Dance)
+              Sala Luke Skywalker, com consoles rodando emuladores e jogos modernos (Mortal Kombat X, FIFA 2016, Just Dance)
             </p>
           </div>
 
@@ -636,17 +636,17 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </div>
         <div class="col-md-10">
           <h5>
-            Palestra: <strong>Cycle Dev: Uma Fábrica de Software no Sertão Pernambucano</strong> - Felipe Alves <span class="where"> (Auditório) </span>
+            Palestra: <strong>Cycle Dev: Uma Fábrica de Software no Sertão Pernambucano</strong> - Felipe Alves <span class="where"> (Auditório Mestre Yoda) </span>
           </h5>
         </div>
-        
+
         <div class="col-md-12"><hr></div>
           <div class="col-md-2">
             <h5><strong>8:30h às 10:30h</strong></h5>
           </div>
           <div class="col-md-10">
             <h5>
-              Workshop: <strong>Dominando CSS Layouts na prática com Grid Layout</strong> - Simone Amorin <span class="where"> (Laboratório) </span>
+              Workshop: <strong>Dominando CSS Layouts na prática com Grid Layout</strong> - Simone Amorin <span class="where"> (Sala Obi-Wan Kenobi) </span>
             </h5>
           </div>
 
@@ -657,17 +657,17 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </div>
         <div class="col-md-10">
           <h5>
-            Palestra: <strong>O que é Composer e como aproveitá-lo</strong> - Abdala Cerqueira  <span class="where"> (Auditório) </span>
+            Palestra: <strong>O que é Composer e como aproveitá-lo</strong> - Abdala Cerqueira  <span class="where"> (Auditório Mestre Yoda) </span>
           </h5>
         </div>
-        
+
 
         <div class="col-md-12"><hr></div><div class="col-md-2">
           <h5><strong>10:00h às 11:00h</strong></h5>
         </div>
         <div class="col-md-10">
           <h5>
-            Palestra: <strong>Mulher na área de T.I.</strong> - Talita Oliveira <span class="where"> (Auditório) </span>
+            Palestra: <strong>Mulher na área de T.I.</strong> - Talita Oliveira <span class="where"> (Auditório Mestre Yoda) </span>
           </h5>
           </div>
 
@@ -677,7 +677,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-              Minicurso: <strong>Laravel: Criando aplicações seguras com agilidade e beleza.</strong> - Denis Alustau <span class="where"> (Laboratório) </span>
+              Minicurso: <strong>Laravel: Criando aplicações seguras com agilidade e beleza.</strong> - Denis Alustau <span class="where"> (Sala Obi-Wan Kenobi) </span>
             </h5>
           </div>
 
@@ -686,10 +686,10 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </div>
         <div class="col-md-10">
           <h5>
-            Palestra: <strong> A Fabricação Digital e os Fab Labs </strong> Cris Lacerda- Fab Lab Recife <span class="where"> (Auditório) </span>
+            Palestra: <strong> A Fabricação Digital e os Fab Labs </strong> Cris Lacerda- Fab Lab Recife <span class="where"> (Auditório Mestre Yoda) </span>
           </h5>
         </div>
-       
+
 
 
 
@@ -709,7 +709,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </div>
         <div class="col-md-10">
           <h5>
-            Minicurso: <strong>Aprendendo a Aprender</strong> - Michael Barney  <span class="where"> (Laboratório) </span>
+            Minicurso: <strong>Aprendendo a Aprender</strong> - Michael Barney  <span class="where"> (Sala Obi-Wan Kenobi) </span>
           </h5>
           </div>
 
@@ -719,7 +719,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-               Minicurso <strong>Ensinamentos Jedi para Gestão de Equipes</strong> - Raquel Lira  <span class="where"> (Sala) </span>
+               Minicurso <strong>Ensinamentos Jedi para Gestão de Equipes</strong> - Raquel Lira  <span class="where"> (Sala Anakin Skywalker) </span>
             </h5>
           </div>
 
@@ -730,7 +730,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-               <strong>Mostra Acadêmica - Seção 02</strong>  <span class="where"> (Auditório) </span>
+               <strong>Mostra Acadêmica - Seção 02</strong>  <span class="where"> (Auditório Mestre Yoda) </span>
             </h5>
           </div>
 
@@ -740,7 +740,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-              Minicurso: <strong>Arte para Jogos</strong> - Ramony Evan <span class="where"> (Sala) </span>
+              Minicurso: <strong>Arte para Jogos</strong> - Ramony Evan <span class="where"> (Sala Anakin Skywalker) </span>
             </h5>
           </div>
 
@@ -750,7 +750,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-               <strong>Concurso de Desenho Nerd - 2º Fase</strong>  <span class="where"> (Espaço Nerd) </span>
+               <strong>Concurso de Desenho Nerd - 2º Fase</strong>  <span class="where"> (Sala Luke Skywalker) </span>
             </h5>
           </div>
 
@@ -761,7 +761,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-               <strong>Torneio de League of Legends - Finais</strong>  <span class="where"> (Laboratório) </span>
+               <strong>Torneio de League of Legends - Finais</strong>  <span class="where"> (Sala Obi-Wan Kenobi) </span>
             </h5>
           </div>
 
@@ -772,10 +772,10 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
           </div>
           <div class="col-md-10">
             <h5>
-              Games <span class="where"> (Corredor, Espaço Nerd)</span>
+              Games <span class="where"> (Corredor, Sala Luke Skywalker)</span>
             </h5>
             <p>
-              Espaço Nerd, com consoles rodando emuladores e jogos modernos (Mortal Kombat X, FIFA 2016, Just Dance)
+              Sala Luke Skywalker, com consoles rodando emuladores e jogos modernos (Mortal Kombat X, FIFA 2016, Just Dance)
             </p>
           </div>
         </div>
@@ -902,7 +902,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         </div>
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            
+
               <div class="row">
                 <div class="col-md-4 col-md-offset-0">
                   <img src="img/vitarella_250x250-min.png" alt="" class="img-rounded img-responsive">
