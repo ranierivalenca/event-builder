@@ -266,6 +266,14 @@ class UsersController extends AppController
             $user->username = $user->email;
             if ($this->Users->save ( $user )) {
                 $this->Flash->success ( __ ( 'Dados da inscrição atualizados com sucesso.' ) );
+
+                $role = $this->Registrations->getUserEventRole(2,$this->Auth->user('id'));
+                if (strpos('supervisor', $role) !== false){
+                    return $this->redirect ( [
+                        'controller' => 'registrations',
+                    'action' => 'checkin'
+                ] );
+                }
                 return $this->redirect ( [
                     'action' => 'userData', $user->id
                 ] );
@@ -372,7 +380,7 @@ class UsersController extends AppController
                 return true;
             }
             $role = $this->Registrations->getUserEventRole(2,$this->Auth->user('id'));
-            if (strpos('manager owner', $role) !== false){
+            if (strpos('manager owner supervisor', $role) !== false){
                 return true;
             }
         }

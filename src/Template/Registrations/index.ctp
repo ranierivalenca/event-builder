@@ -56,16 +56,24 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
                 </td>
                   
                 <td> 
+                     <?php 
+                if(strpos('owner', $loguser['entecrole']) !== false){
+                    echo $this->Form->postLink ('<i class="fa fa-lg fa-fw fa-trash"></i>' , array ('controller' => 'Users','action' => 'delete',$registration->user_id  ), array ('class' => 'btn btn-danger' ,'escape' => false,'confirm' => __ ( 'Você tem certeza que deseja deletar ' . $registration->user->nome . ' ?' ) ) );
+                }
+                    ?>
+                </td>
+
+                </td>
 
                 
                 <td style="text-align:center;">
                     <div  style="<?php echo $registration->user->ativo ? 'background-color:#b3ffb3;':'background-color:#ddd;';?>  width: 40px; height: 40px; line-height: 40px; margin:auto; border: 0px; border-radius: 6px;font-size: 1.5em; text-align:center;">
-                    <?=$this->Form->postLink ('<i class="fa fa-check"></i>' , array ('action' => 'validar',$registration->user->id ), array ('style'=> $registration->user->ativo ? 'color:#555;':'color:#999;' ,'escape' => false,'confirm' => __ ( 'Validar ' . $registration->user->nome . ' ?' ) ) );?>
+                    <i class="fa fa-check"></i>
                     </div>
                 </td>
                 <td style="text-align:center;">
                     <div  style="<?php echo $registration->checkin ? 'background-color:#b3ffb3;':'background-color:#ddd;';?>  width: 40px; height: 40px; line-height: 40px; margin:auto; border: 0px; border-radius: 6px;font-size: 1.5em; text-align:center;">
-                    <?=$this->Form->postLink ('<i class="fa   fa-flag-checkered"></i>' , array ('action' => 'credenciar',$registration->id ), array ('style'=> $registration->checkin ? 'color:#555;':'color:#999;','escape' => false,'confirm' => __ ( 'Credenciar ' . $registration->user->nome . ' ?' ) ) );?>
+                   <i class="fa   fa-flag-checkered"></i>
                     </div>
                 </td>
                 

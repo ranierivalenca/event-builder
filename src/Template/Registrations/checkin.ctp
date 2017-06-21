@@ -20,7 +20,6 @@
 		<div style="width: 100%; text-align: center; ">
 			<div style="width: 31%;float: left;"><i class="fa fa-fw fa-check"> </i><br>Email validado</div>
 			<div style="width: 31%;float: left;"><i class="fa fa-fw fa-flag-checkered"> </i><br>Credenciado</div>
-			<div style="width: 31%;float: left;"><i class="fa fa-fw fa-print"> </i><br>Imprimir certificado</div>
 		</div>
 	<table id='userstable' style="width: 100%;"> 
 			<col style="width: 7% ;"/>
@@ -29,10 +28,10 @@
 			<col style="width: 15% ;"/>
 			<col style="width: 15% ;"/>
 	<tr>
-			<th ><?= $this->Paginator->sort('id',['label' => 'nº']) ?></th>
-			<th ><?= $this->Paginator->sort('nome',['label' => 'Nome']) ?></th>
+			<th >nº</th>
+			<th >Nome</th>
 			<th style="text-align:center;">Status</th>
-			<th style="text-align:center;"><?= $this->Paginator->sort('checkin',['label' => 'Creden.']) ?></th>
+			<th style="text-align:center;">Creden.</th>
 	</tr>
 
     

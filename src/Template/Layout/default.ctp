@@ -231,7 +231,7 @@ $cakeDescription = Configure::read('Event.name');
 
                         <?php } ?>
 
-                        <?php if(strpos('owner manager superisor', $loguser['entecrole']) !== false){?>
+                        <?php if(strpos('owner manager supervisor', $loguser['entecrole']) !== false){?>
                         
                         
                         <li>

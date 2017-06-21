@@ -12,6 +12,12 @@ use Cake\Datasource\ConnectionManager;
 class MinicursosController extends AppController
 {
 
+    public function initialize(){
+        parent::initialize();
+        $this->loadModel('Registrations');
+    }
+
+
     /**
      * Index method
      *
@@ -105,20 +111,7 @@ class MinicursosController extends AppController
     }
     
     
-    public function isAuthorized($user)
-    {
-    	    
-    
-    	if (	$this->request->action === 'view'
-    			||	$this->request->action === 'index'
-    			||	$this->request->action === 'matricularajax'
-    			) {
-    				if (strpos('admin supervisor', $user['role']) !== false){
-    					return true;
-    				}
-    			}
-    			return parent::isAuthorized($user);
-    }
+
     
     
     public function matricularajax($userid,$minicursoid){
@@ -139,5 +132,25 @@ class MinicursosController extends AppController
         }
 
     	
+    }
+
+
+        public function isAuthorized($user)
+    {
+            
+    
+        if (    $this->request->action === 'view'
+                ||  $this->request->action === 'index'
+                ||  $this->request->action === 'matricularajax'
+                ) {
+                    if (strpos('admin', $user['role']) !== false){
+                        return true;
+                    }
+                    $role = $this->Registrations->getUserEventRole(2,$this->Auth->user('id'));
+                    if (strpos('manager owner supervisor', $role) !== false){
+                        return true;
+                    }
+                }
+                return parent::isAuthorized($user);
     }
 }

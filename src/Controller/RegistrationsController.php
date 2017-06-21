@@ -4,8 +4,9 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Mailer\Email;
-/**
- * Registrations Controller
+
+
+ /* Registrations Controller
  *
  * @property \App\Model\Table\RegistrationsTable $Registrations
  */
@@ -141,20 +142,19 @@ class RegistrationsController extends AppController
     public function checkin($event_id = 2)
     {
 
+        //$connection = ConnectionManager::get('default');
+        //$registrations = $connection->execute('SELECT registrations.user_id, registrations.checkin, users.nome, users.ativo FROM registrations INNER JOIN users on registrations.user_id = users.id WHERE registrations.event_id=2 ')->fetchAll('assoc');
+
         $count = $this->Registrations->find()->where(['event_id' => $event_id])->count();
         
         $count_in = $this->Registrations->find()->where(['event_id' => $event_id,'checkin' => '1'])->count();
 
-        $registrations = $this->Registrations->find()->where(['event_id' => $event_id])->contain(['Users']);
+        $registrations = $this->Registrations->find()->select(['Users.id','Users.nome','Users.ativo','checkin'])->where(['event_id' => $event_id])->contain(['Users'])->order(['Users.nome' => 'ASC']);;
                                        ;
 
-        $this->paginate = array(
-                'limit' => 900,
-                'order' => array(
-                        'nome' => 'asc'
-                )
-        );
-        $registrations = $this->paginate($registrations);
+        //$this->paginate = array('limit' => 1500, 'order' => array() ); 
+
+        //$registrations = $this->paginate($registrations);
         $this->set(compact('registrations'));
         $this->set('_serialize', ['registrations']);
         
