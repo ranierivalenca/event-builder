@@ -553,7 +553,7 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
 
           <div class="col-md-12"><hr></div>
           <div class="col-md-2">
-            <h5><strong>13:20h às 16:20h</strong></h5>
+            <h5><strong>14:20h às 16:20h</strong></h5>
           </div>
           <div class="col-md-10">
             <h5>
