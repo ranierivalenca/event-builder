@@ -457,6 +457,31 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
         )
       ?>
 
+      <?=
+        $this->element('home/participante', [
+            'name' => 'Capibalabs',
+            'company' => 'IFPE/Recife',
+            'year' => '2017',
+            'photo' => 'capibalabs.jpg',
+            'about' => [
+              'Projeto Capibalabs' => '
+               Capibalabs é um grupo de pesquisa do IFPE CAMPUS Recife que vem trabalhando com prototipagem eletrônica usando plataformas de hardware livre e tem foco no Monitoramento Ambiental, na disseminação do conhecimento sobre hardware e software livres e na ideia de como eles podem ser usados para prover melhoria na qualidade de vida das pessoas. O grupo atualmente ministra aulas para sua segunda turma do “Curso de Arduino e IoT” todas as segundas-feiras para professores, alunos e servidores dos diversos campi IFPE. 
+              '
+            ],
+            'activity' => [
+              'type' => 'Apresentação',
+              'title' => 'Projeto Capibalabs - Implementando IoT para Monitoramento Ambiental',
+              'desc' => 'No II ENTEC – 2017 o grupo mostrará um pouco dos seus projetos.
+              <br> <strong>Participantes: </strong>
+                <br> Arthur Lima de Castro
+                <br>Michel Henrique da Silva Nascimento
+                <br>Tarcísio Augusto Ferreira da Silva Santos'
+              ]
+
+            ]
+        )
+      ?>
+
 
     </div>
   </div>
