@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\Mailer\Email;
+use CakePdf\Pdf\CakePdf;
 
 
  /* Registrations Controller
@@ -255,6 +256,121 @@ class RegistrationsController extends AppController
        
         return parent::isAuthorized($user);
     }
+
+
+        public function certificadoOuvinte($event_id = 2){
+            $registrations = $this->Registrations->find()->where(['event_id' => $event_id, 'certificate' => 0, 'checkin' => 1])->contain(['Users'])->limit(100);
+            
+           
+
+            foreach ($registrations as $registration){
+                $this->set(compact('registration'));
+
+                $CakePdf = new \CakePdf\Pdf\CakePdf();
+                $CakePdf->orientation('landscape');
+                $CakePdf->template('certificado', 'certificado_ouvinte');
+                $CakePdf->viewVars($this->viewVars);
+                $pdf = $CakePdf->output();
+
+                //          enviar e-mail
+                $email = new Email('default');
+                $email->from(['contatoentec@igarassu.ifpe.edu.br' => 'EnTec 2017'])
+                ->emailFormat('html')
+                ->to(strtolower($registration->user['email']))
+//                ->to(strtolower('strapacao@gmail.com'))
+                ->template('default','certificado_ouvinte')
+                ->subject('[EnTec 2017] Certificado de Ouvinte')
+                ->viewVars(['nome' => $registration->user['nome']])
+                ->attachments(array('ENTEC17_certificado_ouvinte.pdf' => array('data' => $pdf, 'mimetype' => 'application/pdf')))
+                ->send();
+                
+                $this->Registrations->updateAll(['certificate' => 1], ['user_id' => $registration['user_id'], 'event_id' => $registration['event_id']]);
+         
+                //$pdf = $CakePdf->write(APP . 'files' . DS . 'minicurso'.$registration['id'].'_'.rand(1,5000).'.pdf');
+            }
+
+            $this->Flash->default(__('Foram enviados '.count($registrations).' certificados'));
+
+            return $this->redirect($this->referer());
+        }
+
+
+        public function certificadoVoluntario($event_id = 2){
+            $ids = [755];
+            $registrations = $this->Registrations->find()->where(['event_id' => $event_id, 'user_id IN' => $ids])->contain(['Users'])->limit(15);
+            
+            
+           
+
+            foreach ($registrations as $registration){
+                $this->set(compact('registration'));
+
+                $CakePdf = new \CakePdf\Pdf\CakePdf();
+                $CakePdf->orientation('landscape');
+                $CakePdf->template('certificado', 'certificado_voluntario');
+                $CakePdf->viewVars($this->viewVars);
+                $pdf = $CakePdf->output();
+
+                //          enviar e-mail
+                $email = new Email('default');
+                $email->from(['contatoentec@igarassu.ifpe.edu.br' => 'EnTec 2017'])
+                ->emailFormat('html')
+                ->to(strtolower($registration->user['email']))
+            //  ->to(strtolower('strapacao@gmail.com'))
+                ->template('default','certificado_ouvinte')
+                ->subject('[EnTec 2017] Certificado de Voluntário')
+                ->viewVars(['nome' => $registration->user['nome']])
+                ->attachments(array('ENTEC17_certificado_ouvinte.pdf' => array('data' => $pdf, 'mimetype' => 'application/pdf')))
+                ->send();
+                
+                
+         
+                //$pdf = $CakePdf->write(APP . 'files' . DS . 'minicurso'.$registration['id'].'_'.rand(1,5000).'.pdf');
+            }
+
+            $this->Flash->default(__('Foram enviados '.count($registrations).' certificados'));
+
+            return $this->redirect($this->referer());
+        }
+
+        public function certificadoArtigos($event_id = 2){
+            $registrations = [
+['PROJETO MECÂNICO E INSTRUMENTAÇÃO DE PROTÓTIPO ROBÓTICO PARALELO TIPO DELTA PARA APLICAÇÃO DIDÁTICA','ALVES, F. O. M.; SANTOS, L. T. ; ALMEIDA JÚNIOR, J. G.; BARROS, J. C. C.','vini1708@hotmail.com', 'alexander.sena@caruaru.ifpe.edu.br', 'ich_cleyson@hotmail.com']
+];
+
+            foreach ($registrations as $registration){
+                $this->set(compact('registration'));
+
+                $CakePdf = new \CakePdf\Pdf\CakePdf();
+                $CakePdf->orientation('landscape');
+                $CakePdf->template('certificado', 'certificado_apresentacao_artigo');
+                $CakePdf->viewVars($this->viewVars);
+                $pdf = $CakePdf->output();
+
+                //          enviar e-mail
+                $email = new Email('default');
+                $email->from(['contatoentec@igarassu.ifpe.edu.br' => 'EnTec 2017'])
+                ->emailFormat('html')
+                // ->to(strtolower($registration->user['email']))
+                // ->to('strapacao@gmail.com','alexandre.vianna@igarassu.ifpe.edu.br','cinfo@igarassu.ifpe.edu.br')
+                ->to(array_slice($registration, 2))
+                ->template('default','certificado_apresentacao_artigo')
+                ->subject('[EnTec 2017] Certificado de Apresentação de Artigo')
+                ->attachments(array('ENTEC17_certificado_artigo.pdf' => array('data' => $pdf, 'mimetype' => 'application/pdf')))
+                ->send();
+                
+                
+         
+                //$pdf = $CakePdf->write(APP . 'files' . DS . 'minicurso'.$registration['id'].'_'.rand(1,5000).'.pdf');
+            }
+
+            $this->Flash->default(__('Foram enviados '.count($registrations).' certificados'));
+
+            return $this->redirect($this->referer());
+        }
+     
+
+
 
 
 }

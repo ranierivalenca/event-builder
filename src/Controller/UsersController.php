@@ -5,6 +5,7 @@ use App\Controller\AppController;
 use Cake\Event\Event;
 use Cake\I18n\Time;
 use Cake\Mailer\Email;
+use CakePdf\Pdf\CakePdf;
 /**
  * Users Controller
  *
@@ -436,6 +437,5 @@ class UsersController extends AppController
         return $this->redirect($this->referer());
     }
     */
-
 
 }

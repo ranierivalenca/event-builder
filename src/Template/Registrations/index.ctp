@@ -16,7 +16,17 @@ $loguser = $this->request->session ()->read ( 'Auth.User' );
 <div  class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1" style="padding: 0;">
 
     
+    <div  style="width:100%;  text-align: center; background-color: #ddd;">
+        <?php echo $this->Html->link('<i class="fa fa-file-excel-o fa-2x"> Certificados Participante</i>',array('controller'=>'registrations','action'=>'certificadoOuvinte'), array('class'=>'btn btn-default btn-sm col-xs-4', 'escape' => false));?>    
+    </div>  
 
+    <div  style="width:100%;  text-align: center; background-color: #ddd;">
+        <?php echo $this->Html->link('<i class="fa fa-file-excel-o fa-2x"> Certificados Voluntário</i>',array('controller'=>'registrations','action'=>'certificadoVoluntario'), array('class'=>'btn btn-default btn-sm col-xs-4', 'escape' => false));?>    
+    </div>  
+
+    <div  style="width:100%;  text-align: center; background-color: #ddd;">
+        <?php echo $this->Html->link('<i class="fa fa-file-excel-o fa-2x"> Certificados Artigos</i>',array('controller'=>'registrations','action'=>'certificadoArtigos'), array('class'=>'btn btn-default btn-sm col-xs-4', 'escape' => false));?>    
+    </div> 
         
 
     <table style="width: 100%;"> 
