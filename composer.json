@@ -9,14 +9,11 @@
         "cakephp/cakephp": "3.5.*",
         "mobiledetect/mobiledetectlib": "2.*",
         "cakephp/migrations": "~1.0",
-<<<<<<< HEAD
         "cakephp/plugin-installer": "*",
         "dompdf/dompdf": "^0.8.0",
         "friendsofcake/cakepdf": "^3.2"
-=======
         "cakephp/plugin-installer": "~1.0",
         "josegonzalez/dotenv": "2.*"
->>>>>>> f989c4dc5440f7b1edec52edf54d325441062af7
     },
     "require-dev": {
         "psy/psysh": "@stable",
